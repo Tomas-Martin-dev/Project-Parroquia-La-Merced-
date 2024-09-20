@@ -1,4 +1,34 @@
-p{
-    color: azure;
+:root{
+/*Colors Styles*/
+    --Primary-Saturado: #F6572C;
+    --Primary-Claro: #FB7171;
+    --Primary-Oscuro: #942406;
+    
+    --Secundario-Saturado: #EBF52A;
+    --Secundary-claro: #EEF294
+    --Secundary-Oscuro: #DFCE39;
+    
+    --Tinta-medio: #2A5A4F;
+    --Tinta-claro: #B2ACAC;
+    --Tinta-oscuro: #000;
+    
+    --Complementos-blanco: #FFF;
+    --Complementos-celeste: #B2E2FF;
+    --Complementos-azul: #3746CC;
+/* Text Styles */
+    --sizeH1: 45px;
+    --sizeH2: 32px;
+    --sizeH3: 24px;
+    --sizeText: 1em;
+    --sizeTextSmall: 11px;
+/* Shadows  */
+   /* SOMBRA H: box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25); */
+   /* SOMBRA ARTICLE: box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.35); */
+   /* SOMBRA BOTON: 1px 1px 2px 0px #000; */
+   /* SOMBRA BOTON2: box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.40); */
+   /* SOMBRA BOX-PAGO: box-shadow: 1px 1px 2.7px 0px rgba(0, 0, 0, 0.30); */
+   /* SOMBRA CARD-HORARIO: box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.20);*/
+   /* SOMBRA NAV-SCRIOL: box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25); backdrop-filter: blur(3px); */
+   /* SOMBRA SIDER-MENU: box-shadow: 0.5px 0.5px 1.6px 0px rgba(0, 0, 0, 0.60); 
+*/
 }
-/* commit de inicio */
