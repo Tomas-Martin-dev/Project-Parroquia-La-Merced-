@@ -1,31 +1,210 @@
-/* icons */
-.btnLeerMas {
-    display: inline-flex;
-    padding: 2px 16px;
+@import "styles.css";
+
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+/* botones */
+
+.btn {
+    /* div */
+    cursor: pointer;
+    user-select: none;
     justify-content: center;
+    display: inline-flex;
     align-items: center;
+    /* text */
+    margin: 0;
+    color: var(--Tinta-Negro);
+    text-align: center;
+}
+
+.LeerMas {
+    padding: 3px 16px;
     border-radius: 6px;
-    border: 1px solid var(--Tinta-oscuro, #000);
-    background: var(--Secundary-claro, #EEF294);
+    border: 1px solid var(--Tinta-Negro);
+    background: #00000000;
+
+    /* ESTILO TEXTO */
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
     /* SOMBRA BOTON */
-    box-shadow: 1px 1px 2px 0px #000;
+    box-shadow: 1px 1px 2px 0px var(--Tinta-Negro);
 
     &:hover {
-        background: #00000000;
-    }
-
-    & p {
-        color: var(--Tinta-oscuro, #000);
-        text-align: center;
-        font-family: Montserrat;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        background-color: var(--Secundary-Claro);
     }
 }
 
-body{
-    background-color: burlywood;
+.VerMasN {
+    padding: 9px 25px;
+    border-radius: 6px;
+    border: 1px solid var(--Tinta-Negro);
+    background-color: #00000000;
+
+    /* ESTILO TEXTO */
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    /* SOMBRA BOTON */
+    box-shadow: 1px 1px 2px 0px var(--Tinta-Negro);
+
+    &:hover {
+        background-color: var(--Secundary-Claro);
+    }
+}
+
+.ToCalendario {
+    padding: 9px 25px;
+    border-radius: 6px;
+    border: 1px solid var(--Tinta-Negro);
+    background-color: #00000000;
+
+    /* ESTILO TEXTO */
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    /* SOMBRA BOTON */
+    box-shadow: 1px 1px 2px 0px var(--Tinta-Negro);
+
+    &:hover {
+        background-color: var(--Complementos-Blanco);
+    }
+}
+
+.Enviar {
+    padding: 10px 30px;
+    background-color: var(--Secundary-Claro);
+    border-radius: 4px;
+
+    /* SOMBRA BOTON S */
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.40);
+
+    /* ESTILO TEXT */
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &:hover {
+        background-color: var(--Secundary-Saturado);
+    }
+}
+
+.Ubic {
+    padding: 9px 25px;
+    border-radius: 6px;
+    border: 1px solid var(--Tinta-Negro, #000);
+    background: var(--Secundary-Claro, #EEF294);
+    flex-direction: row;
+    column-gap: 4px;
+
+    /* SOMBRA BOTON S */
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.40);
+
+    /* ESTILO TEXT */
+    font-family: Lato;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    &:hover {
+        background: var(--Complementos-Blanco);
+    }
+
+    img {
+        height: 26px;
+        width: 20px;
+
+    }
+}
+
+.Login {
+    padding: 10px 30px;
+    border-radius: 4px;
+    background: var(--Secundary-Claro, #EEF294);
+
+    /* SOMBRA BOTON S */
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.40);
+
+    /* ESTILOS TEXT */
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &:hover {
+        background: var(--Secundary-Oscuro, #DFCE39);
+    }
+}
+
+/* nav-Scroll text y hover */
+.nav-scroll {
+    width: 100vw;
+    padding: 0px 36px;
+    /* position: absolute; */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.65);
+
+    /* SOMBRA NAV-SCROLL */
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+}
+
+.nav-scroll__enlaces {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: inherit;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center ;
+    gap: 14px;
+    padding: 12px 0px;
+
+    a {
+        padding: 8px 8px;
+        
+        color: var(--Tinta-Gris);
+        font-family: Lato;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-decoration: none;
+        text-shadow: 2px 2px 3.5px rgba(0,0,0,0.25);
+
+        &:hover{
+            color: var(--Primary-Oscuro, #942406);
+            
+        } 
+    }
+    
+    .donar{
+        color: var(--Primary-Saturado, #F6572C);
+    }
+}
+
+body {
+    background-color: rgb(196, 183, 183);
 }
