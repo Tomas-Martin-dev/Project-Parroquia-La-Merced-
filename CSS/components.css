@@ -6,7 +6,7 @@
     padding: 0%;
 }
 
-/* botones */
+                                                /* botones */
 
 .btn {
     /* div */
@@ -156,9 +156,9 @@
     }
 }
 
-/* nav Scroll, text y hover */
+                                        /* nav Scroll, text y hover */
 .conteiner-nav--scroll {
-    width: 100vw;
+    width: 100%;
     padding: 0px 36px;
     /* position: absolute; */
     user-select: none;
@@ -208,7 +208,7 @@
     }
 }
 
-/* nav hero, text y hover */
+                                            /* nav hero, text y hover */
 .conteiner-nav--hero {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -256,7 +256,7 @@
     }
 }
 
-/* articulos de nodevades */
+                                            /* articulos de nodevades */
 .container-articles {
     margin: 30px 0 30px 0;
 
@@ -270,7 +270,7 @@
 
 .content {
     /* div que delimita el ancho maximo y los margenes del contenido, permite el wrap de articles al toner espacio*/
-    margin: 0 12.5%; 
+    margin: 0 12.5%;
     max-width: 1440px;
     display: flex;
     flex-flow: row wrap;
@@ -302,6 +302,7 @@
         background: lightgray 50% / cover no-repeat;
         border-radius: 6px 0 0 6px;
     }
+
     .container-text {
         display: flex;
         padding: 12px 0px;
@@ -311,6 +312,7 @@
         gap: 8px;
         flex: 1 0 0;
         align-self: stretch;
+
         /* estilo los diferentes textos */
         .fecha {
             color: var(--Tinta-medio, #2A5A4F);
@@ -343,12 +345,186 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-           
+
         }
     }
 
 }
+                                                /* hamburg menu */
+.container {
+    margin-bottom: 100px ;
+    margin-left: 100px ; /* solo para poder verlo */
 
+    display: block;
+    position: relative;
+}
+
+.checkbox {
+    position: absolute;
+    left: -8px;
+    top: -2px;
+    display: block;
+    height: 32px;
+    width: 42px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 5; /*lo mantengo arraiba ya que el genera la animacion*/
+    
+    /*mientras checkbox este con hover, el hijo line del hno div va a cambiar de color, lo mismo el before */
+    &:hover ~ div .line{
+        background-color: var(--Tinta-Gris);
+        &::before{
+            background-color: var(--Tinta-Gris);
+        }
+    }
+}
+
+.hamburger-lines {
+    height: 24px;
+    width: 30px;  /*estos valores se tienen que emparejar con el .checkbox*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .line {
+        position: relative;
+        height: 4px;
+        width: 100%;
+        border-radius: 0 10px 10px 0;
+        background-color: var(--Tinta-Negro);
+        display: flex;
+        align-items: center;
+    }
+    .line::before {
+        position: absolute;
+        left: -7px;
+        content: "";
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background-color: var(--Tinta-Negro);
+    }
+}
+
+.hamburger-lines__small {
+    height: 18px;
+    width: 24px;  /*estos valores se tienen que emparejar con el .checkbox*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .line {
+        position: relative;
+        height: 3px;
+        width: 100%;
+        border-radius: 0 10px 10px 0;
+        background-color: var(--Tinta-Negro);
+        display: flex;
+        align-items: center;
+    }
+    .line::before {
+        position: absolute;
+        left: -5px;
+        content: "";
+        height: 3px;
+        width: 3px;
+        border-radius: 50%;
+        background-color: var(--Tinta-Negro);
+    }
+}
+
+.line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.line2 {
+    transition: transform 0.2s ease-in-out;
+}
+
+.line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+input[type="checkbox"]:checked ~ div .line::before {
+    height: 0px;
+}
+
+input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+    border-radius: 10px;
+}
+input[type="checkbox"]:checked ~ .hamburger-lines__small .line1 {
+    transform: rotate(42deg);
+    border-radius: 10px;
+}/* corrijo animacion para el menu small*/
+
+input[type="checkbox"]:checked ~ div .line2 {
+    transform: scaleY(0);
+}
+
+input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+    border-radius: 10px;
+}
+input[type="checkbox"]:checked ~ .hamburger-lines__small .line3 {
+    transform: rotate(-42deg);
+    border-radius: 10px;
+}/*lo mismo que la linea 456*/
+
+                                                /*articles de horarios */
+.container-sections {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    padding: 0 12.5%; 
+}
+.section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    column-gap: 40px;
+    width: 100%;
+    
+}
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    
+    background-color: rgb(223, 206, 57,0.24);
+    height: auto;
+    max-width: 320px;
+    padding: 28px 28px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px -2px rgba(0,0,0,0.35);
+
+    img {
+        height: 124px;
+        width: 70%;
+    }
+    h3 {
+        color: var( --Complementos-Azul);
+        font-size: var(--sizeH3);
+        font-family: var(--Lato);
+        text-align: center;
+        /* min-width: 126px; */
+        width: 100%;
+    }
+    p {
+        font-size: var(--sizeText);
+        font-family: var(--Lato);
+        text-align: center;
+        /* min-width: 126px; */
+        width: 100%;
+    }
+}
 body {
-    background-color: rgb(196, 183, 183);
+    background-color: var(--Secundary-Claro);
 }
