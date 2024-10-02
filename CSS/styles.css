@@ -20,9 +20,11 @@
     --sizeH1: 45px;
     --sizeH2: 32px;
     --sizeH3: 24px;
+    --sizeH4: 18px;
     --sizeText: 1em;
     --sizeTextSmall: 13px;
     --Lato: lato;
+    --Mont: Montserrat;
 
     /* Shadows  */
    /* SOMBRA H: box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25); */
