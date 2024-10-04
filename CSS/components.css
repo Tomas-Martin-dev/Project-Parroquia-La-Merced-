@@ -6,7 +6,7 @@
     padding: 0%;
 }
 
-                                                /* botones */
+/* botones */
 
 .btn {
     /* div */
@@ -156,26 +156,56 @@
     }
 }
 
-                                        /* nav Scroll */
-.conteiner-nav--scroll {
-    margin-bottom: 100px; /*solo para separar*/
+/* LINKS A REDES */
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+    .i-youtube {
+        width: 25px;
+        height: 20px;
+    }
+
+    .i-facebook {
+        width: 25px;
+        height: 25px;
+    }
+
+    .i-instagram {
+        width: 22.5px;
+        height: 22.5px;
+    }
+}
+
+/* nav Scroll */
+.nav--scroll {
+    margin-bottom: 100px;
+    /*solo para separar*/
 
     width: 100%;
     padding: 0px 36px;
     /* position: absolute; */
     user-select: none;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
     background: rgba(255, 255, 255, 0.65);
-
-    /* SOMBRA NAV-SCROLL */
     box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(3px);
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .nav--scroll__container {
+        width: 100%;
+        max-width: 1920px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 14px;
+        flex-grow: 1;
+    }
 }
 
 .nav-scroll {
@@ -187,6 +217,7 @@
     justify-content: center;
     gap: 14px;
     padding: 12px 0px;
+    flex-grow: 1;
 
     a {
         padding: 8px 8px;
@@ -209,34 +240,41 @@
         color: var(--Primary-Saturado, #F6572C);
     }
 }
-                                        /* nav Scroll --- version tablet y mobile*/
-.conteiner-nav--scroll__small {
-     /*solo para separar*/
 
+/* nav Scroll --- version tablet y mobile*/
+.nav-scroll--small {
+    width: 100%;
+    /* position: absolute; */
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.nav-scroll--small__container {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    
-    /* position: absolute; */
+
     width: 100%;
+    max-width: 1920px;
     padding: 13px 16px;
     user-select: none;
-    background: rgba(255, 255, 255, 0.65);
-    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(3px);
 
     h2 {
-        font-family:var(--Mont);
-        font-size:var(--sizeH4);
+        font-family: var(--Mont);
+        font-size: var(--sizeH4);
         font-weight: 600;
         color: var(--Tinta-Gris);
     }
-    img {
-        height: 32px;
-    }
+
 }
+
 /* hamburg menu */
 .btn-siderBar {
     display: block;
@@ -252,12 +290,14 @@
     width: 38px;
     opacity: 0;
     cursor: pointer;
-    z-index: 5; /*lo mantengo arraiba ya que el genera la animacion*/
-    
+    z-index: 5;
+    /*lo mantengo arraiba ya que el genera la animacion*/
+
     /*mientras checkbox este con hover, el hijo line del hno div va a cambiar de color, lo mismo el before */
-    &:hover ~ div .line{
+    &:hover~div .line {
         background-color: var(--Tinta-Gris);
-        &::before{
+
+        &::before {
             background-color: var(--Tinta-Gris);
         }
     }
@@ -265,15 +305,19 @@
 
 .hamburger-lines {
     height: 20px;
-    width: 28px;  /*estos valores se tienen que emparejar con el .checkbox*/
+    width: 28px;
+    /*estos valores se tienen que emparejar con el .checkbox*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    @media (width <= 1279px ) {
+    /* breakpoint tablet */
+    @media (width <=639px) {
+        /*coreguir media querie, estoy definiendo el tamaño small desde tablet cuando tendria que ser desde mobile*/
         height: 18px;
         width: 24px;
     }
+
     .line {
         position: relative;
         height: 4px;
@@ -283,15 +327,18 @@
         display: flex;
         align-items: center;
 
-        @media (width <= 1279px ) {
+        /* breakpoint tablet */
+        @media (width <=1279px) {
             height: 3px;
-            &::before{
+
+            &::before {
                 left: -5px !important;
                 height: 3px !important;
                 width: 3px !important;
             }
         }
     }
+
     .line::before {
         position: absolute;
         left: -7px;
@@ -301,8 +348,6 @@
         border-radius: 50%;
         background-color: var(--Tinta-Negro);
     }
-
-    
 }
 
 .line1 {
@@ -319,35 +364,37 @@
     transition: transform 0.4s ease-in-out;
 }
 
-input[type="checkbox"]:checked ~ div .line::before {
+input[type="checkbox"]:checked~div .line::before {
     height: 0px !important;
 }
 
-input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+input[type="checkbox"]:checked~.hamburger-lines .line1 {
     transform: rotate(37deg);
     border-radius: 10px;
-/* version de tablet */
-    @media (width <= 1279px) {
+
+    /* version de tablet */
+    @media (width <=1279px) {
         transform: rotate(41deg);
         border-radius: 10px;
     }
 }
 
-input[type="checkbox"]:checked ~ div .line2 {
+input[type="checkbox"]:checked~div .line2 {
     transform: scaleY(0);
 }
 
-input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+input[type="checkbox"]:checked~.hamburger-lines .line3 {
     transform: rotate(-37deg);
     border-radius: 10px;
-/* version de tablet */
-    @media (width <= 1279px) {
+
+    /* version de tablet */
+    @media (width <=1279px) {
         transform: rotate(-41deg);
         border-radius: 10px;
     }
 }
 
-                                            /* nav hero, text y hover */
+/* nav hero, text y hover */
 .conteiner-nav--hero {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -395,7 +442,7 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
     }
 }
 
-                                            /* articulos de nodevades */
+/* articulos de nodevades */
 .container-articles {
     margin: 30px 0 30px 0;
 
@@ -415,43 +462,45 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
     flex-flow: row wrap;
     justify-content: center;
     gap: 20px;
+
+    /* brakpoint tablet-samll and mobile */
+    @media screen and (width <=639px) and (width >=360px) {
+        margin: 0 42px;
+    }
 }
 
 .art-novedades {
-    /* medidas de los article */
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     flex: 1 0 0;
-    gap: 12px;
-    padding-right: 12px;
-    min-width: 520px;
-    max-width: 825px;
+    column-gap: 12px;
 
+    padding-right: 12px;
+    min-width: 550px;
+    max-width: 825px;
     border-radius: 6px;
     border: 1px solid var(--Tinta-medio, #2A5A4F);
-    /* SOMBRA ARTICLE */
     box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.35);
 
     /* medidas la imagen y el contenedor de texto */
     & img {
-        width: 282px;
+        width: 45%;
+        max-height: 244px;
         align-self: stretch;
-        background: lightgray 50% / cover no-repeat;
-        border-radius: 6px 0 0 6px;
+        z-index: -1;
     }
-
     .container-text {
         display: flex;
-        padding: 12px 0px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        align-self: stretch;
         gap: 8px;
         flex: 1 0 0;
-        align-self: stretch;
-
+        
+        padding: 12px 0px;
         /* estilo los diferentes textos */
         .fecha {
             color: var(--Tinta-medio, #2A5A4F);
@@ -487,10 +536,71 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
 
         }
     }
+/* breakpoint tablet */
+    @media screen and (width <=1279px) and (width >=640px) {
+        column-gap: 8px;
+        padding-right: 8px;
 
+        img {
+            width: 43%;
+        }
+        .container-text {
+            padding: 8px 0px;
+
+            .fecha {
+                margin-bottom: -4px;
+            }
+
+            a {
+                margin: 2% 0 0 0;
+                padding: 2px 16px;
+                font-size: 14px;
+            }
+        }
+    }
+/* breakpoint tablet-small and mobile */
+    @media screen and (width <=639px) and (width >=360px) {
+        max-height: none;
+        min-width: 270px;
+        max-width: none;
+        padding-right: 0px;
+        flex-flow: row wrap;
+        column-gap: 0px;
+        row-gap: 6px;
+
+        img {
+            min-width: 194px;
+            display: flex;
+            flex-grow: 1;
+        }
+        .container-text {
+            min-width: 280px;
+            gap: 6px;
+            flex-grow: 2;
+            padding: 12px 4px ;
+            
+            .fecha {
+                font-size: 12px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .resumen {
+                font-size: 14px;
+            }
+
+            a {
+                font-size: 13px;
+                padding: 2px 16px;
+                margin-top: 8px;
+            }
+        }
+    }
 }
 
-                                                /*articles de horarios */
+/*articles de horarios */
 .container-sections {
     display: flex;
     flex-flow: column nowrap;
@@ -498,42 +608,47 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
     align-items: center;
     gap: 40px;
     width: 100%;
-    padding: 0 12.5%; 
+    padding: 0 12.5%;
     background-color: var(--Secundary-Claro);
 }
+
 .section {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     column-gap: 40px;
     width: 100%;
-    
+
 }
+
 .card {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    
+
     background-color: rgb(223, 206, 57, .24);
     height: auto;
     max-width: 320px;
     padding: 28px 28px;
     border-radius: 12px;
-    box-shadow: 2px 2px 6px -2px rgba(0,0,0,0.35);
+    box-shadow: 2px 2px 6px -2px rgba(0, 0, 0, 0.35);
 
     img {
         height: 124px;
-        width: 70%;  /*cuando suba el png correcto hay que implementar el el responsive para la imagen*/
+        width: 70%;
+        /*cuando suba el png correcto hay que implementar el el responsive para la imagen*/
     }
+
     h3 {
-        color: var( --Complementos-Azul);
+        color: var(--Complementos-Azul);
         font-size: var(--sizeH3);
         font-family: var(--Lato);
         text-align: center;
         width: 100%;
     }
+
     p {
         font-size: var(--sizeText);
         font-family: var(--Lato);
@@ -541,6 +656,7 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
         width: 100%;
     }
 }
+
 body {
     background-color: #8fd8ab;
 }
