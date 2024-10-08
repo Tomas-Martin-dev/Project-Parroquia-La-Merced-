@@ -693,6 +693,14 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     /* breakpoint tablet */
     @media screen and (width <= 1279px) and (width >= 640px) {
         padding: 10% 8.6%;
+    };
+    /* breakpoint tablet-small and mobile */
+    @media screen and (width <= 639px) and (width >= 360px) {
+        padding: 10% 6.57%;
+    };
+    /* breakpoint mobile-small */
+    @media screen and (width <= 360px){
+        padding: 10% 5.57%;
     }
 }
 
@@ -701,9 +709,35 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     grid-template-columns: repeat(4,1fr);
     column-gap: 56px;
     row-gap: 46px;
+    
     width: 100%;
     max-width: 1440px;
+    min-width: 1030px;
 
+    /* breakpoint tablet  */
+    @media screen and (width <= 1279px) and (width >= 640px) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 24px 24px;
+        
+        padding: 0 90px;
+        min-width: 684px;
+    }
+    /* breakpoint tablet-small and mobile  */
+    @media screen and (width <= 639px) and (width >= 360px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 16px;
+        min-width: 0;
+    }
+    /* breakpoint mobile-small */
+    @media screen and (width <= 360px){
+        gap: 16px 12px;
+        grid-template-columns: repeat(2, 1fr);
+        min-width: 0;
+        
+    }
 }
 
 .card {
@@ -714,7 +748,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     gap: 8px;
 
     background-color: rgb(223, 206, 57, .24);
-    max-width: 318px;
+    max-width: 704px;
+    min-width: 215px;
     padding: 28px 28px;
     border-radius: 12px;
     box-shadow: 2px 2px 6px -2px rgba(0, 0, 0, 0.35);
@@ -738,6 +773,56 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         font-family: var(--Lato);
         text-align: center;
         width: 100%;
+    }
+
+    /* breakpoint tablet */
+    @media screen and (width <= 1279px) and (width >= 640px)  {
+        /* max-width: 304px; */
+        padding: 24px 24px;   
+        gap: 10px; 
+        flex-shrink: 0;
+        flex-grow: 1;
+        flex-basis: 240px;
+        
+        img {
+            max-width: min-content;
+         }
+
+        h3{
+            font-size: 20px;
+        }
+    }
+    /* breakpoint tablet-small and mobile */
+    @media screen and (width <= 639px) and (width >= 360px)  {
+        gap: 6px; 
+        padding: 10px 8px;   
+        min-width: 145px;
+        
+        img {
+           max-width: min-content;
+        }
+
+        h3{
+            font-size: 14px;
+        }
+        
+        p{
+            font-size: 11px; 
+        }
+    }
+    /* breakpoint mobile-small */
+    @media screen and (width <= 360px){
+        min-width: 0px;
+        padding: 10px 8px;
+        gap: 6px; 
+        
+        h3{
+            font-size: 14px;
+        }
+        
+        p{
+            font-size: 11px; 
+        }
     }
 }
 
