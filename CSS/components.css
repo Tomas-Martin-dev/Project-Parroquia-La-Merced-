@@ -5,6 +5,13 @@
     margin: 0%;
     padding: 0%;
 }
+html, body {
+    overflow-x: hidden; /* Evita cualquier desplazamiento horizontal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%; /* Para que siempre ocupe el 100% del ancho de la pantalla */
+}
 
 /* botones */
 
@@ -244,7 +251,10 @@
 /* nav Scroll --- version tablet y mobile*/
 .nav-scroll--small {
     width: 100%;
-    /* position: absolute; */
+    /* position: fixed; */
+    /* top: 0px; */
+    /* left: 0px; */
+
     background: rgba(255, 255, 255, 0.65);
     box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(3px);
@@ -265,17 +275,43 @@
     max-width: 1920px;
     padding: 13px 16px;
     user-select: none;
-
+    
     h2 {
         font-family: var(--Mont);
         font-size: var(--sizeH4);
         font-weight: 600;
         color: var(--Tinta-Gris);
     }
-
+    
+    /* breakpoint tablet-small and mobile */
+    @media screen and (width <= 639px) {
+        padding: 13px 4px;
+        img {
+            width: 36px;
+            height: 36px;
+        }
+        h2 {
+            font-size: 14px;
+            margin-left: -6px;
+        }
+    }
+    /* breakpoint mobile-small */
+    @media screen and (width <= 359px) {
+        padding: 13px 4px;
+        img {
+            width: 36px;
+            height: 36px;
+        }
+        h2 {
+            display: none;
+        }
+        .h2-mobile__small{
+            display: block !important;
+        }
+    }
 }
 
-/* hamburg menu */
+/* hamburg menu  */
 .btn-siderBar {
     display: block;
     position: relative;
@@ -311,9 +347,8 @@
     flex-direction: column;
     justify-content: space-between;
 
-    /* breakpoint tablet */
+    /* breakpoint tablet-samll and mobile */
     @media (width <=639px) {
-        /*coreguir media querie, estoy definiendo el tamaño small desde tablet cuando tendria que ser desde mobile*/
         height: 18px;
         width: 24px;
     }
@@ -467,6 +502,11 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     @media screen and (width <=639px) and (width >=360px) {
         margin: 0 42px;
     }
+    /* brakpoint mobile-samll */
+    @media screen and (width <=359px) {
+        margin: 0 20px;
+        /* background-color: #000; */
+    }
 }
 
 .art-novedades {
@@ -569,14 +609,52 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         row-gap: 6px;
 
         img {
-            min-width: 194px;
-            display: flex;
+            min-width: 0px;
             flex-grow: 1;
         }
         .container-text {
-            min-width: 280px;
+            min-width: 300px;
+            min-height: 160px;
             gap: 6px;
-            flex-grow: 2;
+            padding: 12px 4px ;
+            
+            .fecha {
+                font-size: 12px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .resumen {
+                font-size: 14px;
+            }
+
+            a {
+                font-size: 13px;
+                padding: 2px 16px;
+                margin-top: 8px;
+            }
+        }
+    }
+/* breakpoint mobile-small */
+    @media screen and (width <=359px) {
+        max-height: none;
+        min-width: 270px;
+        max-width: none;
+        padding-right: 0px;
+        flex-flow: row wrap;
+        column-gap: 0px;
+        row-gap: 6px;
+
+        img {
+            min-width: 0px;
+            flex-grow: 1;
+        }
+        .container-text {
+            min-width: 300px;
+            min-height: 160px;
+            gap: 6px;
             padding: 12px 4px ;
             
             .fecha {
@@ -607,17 +685,24 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     justify-content: center;
     align-items: center;
     gap: 40px;
+
     width: 100%;
-    padding: 0 12.5%;
+    padding: 10% 12.5%;
     background-color: var(--Secundary-Claro);
+
+    /* breakpoint tablet */
+    @media screen and (width <= 1279px) and (width >= 640px) {
+        padding: 10% 8.6%;
+    }
 }
 
 .section {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    column-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 56px;
+    row-gap: 46px;
     width: 100%;
+    max-width: 1440px;
 
 }
 
@@ -629,15 +714,14 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     gap: 8px;
 
     background-color: rgb(223, 206, 57, .24);
-    height: auto;
-    max-width: 320px;
+    max-width: 318px;
     padding: 28px 28px;
     border-radius: 12px;
     box-shadow: 2px 2px 6px -2px rgba(0, 0, 0, 0.35);
 
     img {
-        height: 124px;
-        width: 70%;
+        width: 100%;
+        height: 100%;
         /*cuando suba el png correcto hay que implementar el el responsive para la imagen*/
     }
 
