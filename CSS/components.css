@@ -433,16 +433,36 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 .conteiner-nav--hero {
     margin-top: 15px;
     margin-bottom: 15px;
+    
     width: 100%;
     padding: 0 12.5%;
     user-select: none;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
 
+    /*Breakpoint tablet  */
+    @media screen and (width <= 1279px) and (width >= 640px) {
+        padding: 0 8.6%;
+        @media screen and (width <= 775px){
+            padding: 0 10px;
+            nav{
+                justify-content:center;
+            }
+        }
+    }
+
+    /*Breakpoint tablet-small and mobile  */
+    @media screen and (width <= 639px) and (width >= 360px) {
+        padding: 0 6.26%;
+    }
+
+    @media screen and (width <= 359px) {
+        padding: 0 20px;
+    }
 }
 
 .nav--hero {
@@ -451,29 +471,72 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     max-width: 1440px;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
 
-    & a {
+    a {
         padding: 10px 15px;
-
         text-decoration: none;
         color: var(--Complementos-Blanco);
         font-family: Lato;
-        font-size: 22px;
+        font-size: 22px; /* revisar como queda con 24px*/
         font-style: normal;
         font-weight: 500;
         line-height: normal;
-        /* SOMBRA BOTON S */
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.40);
-
+        
         &:hover {
             color: var(--Secundary-Claro, #EEF294);
         }
     }
-
+    
     .donar {
         color: var(--Secundary-Oscuro, #DFCE39);
+    }
+    
+    /* Breakponit tablet */
+    @media screen and (width <= 1279px) and (width >= 640px) {
+        min-width: 630px;
+        max-width: 959px;
+        a{
+            font-size: 20px;
+            @media screen and (width <= 840px){
+                font-size: 18px; /* font-weight: 600; probar como queda con 600 y en Destopk tmb*/
+            }
+        }
+    }
+    
+    /* Breakponit tablet-small and mobile */
+    @media screen and (width <= 639px) and (width >= 360px) {
+        min-width: 350px;
+        max-width: none;
+        
+        a{
+            font-size: 16px;
+            padding: 6px 6px;
+            @media screen and (width <= 450px){
+                font-size: 14px; 
+            }
+        }
+        .calendario{
+            display: none;
+        }
+    }
+
+    /* mobile */
+    @media screen and (width <= 359px) {
+        min-width: 300px;
+        max-width: none;
+        a{
+            font-size: 12px;
+            padding: 6px 6px;
+        }
+        .calendario , .donar, .comunidad{
+            display: none;
+        }
+        .donar__small{
+            display: block !important;
+        }
     }
 }
 
