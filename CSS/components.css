@@ -541,7 +541,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 }
 
 /* articulos de nodevades */
-.container-articles {
+.container-section__novedades {
     margin: 30px 0 30px 0;
 
     /* padre section, ocupa el 100% para que el hijo pueda centrase al tener un maximo de 1440px */
@@ -552,7 +552,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     width: 100%;
 }
 
-.content {
+.content-art__novedades {
     /* div que delimita el ancho maximo y los margenes del contenido, permite el wrap de articles al toner espacio*/
     margin: 0 12.5%;
     max-width: 1440px;
@@ -742,7 +742,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 }
 
 /*articles de horarios */
-.container-sections {
+.container-section__horarios {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -767,7 +767,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 }
 
-.section {
+.content-art__horarios {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     column-gap: 56px;
@@ -803,7 +803,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 }
 
-.card {
+.art-card {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
