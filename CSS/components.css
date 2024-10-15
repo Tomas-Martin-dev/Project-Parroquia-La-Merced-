@@ -173,7 +173,7 @@ html, body {
     flex-direction: row;
     align-items: center;
     gap: 16px;
-
+    
     .i-youtube {
         width: 25px;
         height: 20px;
@@ -188,6 +188,9 @@ html, body {
         width: 22.5px;
         height: 22.5px;
     }
+    @media screen and (width <= 1279px){
+        display: none;
+    }
 }
 
 /* Top del Hero */
@@ -196,14 +199,183 @@ html, body {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 12px 12px 12px;
+    padding: 8px 36px;
     width: 100%;
     user-select: none;
 
-    img{
-        user-select: none;
-        height: 36px;
-        width: 36px;
+    .container-logo{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center; 
+        gap: 8px;
+    
+        img{
+            user-select: none;
+            width: 46px;
+            height: auto;
+            
+            /* breakpoint tablet */
+            @media screen and (width <= 1279px){
+                width: 42px;
+            }
+            
+            /* breakpoint tablet-small and mobile */
+            @media screen and (width <= 639px){
+                width: 36px;
+            }
+
+            /* breakpoint tablet-small and mobile */
+            @media screen and (width <= 359px){
+                width: 32px;
+            }
+        }
+        
+        p{
+            max-width: 200px;
+            font-family: var(--Lato);
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--Tinta-Gris);
+            text-align: left;
+            
+            /* breakpoint tablet */
+            @media screen and (width <= 1279px){
+                font-size: 16px;
+                font-weight: 500;
+            }
+            /* breakpoint tablet-small */
+            @media screen and (width <= 639px){
+                font-size: 13px;
+            }
+            /* breakpoint mobile */
+            @media screen and (width <= 359px){
+                display: none;
+            }
+        }
+    }
+    /* breakpoint tablet */
+    @media screen and (width <= 1279px){
+        padding: 4px 12px;
+    }
+    /* breakpoint tablet-small */
+    @media screen and (width <= 639px){
+        padding: 4px 4px;
+        .container-logo{
+            gap: 4px;
+        }
+    }
+    /* breakpoint mobile */
+    @media screen and (width <= 359px){
+        padding: 4px 6px;
+    }
+
+}
+
+/* nav hero, text y hover */
+.conteiner-nav--hero {
+    width: 100%;
+    padding: 0 12.5%;
+    user-select: none;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    /*Breakpoint tablet  */
+    @media screen and (width <= 1279px) and (width >= 640px) {
+        padding: 0 8.6%;
+        @media screen and (width <= 775px){
+            padding: 0 10px;
+                nav{
+                    justify-content:center;
+                }
+        }
+    }
+
+    /*Breakpoint tablet-small and mobile  */
+    @media screen and (width <= 639px) and (width >= 360px) {
+        padding: 0 6.26%;
+    }
+    /*Breakpoint mobile-small   */
+    @media screen and (width <= 359px) {
+        padding: 0 20px;
+    }
+}
+
+.nav--hero {
+    width: 100%;
+    min-width: 890px;
+    max-width: 1440px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+
+    a {
+        padding: 10px 15px;
+        text-decoration: none;
+        color: var(--Complementos-Blanco);
+        font-family: Lato;
+        font-size: 22px; /* revisar como queda con 24px*/
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.40);
+        
+        &:hover {
+            color: var(--Secundary-Claro, #EEF294);
+        }
+    }
+    
+    .donar {
+        color: var(--Secundary-Oscuro, #DFCE39);
+    }
+    
+    /* Breakponit tablet */
+    @media screen and (width <= 1279px) and (width >= 640px) {
+        min-width: 630px;
+        max-width: 959px;
+        a{
+            font-size: 20px;
+            @media screen and (width <= 840px){
+                font-size: 18px; /* font-weight: 600; probar como queda con 600 y en Destopk tmb*/
+            }
+        }
+    }
+    
+    /* Breakponit tablet-small and mobile */
+    @media screen and (width <= 639px) and (width >= 360px) {
+        min-width: 350px;
+        max-width: none;
+        
+        a{
+            font-size: 16px;
+            padding: 6px 6px;
+            @media screen and (width <= 450px){
+                font-size: 14px; 
+            }
+        }
+        .calendario{
+            display: none;
+        }
+    }
+
+    /* mobile */
+    @media screen and (width <= 359px) {
+        min-width: 300px;
+        max-width: none;
+        a{
+            font-size: 12px;
+            padding: 6px 6px;
+        }
+        .calendario , .donar, .comunidad{
+            display: none;
+        }
+        .donar__small{
+            display: block !important;
+        }
     }
 }
 
@@ -376,8 +548,10 @@ html, body {
 
 /* hamburg menu  */
 .btn-siderBar {
-    display: block;
-    position: relative;
+    @media screen and (width <= 1279px){
+        display: block !important; 
+        position: relative;
+    }
 }
 
 .checkbox {
@@ -385,12 +559,16 @@ html, body {
     left: -8px;
     top: -2px;
     display: block;
-    height: 24px;
+    height: 20px;
     width: 38px;
     opacity: 0;
     cursor: pointer;
     z-index: 5;
-    /*lo mantengo arraiba ya que el genera la animacion*/
+    
+    @media (width <=639px) {
+        height: 18px;
+        width: 24px;
+    }
 
     /*mientras checkbox este con hover, el hijo line del hno div va a cambiar de color, lo mismo el before */
     &:hover~div .line {
@@ -489,117 +667,6 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     @media (width <=1279px) {
         transform: rotate(-41deg);
         border-radius: 10px;
-    }
-}
-
-/* nav hero, text y hover */
-.conteiner-nav--hero {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    
-    width: 100%;
-    padding: 0 12.5%;
-    user-select: none;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-
-    /*Breakpoint tablet  */
-    @media screen and (width <= 1279px) and (width >= 640px) {
-        padding: 0 8.6%;
-        @media screen and (width <= 775px){
-            padding: 0 10px;
-            nav{
-                justify-content:center;
-            }
-        }
-    }
-
-    /*Breakpoint tablet-small and mobile  */
-    @media screen and (width <= 639px) and (width >= 360px) {
-        padding: 0 6.26%;
-    }
-
-    @media screen and (width <= 359px) {
-        padding: 0 20px;
-    }
-}
-
-.nav--hero {
-    width: 100%;
-    min-width: 890px;
-    max-width: 1440px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content:space-between;
-    align-items: center;
-
-    a {
-        padding: 10px 15px;
-        text-decoration: none;
-        color: var(--Complementos-Blanco);
-        font-family: Lato;
-        font-size: 22px; /* revisar como queda con 24px*/
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.40);
-        
-        &:hover {
-            color: var(--Secundary-Claro, #EEF294);
-        }
-    }
-    
-    .donar {
-        color: var(--Secundary-Oscuro, #DFCE39);
-    }
-    
-    /* Breakponit tablet */
-    @media screen and (width <= 1279px) and (width >= 640px) {
-        min-width: 630px;
-        max-width: 959px;
-        a{
-            font-size: 20px;
-            @media screen and (width <= 840px){
-                font-size: 18px; /* font-weight: 600; probar como queda con 600 y en Destopk tmb*/
-            }
-        }
-    }
-    
-    /* Breakponit tablet-small and mobile */
-    @media screen and (width <= 639px) and (width >= 360px) {
-        min-width: 350px;
-        max-width: none;
-        
-        a{
-            font-size: 16px;
-            padding: 6px 6px;
-            @media screen and (width <= 450px){
-                font-size: 14px; 
-            }
-        }
-        .calendario{
-            display: none;
-        }
-    }
-
-    /* mobile */
-    @media screen and (width <= 359px) {
-        min-width: 300px;
-        max-width: none;
-        a{
-            font-size: 12px;
-            padding: 6px 6px;
-        }
-        .calendario , .donar, .comunidad{
-            display: none;
-        }
-        .donar__small{
-            display: block !important;
-        }
     }
 }
 
@@ -950,8 +1017,4 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
             font-size: 11px; 
         }
     }
-}
-
-body {
-    /* background-color: #8fd8ab; */
 }
