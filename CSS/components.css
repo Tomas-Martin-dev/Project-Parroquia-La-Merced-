@@ -11,6 +11,7 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     width: 100%; /* Para que siempre ocupe el 100% del ancho de la pantalla */
+    scroll-behavior: smooth; /* el scroll lo realiza mas suave*/
 }
 
 /* botones */
@@ -233,7 +234,7 @@ html, body {
         p{
             max-width: 200px;
             font-family: var(--Lato);
-            font-size: 17px;
+            font-size: clamp(16px, 1vw, 17px);;
             font-weight: 600;
             color: var(--Tinta-Gris);
             text-align: left;
@@ -386,6 +387,7 @@ html, body {
     position: relative;
     cursor: pointer;
     animation: bounce 2s infinite;
+    
 }
 
 @keyframes bounce {
@@ -406,11 +408,16 @@ html, body {
     position: absolute;
     bottom: 0;
     left: calc(50% - 1.5px);
-    width: 3px;
-    height: 18px;
+    width: 4px;
+    height: 26px;
     border-radius: 9999px;
     background-color: var(--Secundary-Oscuro);
     transform-origin: 50% calc(100% - 1.5px);
+
+    @media screen and (width <= 639px){
+        width: 3px;
+        height: 18px;
+    }
 }
 
 .arrow-down::before {

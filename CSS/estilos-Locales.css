@@ -105,7 +105,7 @@
 
     /* breakpoint desktop */
     @media screen and (width >= 640px){
-        margin-top: 96px;
+        margin-top: 4.20%;
     }
 
 }
@@ -138,18 +138,18 @@ h1{
 
     /* breakpoint desktop */
     @media screen and (width >= 1280px){
-        margin-top: 76px;
+        margin-top: 5.89%;
         padding: 0 240px;
         min-width: 675px;
         max-width: 1596px;
-        font-size: var(--sizeH1);
+        font-size:clamp(40px, 3vw, 44px);
     }
 }
 
 .arrow-down{
     margin: -20vh auto ;
+    
 }
-
 
 
 

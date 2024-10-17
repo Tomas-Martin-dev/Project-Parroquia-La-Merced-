@@ -18,7 +18,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <script src="./JS/app.js"></script>
 </head>
 <body>
     <main>
@@ -45,8 +44,8 @@
                 </nav>
                 <div class="conteiner-nav--hero">
                     <nav class="nav--hero">
-                        <a class="" href="">Novedades</a>
-                        <a class="" href="">Horarios</a>
+                        <a class="" href="#section-novedades">Novedades</a>
+                        <a class="" href="#section-horarios">Horarios</a>
                         <a class="donar" href="">Donar</a>
                         <a class="donar donar__small" href="" style="display: none;">Donaciones</a>
                         <a class="" href="">Contacto</a>
@@ -56,9 +55,9 @@
                 </div>
                 <h1 class="title--hero">Parroquia Nuestra Señora de la Merced</h1>
             </div>
-            <div class="arrow-down"></div>
+            <div class="arrow-down" onclick="scrollDown()"></div>
         </div>
-        <section class="container-section__novedades">
+        <section id="section-novedades" class="container-section__novedades">
             <div class="content-art__novedades">
                 <article class="art-novedades">
                     <img src="./MEDIA/PHOTOS/foto-sin-fondo.jpg" alt="">
@@ -106,7 +105,7 @@
                 <a href="#" class="btn VerMasN">Ver mas Novedades</a>
             </div>
         </section>
-        <section class="container-section__horarios">
+        <section id="section-horarios" class="container-section__horarios">
             <section class="content-art__horarios">
                 <article class="art-card">
                     <img src="./MEDIA/PHOTOS/Oreja.png" alt="">
@@ -156,5 +155,6 @@
         <section class="caontainer-section__contacto"></section>
         <footer class="footer"></footer>
     </main>
+    <script src="./JS/app.js"></script>
 </body>
 </html>
