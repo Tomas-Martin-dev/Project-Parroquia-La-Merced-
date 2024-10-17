@@ -388,6 +388,18 @@ html, body {
     animation: bounce 2s infinite;
 }
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
 .arrow-down::before,
 .arrow-down::after {
     content: "";
@@ -409,17 +421,7 @@ html, body {
     transform: rotate(-45deg);
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
+
 
 /* nav Scroll */
 .nav--scroll {
@@ -970,7 +972,6 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* breakpoint tablet */
     @media screen and (width <= 1279px) and (width >= 640px)  {
-        /* max-width: 304px; */
         padding: 24px 24px;   
         gap: 10px; 
         flex-shrink: 0;
