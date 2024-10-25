@@ -1,5 +1,5 @@
 @import "styles.css";
-
+/*                                  Mobile-first                                        */
 .hero{
     min-height: 450px;
     height: 100vh;
@@ -104,7 +104,7 @@
     }
 
     /* breakpoint desktop */
-    @media screen and (width >= 640px){
+    @media screen and (width >= 1280px){
         margin-top: 4.20%;
     }
 
