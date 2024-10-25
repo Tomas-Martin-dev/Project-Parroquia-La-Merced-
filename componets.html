@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="CSS/components.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <!-- Para la versión 6 de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Para la versión 5 de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -173,23 +179,32 @@
     <!-- box-pagos -->
      <div class="container-box">
         <div class="box tranferencia">
-            <div class="content-img-text"><img src="./MEDIA/icons/bank-D.png" alt="Banco" width=28px>Transferencia Bancaria</div>
-            <div class="arrow-box"></div>
+            <div class="content-icons-text"><i class="fa-solid fa-landmark"></i>Transferencia Bancaria</div>
+            <div class="arrow-box" onclick="activarInfo(this)"></div>
+            <div id="container-info" class="" style="display: none;">
+                <p class="info-tranferencia" href="" target="_blank">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione saepe ipsam nesciunt qui voluptatum laborum a et blanditiis, tempora minima, perferendis corporis beatae </p>
+            </div>
         </div>
         <div class="box tarjeta">
-            <div class="content-img-text"><img src="./MEDIA/icons/card-D.png" alt="Tarjeta" width=28px>Pago con Tarjeta</div>
+            <div class="content-icons-text"><i class="fa-solid fa-credit-card"></i>Pago con Tarjeta</div>
             <div class="arrow-box " onclick="activarInfo(this)"></div>
-            <div id="info-tarjeta" class="" style="display: none;">
-                <p class="link-tarjeta">Lorem ipsum dolor sit ametadipisicing elit. Ducimus distinctio quidem, consequuntur ut dicta voluptas asperiores earum reiciendis, perspiciatis labore </p>
+            <div id="container-info" class="" style="display: none;">
+                <a class="info-tarjeta" href="https://www.mercadopago.com.ar/" target="_blank">Link para pagos con tarjetas</a>
             </div>
         </div>
         <div class="box mp">
-            <div class="content-img-text"><img src="./MEDIA/icons/qr-D.png" alt="QR" width=28px>QR-Mercado pago</div>
-            <div class="arrow-box"></div>
+            <div class="content-icons-text"><i class="fa-solid fa-qrcode"></i>QR-Mercado pago</div>
+            <div class="arrow-box" onclick="activarInfo(this)"></div>
+            <div id="container-info" class="" style="display: none;">
+                <p class="info-mp" href="" target="_blank">QR</p>
+            </div>
         </div>
         <div class="box presencial">
-            <div class="content-img-text"><img src="./MEDIA/icons/logo-iglesia-D.png" alt="Iglesia" width=28px>Donaciones Presenciales</div>
-            <div class="arrow-box"></div>
+            <div class="content-icons-text"><i class="fa-solid fa-church" style="color: #000000;"></i> Donaciones Presenciales</div>
+            <div class="arrow-box" onclick="activarInfo(this)"></div>
+            <div id="container-info" class="" style="display: none;">
+                <p class="info-presencial" href="" target="_blank">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste labore incidunt laudantium fugiat eaque dolor in et est, repudiandae quam corporis libero impedit illum tenetur, atque inventore.</p>
+            </div>
         </div>
      </div>
      <script src="./JS/app.js"></script>

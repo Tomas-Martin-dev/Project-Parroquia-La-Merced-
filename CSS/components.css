@@ -1147,6 +1147,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         flex-flow: row wrap;
         justify-content: space-between;
         padding: 6px 24px;
+        user-select: none;
 
         &.tranferencia{
             border-top: #000 solid 1px;
@@ -1174,7 +1175,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 }
 
-.content-img-text {
+.content-icons-text {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -1182,7 +1183,9 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     font-family: var(--Lato);
     font-size: var(--sizeTextSmall);
 
-    & img {
+    & i {
+        width: 16px;
+        height: auto;
         margin-right: 9px;
     }
 }
@@ -1220,14 +1223,14 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 .arrow-box__click{
     &::before {
         top: 50%; 
-        left: 50%;
+        left: 45%;
         transform: rotate(135deg);
         transform-origin: 50% calc(60% - 1px);
     }
     
     &::after {
         top: 50%;
-        left: 50%;
+        left: 45%;
         transform: rotate(-135deg);
         transform-origin: 50% calc(60% - 1px);
     } 
@@ -1237,11 +1240,23 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     width: 100%;
     height: auto;
     display: block !important;
+    text-align: center;
 }
-.link-tarjeta{
-    padding: 0 24px;
+
+.info-tarjeta{
+    padding: 8px 24px;
     font-family: var(--Lato);
     font-size: 12px;
-    text-align: center;
-    text-wrap: balance;
+    user-select: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.info-tranferencia,
+.info-mp,
+.info-presencial{
+    padding: 8px 24px;
+    font-family: var(--Lato);
+    font-size: 12px;
+    
 }
