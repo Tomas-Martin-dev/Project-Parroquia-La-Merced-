@@ -1133,15 +1133,28 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 }
 
 /* Box de pagos para Donaciones */
+.cbp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container-box {
     margin: 100px 0px;
+    
     padding: 0 20px;
-
-
+    max-width: 784px;
+    min-width: 515px;
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
-
+    
+    @media screen and (width > 359px){
+        padding: 0 40px;
+    }
+    @media screen and (width > 639px){
+        padding: 0 110px;
+    }
     .box {
         display: flex;
         flex-flow: row wrap;
@@ -1149,6 +1162,10 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         padding: 6px 24px;
         user-select: none;
 
+        @media screen and (width > 639px){
+            padding: 9px 35px;
+        }
+        
         &.tranferencia{
             border-top: #000 solid 1px;
             border-left: #000 solid 1px;
@@ -1173,6 +1190,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
             border-radius: 0px 0px 4px 4px;
         }
     }
+
+
 }
 
 .content-icons-text {
@@ -1183,9 +1202,13 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     font-family: var(--Lato);
     font-size: var(--sizeTextSmall);
 
+    @media screen and (width > 639px){
+        font-size: 16px;
+    }
     & i {
-        width: 16px;
+        width: 28px;
         height: auto;
+        text-align: center;
         margin-right: 9px;
     }
 }

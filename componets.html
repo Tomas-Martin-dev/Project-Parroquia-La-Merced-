@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="CSS/components.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <!-- Para la versión 6 de Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Para la versión 6 de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<!-- Para la versión 5 de Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Para la versión 5 de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -34,9 +34,15 @@
                 <a class="" href="">Comunidad</a>
             </nav>
             <div class="social">
-                <a href=""> <img class="i-youtube" src="./MEDIA/icons/youtube-D.png" alt="youtube"  onmouseout="this.src=`./MEDIA/icons/youtube-D.png`" onmouseover="this.src=`./MEDIA/icons/youtube-H.png`"> </a>
-                <a href=""> <img class="i-facebook" src="./MEDIA/icons/face-D.png" alt="face" onmouseout="this.src=`./MEDIA/icons/face-D.png`" onmouseover="this.src=`./MEDIA/icons/face-H.png`"> </a>
-                <a href=""> <img class="i-instagram" src="./MEDIA/icons/instagram-D.png" alt="instagram" onmouseout="this.src=`./MEDIA/icons/instagram-D.png`" onmouseover="this.src=`./MEDIA/icons/instagram-H.png`"> </a>
+                <a href=""> <img class="i-youtube" src="./MEDIA/icons/youtube-D.png" alt="youtube"
+                        onmouseout="this.src=`./MEDIA/icons/youtube-D.png`"
+                        onmouseover="this.src=`./MEDIA/icons/youtube-H.png`"> </a>
+                <a href=""> <img class="i-facebook" src="./MEDIA/icons/face-D.png" alt="face"
+                        onmouseout="this.src=`./MEDIA/icons/face-D.png`"
+                        onmouseover="this.src=`./MEDIA/icons/face-H.png`"> </a>
+                <a href=""> <img class="i-instagram" src="./MEDIA/icons/instagram-D.png" alt="instagram"
+                        onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"
+                        onmouseover="this.src=`./MEDIA/icons/instagram-H.png`"> </a>
             </div>
         </div>
     </div>
@@ -177,37 +183,46 @@
     </section>
 
     <!-- box-pagos -->
-     <div class="container-box">
-        <div class="box tranferencia">
-            <div class="content-icons-text"><i class="fa-solid fa-landmark"></i>Transferencia Bancaria</div>
-            <div class="arrow-box" onclick="activarInfo(this)"></div>
-            <div id="container-info" class="" style="display: none;">
-                <p class="info-tranferencia" href="" target="_blank">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione saepe ipsam nesciunt qui voluptatum laborum a et blanditiis, tempora minima, perferendis corporis beatae </p>
+    <div class="cbp">
+        <div class="container-box">
+            <div class="box tranferencia">
+                <div class="content-icons-text"><i class="fa-solid fa-landmark"></i>Transferencia Bancaria</div>
+                <div class="arrow-box" onclick="activarInfo(this)"></div>
+                <div id="container-info" class="" style="display: none;">
+                    <p class="info-tranferencia" href="" target="_blank">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Ratione saepe ipsam nesciunt qui voluptatum laborum a et blanditiis, tempora minima,
+                        perferendis corporis beatae </p>
+                </div>
+            </div>
+            <div class="box tarjeta">
+                <div class="content-icons-text"><i class="fa-solid fa-credit-card"></i>Pago con Tarjeta</div>
+                <div class="arrow-box " onclick="activarInfo(this)"></div>
+                <div id="container-info" class="" style="display: none;">
+                    <a class="info-tarjeta" href="https://www.mercadopago.com.ar/" target="_blank">Link para pagos con
+                        tarjetas</a>
+                </div>
+            </div>
+            <div class="box mp">
+                <div class="content-icons-text"><i class="fa-solid fa-qrcode qr"></i>QR-Mercado pago</div>
+                <div class="arrow-box" onclick="activarInfo(this)"></div>
+                <div id="container-info" class="" style="display: none;">
+                    <p class="info-mp" href="" target="_blank">QR</p>
+                </div>
+            </div>
+            <div class="box presencial">
+                <div class="content-icons-text"><i class="fa-solid fa-church" style="color: #000000;"></i> Donaciones
+                    Presenciales</div>
+                <div class="arrow-box" onclick="activarInfo(this)"></div>
+                <div id="container-info" class="" style="display: none;">
+                    <p class="info-presencial" href="" target="_blank">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Iste labore incidunt laudantium fugiat eaque dolor in et est, repudiandae quam corporis libero
+                        impedit illum tenetur, atque inventore.</p>
+                </div>
             </div>
         </div>
-        <div class="box tarjeta">
-            <div class="content-icons-text"><i class="fa-solid fa-credit-card"></i>Pago con Tarjeta</div>
-            <div class="arrow-box " onclick="activarInfo(this)"></div>
-            <div id="container-info" class="" style="display: none;">
-                <a class="info-tarjeta" href="https://www.mercadopago.com.ar/" target="_blank">Link para pagos con tarjetas</a>
-            </div>
-        </div>
-        <div class="box mp">
-            <div class="content-icons-text"><i class="fa-solid fa-qrcode"></i>QR-Mercado pago</div>
-            <div class="arrow-box" onclick="activarInfo(this)"></div>
-            <div id="container-info" class="" style="display: none;">
-                <p class="info-mp" href="" target="_blank">QR</p>
-            </div>
-        </div>
-        <div class="box presencial">
-            <div class="content-icons-text"><i class="fa-solid fa-church" style="color: #000000;"></i> Donaciones Presenciales</div>
-            <div class="arrow-box" onclick="activarInfo(this)"></div>
-            <div id="container-info" class="" style="display: none;">
-                <p class="info-presencial" href="" target="_blank">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste labore incidunt laudantium fugiat eaque dolor in et est, repudiandae quam corporis libero impedit illum tenetur, atque inventore.</p>
-            </div>
-        </div>
-     </div>
-     <script src="./JS/app.js"></script>
+    </div>
+    
+    <script src="./JS/app.js"></script>
 </body>
 
 </html>
