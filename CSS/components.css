@@ -1139,12 +1139,21 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     justify-content: center;
 }
 
+.container-img{
+    @media screen and (width > 1279px){
+        display: block !important;
+        width: 50%;
+    }
+    & img{
+        width: 100%;
+        height: auto;
+    }
+}
+
 .container-box {
     margin: 100px 0px;
     
     padding: 0 20px;
-    max-width: 784px;
-    min-width: 515px;
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
@@ -1153,7 +1162,13 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         padding: 0 40px;
     }
     @media screen and (width > 639px){
-        padding: 0 110px;
+        padding: 0 110px ;
+        max-width: 784px;
+        min-width: 515px;
+    }
+    @media screen and (width > 1279px){
+        padding: 0 28px 0 4px;
+        width: 50%;
     }
     .box {
         display: flex;
