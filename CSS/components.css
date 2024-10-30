@@ -1133,18 +1133,19 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 }
 
 /* Box de pagos para Donaciones */
-.cbp{
+.cbp {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container-img{
-    @media screen and (width > 1279px){
+.container-img {
+    @media screen and (width > 1279px) {
         display: block !important;
         width: 50%;
     }
-    & img{
+
+    & img {
         width: 100%;
         height: auto;
     }
@@ -1152,24 +1153,27 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
 .container-box {
     margin: 100px 0px;
-    
+
     padding: 0 20px;
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
-    
-    @media screen and (width > 359px){
+
+    @media screen and (width > 359px) {
         padding: 0 40px;
     }
-    @media screen and (width > 639px){
-        padding: 0 110px ;
+
+    @media screen and (width > 639px) {
+        padding: 0 110px;
         max-width: 784px;
         min-width: 515px;
     }
-    @media screen and (width > 1279px){
+
+    @media screen and (width > 1279px) {
         padding: 0 28px 0 4px;
         width: 50%;
     }
+
     .box {
         display: flex;
         flex-flow: row wrap;
@@ -1177,27 +1181,30 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         padding: 6px 24px;
         user-select: none;
 
-        @media screen and (width > 639px){
+        @media screen and (width > 639px) {
             padding: 9px 35px;
         }
-        
-        &.tranferencia{
+
+        &.tranferencia {
             border-top: #000 solid 1px;
             border-left: #000 solid 1px;
             border-right: #000 solid 1px;
             border-radius: 4px 4px 0px 0px;
         }
-        &.tarjeta{
+
+        &.tarjeta {
             border-top: #000 solid 1px;
             border-left: #000 solid 1px;
             border-right: #000 solid 1px;
         }
-        &.mp{
+
+        &.mp {
             border-top: #000 solid 1px;
             border-left: #000 solid 1px;
             border-right: #000 solid 1px;
         }
-        &.presencial{
+
+        &.presencial {
             border-top: #000 solid 1px;
             border-left: #000 solid 1px;
             border-right: #000 solid 1px;
@@ -1213,18 +1220,28 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    gap: 9px;
+    font-size: 16px;
 
     font-family: var(--Lato);
     font-size: var(--sizeTextSmall);
 
-    @media screen and (width > 639px){
-        font-size: 16px;
-    }
     & i {
-        width: 28px;
+        width: 32px;
         height: auto;
+        font-size: 22px;
         text-align: center;
-        margin-right: 9px;
+    }
+
+    @media screen and (width <=639px) {
+        font-size: 13px;
+
+        & i {
+            width: 24px;
+            height: auto;
+            font-size: 16px;
+            text-align: center;
+        }
     }
 }
 
@@ -1249,39 +1266,40 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         transform-origin: 50% calc(100% - .6px);
         transition: transform 0.3s ease;
     }
+
     &::before {
         transform: rotate(45deg);
     }
-    
+
     &::after {
         transform: rotate(-45deg);
     }
 }
 
-.arrow-box__click{
+.arrow-box__click {
     &::before {
-        top: 50%; 
+        top: 50%;
         left: 45%;
         transform: rotate(135deg);
         transform-origin: 50% calc(60% - 1px);
     }
-    
+
     &::after {
         top: 50%;
         left: 45%;
         transform: rotate(-135deg);
         transform-origin: 50% calc(60% - 1px);
-    } 
+    }
 }
 
-.info-vissibility{
+.info-vissibility {
     width: 100%;
     height: auto;
     display: block !important;
     text-align: center;
 }
 
-.info-tarjeta{
+.info-tarjeta {
     padding: 8px 24px;
     font-family: var(--Lato);
     font-size: 12px;
@@ -1292,9 +1310,9 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
 .info-tranferencia,
 .info-mp,
-.info-presencial{
+.info-presencial {
     padding: 8px 24px;
     font-family: var(--Lato);
     font-size: 12px;
-    
+
 }
