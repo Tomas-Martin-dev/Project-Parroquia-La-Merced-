@@ -47,8 +47,8 @@
                     <nav class="nav--hero">
                         <a class="" href="#section-novedades">Novedades</a>
                         <a class="" href="#section-horarios">Horarios</a>
-                        <a class="donar" href="">Donar</a>
-                        <a class="donar donar__small" href="" style="display: none;">Donaciones</a>
+                        <a class="donar" href="#section-donaciones">Donar</a>
+                        <a class="donar donar__small" href="#section-donaciones" style="display: none;">Donaciones</a>
                         <a class="" href="">Contacto</a>
                         <a class="calendario" href="">Calendario</a>
                         <a class="comunidad" href="">Comunidad</a>
@@ -153,7 +153,44 @@
             </section>
             <div class="btn ToCalendario">Calendario de Actividades</div>
         </section>
-        <section class="caontainer-section__donaciones"></section>
+        <div id="section-donaciones" class="cbp">
+            <div class="container-img";"><img src="./MEDIA/PHOTOS/foto-sin-fondo.jpg" alt="donaciones"></div>
+            <div class="container-box">
+                <div class="box tranferencia">
+                    <div class="content-icons-text"><i class="fa-solid fa-landmark"></i><p>Transferencia Bancaria</p></div>
+                    <div class="arrow-box" onclick="activarInfo(this)"></div>
+                    <div id="container-info" class="" style="display: none;">
+                        <p class="info-tranferencia" href="" target="_blank">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Ratione saepe ipsam nesciunt qui voluptatum laborum a et blanditiis, tempora minima,
+                            perferendis corporis beatae </p>
+                    </div>
+                </div>
+                <div class="box tarjeta">
+                    <div class="content-icons-text"><i class="fa-solid fa-credit-card"></i><p>Pago con Tarjeta</p></div>
+                    <div class="arrow-box " onclick="activarInfo(this)"></div>
+                    <div id="container-info" class="" style="display: none;">
+                        <a class="info-tarjeta" href="https://www.mercadopago.com.ar/" target="_blank">Link para pagos con
+                            tarjetas</a>
+                    </div>
+                </div>
+                <div class="box mp">
+                    <div class="content-icons-text"><i class="fa-solid fa-qrcode qr"></i><p>QR-Mercado pago</p></div>
+                    <div class="arrow-box" onclick="activarInfo(this)"></div>
+                    <div id="container-info" class="" style="display: none;">
+                        <p class="info-mp" href="" target="_blank">QR</p>
+                    </div>
+                </div>
+                <div class="box presencial">
+                    <div class="content-icons-text"><i class="fa-solid fa-church" style="color: #000000;"></i><p>Donaciones Presenciales</p></div>
+                    <div class="arrow-box" onclick="activarInfo(this)"></div>
+                    <div id="container-info" class="" style="display: none;">
+                        <p class="info-presencial" href="" target="_blank">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Iste labore incidunt laudantium fugiat eaque dolor in et est, repudiandae quam corporis libero
+                            impedit illum tenetur, atque inventore.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <section class="caontainer-section__contacto"></section>
         <footer class="footer"></footer>
     </main>

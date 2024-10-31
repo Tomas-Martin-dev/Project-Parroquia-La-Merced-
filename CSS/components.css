@@ -1137,12 +1137,35 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* breakpoint tablet */
+    @media screen and (width <=1279px) and (width >=640px) {
+        padding: 0px 0%;
+        flex-flow: column nowrap;
+    }
+
+    /* breakpoint tablet-small and mobile */
+    @media screen and (width <=639px) and (width >=360px) {
+        padding: 36px 6.57%;
+    }
+    /* breakpoint mobile-small */
+    @media screen and (width <=360px) {
+        padding: 36px 5.57%;
+    }
 }
 
 .container-img {
-    @media screen and (width > 1279px) {
-        display: block !important;
-        width: 50%;
+    display: block;
+    width: 50%;
+    
+    /* breakpoint tablet-small and mobile */
+    @media screen and (width <= 639px) {
+        display: none;
+    }
+    
+    /* breakpoint tablet */
+    @media screen and (width <= 1279px) {
+        width: 100%;
     }
 
     & img {
@@ -1152,7 +1175,6 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 }
 
 .container-box {
-    margin: 100px 0px;
 
     padding: 0 20px;
     display: flex;
@@ -1160,17 +1182,19 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     width: 100%;
 
     @media screen and (width > 359px) {
-        padding: 0 40px;
+        padding: 0 0px;
     }
 
     @media screen and (width > 639px) {
-        padding: 0 110px;
-        max-width: 784px;
+        padding: 36px 110px;
+        width: 100%;
         min-width: 515px;
+        max-width: 1140px;
     }
 
     @media screen and (width > 1279px) {
-        padding: 0 28px 0 4px;
+        padding: 0 48px 0 48px;
+        margin: 0 0px;
         width: 50%;
     }
 
@@ -1184,6 +1208,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         @media screen and (width > 639px) {
             padding: 9px 35px;
         }
+
+        @media screen and (width > 1279px) {}
 
         &.tranferencia {
             border-top: #000 solid 1px;
@@ -1222,9 +1248,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     align-items: center;
     gap: 9px;
     font-size: 16px;
-
     font-family: var(--Lato);
-    font-size: var(--sizeTextSmall);
 
     & i {
         width: 32px;
@@ -1239,7 +1263,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         & i {
             width: 24px;
             height: auto;
-            font-size: 16px;
+            font-size: var(--sizeTextSmall);
             text-align: center;
         }
     }
@@ -1280,15 +1304,33 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     &::before {
         top: 50%;
         left: 45%;
+        height: 14px;
         transform: rotate(135deg);
-        transform-origin: 50% calc(60% - 1px);
+        transform-origin: 50% calc(58% - 1px);
     }
 
     &::after {
         top: 50%;
         left: 45%;
+        height: 14px;
         transform: rotate(-135deg);
-        transform-origin: 50% calc(60% - 1px);
+        transform-origin: 50% calc(58% - 1px);
+    }
+     /* breakpoint tablet-small and mobile */
+     @media screen and (width <=639px) {
+        &::before,
+        &::after {
+            height: 10px;
+            transform-origin: 50% calc(60% - 1px);
+        }
+
+        &::before {
+            transform: rotate(135deg);
+        }
+    
+        &::after {
+            transform: rotate(-135deg);
+        }
     }
 }
 
