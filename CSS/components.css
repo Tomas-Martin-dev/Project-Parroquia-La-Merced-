@@ -193,6 +193,7 @@ body {
     font-size: clamp(28px, 1.69vw, 32px);
     font-weight: 600;
     color: var(--Tinta-Gris);
+    text-transform: uppercase;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 
     /* breakpoint 1279px - 640px */
@@ -203,7 +204,7 @@ body {
 
     /* breakpoint 639px - 360px and 359px - 320px */
     @media screen and (width <=639px) {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
     }
 }
@@ -1137,6 +1138,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     /* breakpoint tablet */
     @media screen and (width <=1279px) and (width >=640px) {
@@ -1146,18 +1148,47 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* breakpoint tablet-small and mobile */
     @media screen and (width <=639px) and (width >=360px) {
-        padding: 36px 6.57%;
+        padding: 36px 0;
+        flex-flow: column nowrap;
     }
     /* breakpoint mobile-small */
-    @media screen and (width <=360px) {
-        padding: 36px 5.57%;
+    @media screen and (width < 359px) {
+        padding: 36px 0;
+        flex-flow: column nowrap;
+    }
+}
+
+.tittle-novedades{
+    margin-bottom: 56px;
+    
+    /* breakpoint tablet-small and mobile */
+    @media screen and (width <=639px) and (width >=360px) {
+        margin-bottom: 63px;
+    }
+
+    /* breakpoint tablet */
+    @media screen and (width <=1279px) and (width >=640px) {
+        display: none;
+        ~ .tittle-novedades__big {
+            display: block !important;
+            position: absolute;
+            top: 36px;
+            margin: auto auto;
+            z-index: 100;
+        }
+        
     }
 }
 
 .container-img {
     display: block;
     width: 50%;
-    
+    position: relative;
+      & img {
+        width: 100%;
+        height: auto;
+    }
+
     /* breakpoint tablet-small and mobile */
     @media screen and (width <= 639px) {
         display: none;
@@ -1166,11 +1197,18 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     /* breakpoint tablet */
     @media screen and (width <= 1279px) {
         width: 100%;
-    }
-
-    & img {
-        width: 100%;
-        height: auto;
+        & img {
+            width: 100%;
+            max-height: 734px;
+        }
+        & .destopk-tablet{
+            display: block !important;
+            position: absolute;
+            bottom: 33px;
+            margin: 0 0;
+            padding: 0 3.84%;
+            z-index: 100;
+        }
     }
 }
 
@@ -1182,7 +1220,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     width: 100%;
 
     @media screen and (width > 359px) {
-        padding: 0 0px;
+        padding: 0 40px;
     }
 
     @media screen and (width > 639px) {
@@ -1240,6 +1278,49 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
 
+}
+
+.container-text{
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+    padding: 0 4px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4px;
+    
+    & .parrafo{
+        font-family: var(--Mont);
+        font-size: 12px;
+        font-weight: 400;
+        text-shadow:  1px 1px 2px rgba(0, 0, 0, 0.21);
+        text-wrap: stable;
+    }
+    & .autor{
+        font-family: var(--Lato);
+        font-size: 10px;
+        font-weight: 600;
+        text-shadow:  1px 1px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    /* breakpoint tablet-small and mobile */
+    @media screen and (width <=639px) and (width >=360px) {
+        margin-top: 12px;
+    }
+
+    /* breakpoint desktop and tablet */
+    @media screen and (width >= 640px) {
+        display: none;
+        & .parrafo{
+            font-size: clamp(16px , 2.4vw , 20px);
+            font-weight: 500;
+            text-wrap: stable;
+        }
+        & .autor{
+            font-size: clamp(14px , 1.7vw , 16px);
+            font-weight: 600;
+        }
+    }
 }
 
 .content-icons-text {
