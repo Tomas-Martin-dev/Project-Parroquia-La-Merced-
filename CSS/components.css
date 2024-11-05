@@ -8,15 +8,16 @@
 
 html,
 body {
-    /* overflow-x: hidden; */
     /* Evita cualquier desplazamiento horizontal */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    width: 100%;
+    
     /* Para que siempre ocupe el 100% del ancho de la pantalla */
-    scroll-behavior: smooth;
+    width: 100%;
+    
     /* el scroll lo realiza mas suave*/
+    scroll-behavior: smooth;
 }
 
 /* botones */
@@ -28,8 +29,8 @@ body {
     justify-content: center;
     display: inline-flex;
     align-items: center;
-    /* text */
     margin: 0;
+    
     color: var(--Tinta-Negro);
     text-align: center;
     user-select: none;
@@ -43,14 +44,11 @@ body {
     user-select: none;
     text-decoration: none;
 
-    /* ESTILO TEXTO */
     font-family: Lato;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
-    /* SOMBRA BOTON */
     box-shadow: 1px 1px 2px 0px var(--Tinta-Negro);
 
     &:hover {
@@ -117,12 +115,8 @@ body {
     padding: 10px 30px;
     background-color: var(--Secundary-Claro);
     border-radius: 4px;
-
-    /* SOMBRA BOTON */
+    
     box-shadow: 1px 1px 2px 0px #000;
-    ;
-
-    /* ESTILO TEXT */
     font-family: Lato;
     font-size: 14px;
     font-style: normal;
@@ -142,11 +136,7 @@ body {
     flex-direction: row;
     column-gap: 4px;
 
-    /* SOMBRA BOTON */
     box-shadow: 1px 1px 2px 0px #000;
-    ;
-
-    /* ESTILO TEXT */
     font-family: Lato;
     font-size: 13px;
     font-style: normal;
@@ -169,11 +159,7 @@ body {
     border-radius: 4px;
     background: var(--Secundary-Claro, #EEF294);
 
-    /* SOMBRA BOTON */
     box-shadow: 1px 1px 2px 0px #000;
-    ;
-
-    /* ESTILOS TEXT */
     font-family: Lato;
     font-size: 14px;
     font-style: normal;
@@ -421,7 +407,7 @@ body {
         }
     }
 
-    /* mobile */
+    /* mobile-small */
     @media screen and (width <=359px) {
         min-width: 300px;
         max-width: none;
@@ -454,7 +440,6 @@ body {
 }
 
 @keyframes bounce {
-
     0%,
     20%,
     50%,
@@ -484,6 +469,7 @@ body {
     background-color: var(--Secundary-Oscuro);
     transform-origin: 50% calc(100% - 1.5px);
 
+    /* breakpoint tablet-small and mobile */
     @media screen and (width <=639px) {
         width: 3px;
         height: 18px;
@@ -499,11 +485,8 @@ body {
 }
 
 
-
 /* nav Scroll */
 .nav--scroll {
-    margin-bottom: 100px;
-    /*solo para separar*/
 
     width: 100%;
     padding: 0px 36px;
@@ -633,6 +616,7 @@ body {
 
 /* hamburg menu  */
 .btn-siderBar {
+    /* breakpoint tablet */
     @media screen and (width <=1279px) {
         display: block !important;
         position: relative;
@@ -733,7 +717,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line1 {
     transform: rotate(37deg);
     border-radius: 10px;
 
-    /* version de tablet */
+    /* breakpoint tablet */
     @media (width <=1279px) {
         transform: rotate(41deg);
         border-radius: 10px;
@@ -748,7 +732,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     transform: rotate(-37deg);
     border-radius: 10px;
 
-    /* version de tablet */
+    /* breakpoint tablet */
     @media (width <=1279px) {
         transform: rotate(-41deg);
         border-radius: 10px;
@@ -767,10 +751,12 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     gap: 48px;
     width: 100%;
 
+    /* breakpoint tablet */
     @media screen and (width <=1279px) {
         margin: 36px 0;
     }
-
+    
+    /* breakpoint tablet-small and mobile */
     @media screen and (width <=639px) {
         gap: 24px;
     }
