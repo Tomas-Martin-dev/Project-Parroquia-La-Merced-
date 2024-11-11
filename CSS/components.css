@@ -1,4 +1,5 @@
 @import "styles.css";
+
 /*                                              Desktop first                                                     */
 * {
     box-sizing: border-box;
@@ -12,10 +13,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
     /* Para que siempre ocupe el 100% del ancho de la pantalla */
     width: 100%;
-    
+
     /* el scroll lo realiza mas suave*/
     scroll-behavior: smooth;
 }
@@ -30,7 +31,7 @@ body {
     display: inline-flex;
     align-items: center;
     margin: 0;
-    
+
     color: var(--Tinta-Negro);
     text-align: center;
     user-select: none;
@@ -115,7 +116,7 @@ body {
     padding: 10px 30px;
     background-color: var(--Secundary-Claro);
     border-radius: 4px;
-    
+
     box-shadow: 1px 1px 2px 0px #000;
     font-family: Lato;
     font-size: 14px;
@@ -440,6 +441,7 @@ body {
 }
 
 @keyframes bounce {
+
     0%,
     20%,
     50%,
@@ -616,6 +618,7 @@ body {
 
 /* hamburg menu  */
 .btn-siderBar {
+
     /* breakpoint tablet */
     @media screen and (width <=1279px) {
         display: block !important;
@@ -755,7 +758,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     @media screen and (width <=1279px) {
         margin: 36px 0;
     }
-    
+
     /* breakpoint tablet-small and mobile */
     @media screen and (width <=639px) {
         gap: 24px;
@@ -974,7 +977,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* breakpoint tablet */
     @media screen and (width <=1279px) and (width >=640px) {
-        padding: 36px 8.6%;
+        padding: 36px 12.5%;
     }
 
     ;
@@ -1011,8 +1014,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         justify-content: center;
         gap: 24px 24px;
 
-        padding: 0 90px;
-        min-width: 684px;
+        padding: 0 40px;
+        min-width: 640px;
     }
 
     /* breakpoint tablet-small and mobile  */
@@ -1121,6 +1124,10 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
 /* Box de pagos para Donaciones */
 .cbp {
+    margin-bottom: 200px;
+
+    min-height: 600px;
+    max-height: 800px;
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1132,6 +1139,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* breakpoint tablet */
     @media screen and (width <=1279px) and (width >=640px) {
+        min-height: 0;
+        max-height: none;
         padding: 0px 0%;
         display: flex;
         flex-flow: column nowrap;
@@ -1140,6 +1149,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* breakpoint tablet-small and mobile */
     @media screen and (width <=639px) and (width >=360px) {
+        min-height: 0;
+        max-height: none;
         padding: 36px 0;
         display: flex;
         flex-flow: column nowrap;
@@ -1147,6 +1158,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* breakpoint mobile-small */
     @media screen and (width <=359px) {
+        min-height: 0;
+        max-height: none;
         padding: 36px 0;
         display: flex;
         flex-flow: column nowrap;
@@ -1156,7 +1169,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 .tittle-donaciones {
     display: none;
 
-    ~.tittle-donaciones__big {
+    ~.tittle-donaciones__desktop {
         grid-area: title;
         display: block !important;
         margin-bottom: 0;
@@ -1167,10 +1180,12 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     /* breakpoint tablet */
     @media screen and (width <=1279px) and (width >=640px) {
         display: none;
+        ~.tittle-donaciones__desktop {
+            display: none !important;
+        }
 
-        ~.tittle-donaciones__big {
+        ~.tittle-donaciones__tablet {
             display: block !important;
-            position: absolute;
             width: 100%;
             padding-top: 36px;
             text-align: center;
@@ -1181,10 +1196,10 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     /* breakpoint tablet-small and mobile */
     @media screen and (width <=639px) and (width >=360px) {
         display: block;
-        margin-bottom: 63px;
+        margin-bottom: 11%;
         text-align: center;
 
-        ~.tittle-donaciones__big {
+        ~.tittle-donaciones__desktop {
             display: none !important;
         }
     }
@@ -1195,7 +1210,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         margin-bottom: 56px;
         text-align: center;
 
-        ~.tittle-donaciones__big {
+        ~.tittle-donaciones__desktop {
             display: none !important;
         }
     }
@@ -1206,15 +1221,44 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     width: 100%;
     position: relative;
     grid-area: img;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(270deg, #ffffff 2%, #ffffff00 40%);
+        pointer-events: none;
+    }
 
     & img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
 
     /* breakpoint tablet */
     @media screen and (width <=1279px) {
         width: 100%;
+
+        &::after { 
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: linear-gradient(0deg, #ffffff 0%, #ffffff00 40%);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        } 
 
         & img {
             width: 100%;
@@ -1259,7 +1303,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* breakpoint tablet */
     @media screen and (width <=1279px) {
-        padding: 36px 110px;
+        padding: 56px 110px 12% 110px;
         width: 100%;
         min-width: 515px;
         max-width: 1140px;
@@ -1440,7 +1484,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
 }
 
-.container-text {
+.container-text__donaciones {
     display: flex !important;
     flex-flow: column nowrap;
     gap: 6px;
@@ -1458,7 +1502,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     & .autor {
-        font-size: 10px; 
+        font-size: 10px;
         font-family: var(--Lato);
         font-weight: 600;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
