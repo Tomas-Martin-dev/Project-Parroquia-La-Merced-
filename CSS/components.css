@@ -218,7 +218,7 @@ body {
         height: 22.5px;
     }
 
-    @media screen and (width <=1279px) {
+    @media screen and (width <= 780px) {
         display: none;
     }
 }
@@ -227,39 +227,67 @@ body {
 .top--hero {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     padding: 8px 36px;
     width: 100%;
     user-select: none;
 
+    /* breakpoint tablet */
+    @media screen and (width <= 1279px) {
+        padding: 4px 12px;  
+    }
+
+    @media screen and (width <= 780px){
+        padding: 4px 8.6% ;
+    }
+
+    /* breakpoint tablet-small */
+    @media screen and (width <=639px) {
+        padding: 4px 6.26%;
+        .container-logo {
+            gap: 4px;
+        }
+    }
+
+    /* breakpoint mobile */
+    @media screen and (width <=359px) {
+        padding: 4px 20px;
+    }
+}
+
+.content-top--hero{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     .container-logo {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         gap: 8px;
-
+    
         img {
             user-select: none;
             width: 46px;
             height: auto;
-
+    
             /* breakpoint tablet */
             @media screen and (width <=1279px) {
                 width: 42px;
             }
-
+    
             /* breakpoint tablet-small and mobile */
             @media screen and (width <=639px) {
                 width: 36px;
             }
-
+    
             /* breakpoint tablet-small and mobile */
             @media screen and (width <=359px) {
                 width: 32px;
             }
         }
-
+    
         p {
             max-width: 200px;
             font-family: var(--Lato);
@@ -268,18 +296,18 @@ body {
             font-weight: 600;
             color: var(--Tinta-Gris);
             text-align: left;
-
+    
             /* breakpoint tablet */
             @media screen and (width <=1279px) {
                 font-size: 16px;
                 font-weight: 500;
             }
-
+    
             /* breakpoint tablet-small */
             @media screen and (width <=639px) {
                 font-size: 13px;
             }
-
+    
             /* breakpoint mobile */
             @media screen and (width <=359px) {
                 display: none;
@@ -288,24 +316,23 @@ body {
     }
 
     /* breakpoint tablet */
-    @media screen and (width <=1279px) {
-        padding: 4px 12px;
+    @media screen and (width <= 1279px) {
+        @media screen and (width <= 780px){
+            min-width: 620px;
+        }
     }
-
+    
     /* breakpoint tablet-small */
     @media screen and (width <=639px) {
-        padding: 4px 4px;
-
+        min-width: 350px;
         .container-logo {
             gap: 4px;
         }
     }
-
     /* breakpoint mobile */
-    @media screen and (width <=359px) {
-        padding: 4px 6px;
+    @media screen and (width <= 359px) {
+        min-width: 300px;
     }
-
 }
 
 /* nav hero, text y hover */
@@ -323,14 +350,6 @@ body {
     /*Breakpoint tablet  */
     @media screen and (width <=1279px) and (width >=640px) {
         padding: 0 8.6%;
-
-        @media screen and (width <=775px) {
-            padding: 0 10px;
-
-            nav {
-                justify-content: center;
-            }
-        }
     }
 
     /*Breakpoint tablet-small and mobile  */
@@ -376,14 +395,14 @@ body {
 
     /* Breakponit tablet */
     @media screen and (width <=1279px) and (width >=640px) {
-        min-width: 630px;
+        min-width: 620px;
         max-width: 959px;
 
         a {
             font-size: 20px;
-
             @media screen and (width <=840px) {
                 font-size: 18px;
+                padding: 8px 10px;
                 /* font-weight: 600; probar como queda con 600 y en Destopk tmb*/
             }
         }
@@ -620,7 +639,7 @@ body {
 .btn-siderBar {
 
     /* breakpoint tablet */
-    @media screen and (width <=1279px) {
+    @media screen and (width <= 780px) {
         display: block !important;
         position: relative;
     }
