@@ -1,4 +1,30 @@
 {
-    "editor.fontFamily": "´Cascadia Code PL´",
-    "liveServer.settings.port": 5502
+    "editor.fontFamily": "Cascadia Code PL",
+    "liveServer.settings.port": 5502,
+    "autofold.default": 0,
+    "autofold.delay": 250,
+    "autofold.pack": true,
+    "autofold.unfold": true,
+    "autofold.types": [
+        {
+            "ext": ".js",
+            "level": 1
+        },
+        {
+            "ext": ".c",
+            "level": 1
+        },
+        {
+            "ext": ".html",
+            "level": 2
+        },
+        {
+            "ext": ".css",
+            "level": 1
+        },
+        {
+            "ext": ".conf.php",
+            "level": 1
+        }
+    ]
 }

@@ -1143,8 +1143,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
 /* Box de pagos para Donaciones */
 .cbp {
-    margin-bottom: 200px;
-
+    margin-bottom: 12%;
     min-height: 600px;
     max-height: 800px;
     position: relative;
@@ -1267,7 +1266,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
             position: absolute;
             left: 0;
             top: 0;
-            background: linear-gradient(0deg, #ffffff 0%, #ffffff00 40%);
+            background: linear-gradient(0deg, #ffffff 1%, #ffffff00 50%);
         }
 
         &::before {
@@ -1585,5 +1584,19 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
             font-weight: 600;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
         }
+    }
+}
+
+/* section contacto */
+.container-section__contacto{
+    
+    background-color: var(--Secundary-Claro);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 36px 20px;
+
+    & .tittle-contacto{
+        align-self: self-start;
     }
 }
