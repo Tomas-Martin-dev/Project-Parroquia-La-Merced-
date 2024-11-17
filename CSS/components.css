@@ -218,7 +218,7 @@ body {
         height: 22.5px;
     }
 
-    @media screen and (width <= 780px) {
+    @media screen and (width <=780px) {
         display: none;
     }
 }
@@ -233,17 +233,18 @@ body {
     user-select: none;
 
     /* breakpoint tablet */
-    @media screen and (width <= 1279px) {
-        padding: 4px 12px;  
+    @media screen and (width <=1279px) {
+        padding: 4px 12px;
     }
 
-    @media screen and (width <= 780px){
-        padding: 4px 8.6% ;
+    @media screen and (width <=780px) {
+        padding: 4px 8.6%;
     }
 
     /* breakpoint tablet-small */
     @media screen and (width <=639px) {
         padding: 4px 6.26%;
+
         .container-logo {
             gap: 4px;
         }
@@ -255,39 +256,40 @@ body {
     }
 }
 
-.content-top--hero{
+.content-top--hero {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
     .container-logo {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         gap: 8px;
-    
+
         img {
             user-select: none;
             width: 46px;
             height: auto;
-    
+
             /* breakpoint tablet */
             @media screen and (width <=1279px) {
                 width: 42px;
             }
-    
+
             /* breakpoint tablet-small and mobile */
             @media screen and (width <=639px) {
                 width: 36px;
             }
-    
+
             /* breakpoint tablet-small and mobile */
             @media screen and (width <=359px) {
                 width: 32px;
             }
         }
-    
+
         p {
             max-width: 200px;
             font-family: var(--Lato);
@@ -296,18 +298,18 @@ body {
             font-weight: 600;
             color: var(--Tinta-Gris);
             text-align: left;
-    
+
             /* breakpoint tablet */
             @media screen and (width <=1279px) {
                 font-size: 16px;
                 font-weight: 500;
             }
-    
+
             /* breakpoint tablet-small */
             @media screen and (width <=639px) {
                 font-size: 13px;
             }
-    
+
             /* breakpoint mobile */
             @media screen and (width <=359px) {
                 display: none;
@@ -316,21 +318,23 @@ body {
     }
 
     /* breakpoint tablet */
-    @media screen and (width <= 1279px) {
-        @media screen and (width <= 780px){
+    @media screen and (width <=1279px) {
+        @media screen and (width <=780px) {
             min-width: 620px;
         }
     }
-    
+
     /* breakpoint tablet-small */
     @media screen and (width <=639px) {
         min-width: 350px;
+
         .container-logo {
             gap: 4px;
         }
     }
+
     /* breakpoint mobile */
-    @media screen and (width <= 359px) {
+    @media screen and (width <=359px) {
         min-width: 300px;
     }
 }
@@ -400,6 +404,7 @@ body {
 
         a {
             font-size: 20px;
+
             @media screen and (width <=840px) {
                 font-size: 18px;
                 padding: 8px 10px;
@@ -639,7 +644,7 @@ body {
 .btn-siderBar {
 
     /* breakpoint tablet */
-    @media screen and (width <= 780px) {
+    @media screen and (width <=780px) {
         display: block !important;
         position: relative;
     }
@@ -1198,6 +1203,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     /* breakpoint tablet */
     @media screen and (width <=1279px) and (width >=640px) {
         display: none;
+
         ~.tittle-donaciones__desktop {
             display: none !important;
         }
@@ -1239,7 +1245,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     width: 100%;
     position: relative;
     grid-area: img;
-    
+
     &::after {
         content: "";
         position: absolute;
@@ -1261,7 +1267,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     @media screen and (width <=1279px) {
         width: 100%;
 
-        &::after { 
+        &::after {
             content: "";
             position: absolute;
             left: 0;
@@ -1276,7 +1282,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
             height: 100%;
             left: 0;
             top: 0;
-        } 
+        }
 
         & img {
             width: 100%;
@@ -1588,15 +1594,91 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 }
 
 /* section contacto */
-.container-section__contacto{
-    
+.container-section__contacto {
+
     background-color: var(--Secundary-Claro);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     padding: 36px 20px;
 
-    & .tittle-contacto{
+    & .tittle-contacto {
         align-self: self-start;
+    }
+
+    /* breakpoint  tablet */
+    @media screen and (width <=1279px) and (width >=640px) {
+        padding: 36px 25px;
+    }
+}
+
+.container-info_small {
+    width: 100%;
+    max-width: 319px;
+    min-width: 318px;
+    padding: 32px 0;
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 12px;
+    column-gap: 12px;
+    justify-content: center;
+
+    & .info {
+        background-color: #EBEA7F;
+        border-radius: 16px;
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        min-width: 148px;
+        max-width: 153px;
+        width: 100%;
+        padding: 36px 0;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+
+        & .info-text {
+            font-family: var(--Lato);
+            font-size: 12px;
+        }
+    }
+
+    & .info__tel {
+        img {
+            max-width: 46px;
+        }
+    }
+
+    & .info__ubic {
+        img {
+            max-width: 36px;
+        }
+
+        span {
+            text-align: center;
+        }
+    }
+
+    & .info__email {
+        max-width: 318px;
+
+        img {
+            max-width: 60px;
+        }
+    }
+
+    @media screen and (width <=639px) and (width >=360px) {
+        padding: 36px 0;
+        max-width: 398px;
+        row-gap: 20px;
+        column-gap: 20px;
+        & .info {
+            gap: 8px;
+            max-width: 189px;
+            min-width: 152px;
+        }
+        & .info__email {
+            max-width: none;
+        }
     }
 }
