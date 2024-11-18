@@ -120,14 +120,14 @@ h1{
     text-align: center;
     
     /* breakpoint tablet-small */
-    @media screen and (width >= 360px){
+    @media screen and (width > 360px){
         margin-top: 56px;
         font-size: 28px;
-        padding: 0 32px;
+        padding: 0 6.50%;
     }
     
     /* breakpoint tablet */
-    @media screen and (width >= 640px){
+    @media screen and (width > 640px){
         margin-top: 52px;
         padding: 0 16%;
         min-width: 458px;
@@ -136,7 +136,7 @@ h1{
     }
 
     /* breakpoint desktop */
-    @media screen and (width >= 1280px){
+    @media screen and (width > 1280px){
         margin-top: 5.89%;
         padding: 0 240px;
         min-width: 675px;
