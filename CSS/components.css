@@ -75,11 +75,11 @@ body {
         background-color: var(--Secundary-Claro);
     }
 
-    @media screen and (width <= 1279px) {
+    @media screen and (width <=1280px) {
         font-size: 16px;
     }
 
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         padding: 4px 8px;
         font-size: 14px;
     }
@@ -102,11 +102,11 @@ body {
         background-color: var(--Complementos-Blanco);
     }
 
-    @media screen and (width <= 1289px) {
+    @media screen and (width <=1280px) {
         font-size: 16px;
     }
 
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         padding: 4px 8px;
         font-size: 14px;
     }
@@ -183,8 +183,8 @@ body {
     text-transform: uppercase;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 
-    /* breakpoint 1279px - 640px */
-    @media screen and (width <=1279px) and (width > 640px) {
+    /* breakpoint 1280px - 640px */
+    @media screen and (width <= 1280) and (width > 640px) {
         font-size: var(--sizeH3);
         font-weight: 600;
     }
@@ -233,16 +233,16 @@ body {
     user-select: none;
 
     /* breakpoint tablet */
-    @media screen and (width <= 1279px) {
+    @media screen and (width <=1280px) {
         padding: 4px 12px;
     }
 
-    @media screen and (width <= 780px) {
+    @media screen and (width <=780px) {
         padding: 4px 8.6%;
     }
 
     /* breakpoint tablet-small */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         padding: 4px 6.26%;
 
         .container-logo {
@@ -251,7 +251,7 @@ body {
     }
 
     /* breakpoint mobile */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         padding: 4px 20px;
     }
 }
@@ -275,17 +275,17 @@ body {
             height: auto;
 
             /* breakpoint tablet */
-            @media screen and (width <= 1279px) {
+            @media screen and (width <=1280px) {
                 width: 42px;
             }
 
             /* breakpoint tablet-small and mobile */
-            @media screen and (width <= 640px) {
+            @media screen and (width <=640px) {
                 width: 36px;
             }
 
             /* breakpoint tablet-small and mobile */
-            @media screen and (width <= 360px) {
+            @media screen and (width <=360px) {
                 width: 32px;
             }
         }
@@ -300,32 +300,32 @@ body {
             text-align: left;
 
             /* breakpoint tablet */
-            @media screen and (width <=1279px) {
+            @media screen and (width <=1280px) {
                 font-size: 16px;
                 font-weight: 500;
             }
 
             /* breakpoint tablet-small */
-            @media screen and (width <= 640px) {
+            @media screen and (width <=640px) {
                 font-size: 13px;
             }
 
             /* breakpoint mobile */
-            @media screen and (width <= 360px) {
+            @media screen and (width <=360px) {
                 display: none;
             }
         }
     }
 
     /* breakpoint tablet */
-    @media screen and (width <=1279px) {
+    @media screen and (width <=1280px) {
         @media screen and (width <=780px) {
             min-width: 620px;
         }
     }
 
     /* breakpoint tablet-small */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         min-width: 350px;
 
         .container-logo {
@@ -334,7 +334,7 @@ body {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         min-width: 300px;
     }
 }
@@ -352,17 +352,17 @@ body {
     flex-shrink: 0;
 
     /*Breakpoint tablet  */
-    @media screen and (width <= 1279px) and (width > 640px) {
+    @media screen and (width <=1280px) and (width > 640px) {
         padding: 0 8.6%;
     }
 
     /*Breakpoint tablet-small and mobile  */
-    @media screen and (width <= 640px) and (width > 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         padding: 0 6.26%;
     }
 
     /*Breakpoint mobile-small   */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         padding: 0 20px;
     }
 }
@@ -398,7 +398,7 @@ body {
     }
 
     /* Breakponit tablet */
-    @media screen and (width <= 1279px) and (width > 640px) {
+    @media screen and (width <=1280px) and (width > 640px) {
         min-width: 620px;
         max-width: 959px;
 
@@ -414,7 +414,7 @@ body {
     }
 
     /* Breakponit tablet-small and mobile */
-    @media screen and (width <= 640px) and (width >= 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         min-width: 350px;
         max-width: none;
 
@@ -433,7 +433,7 @@ body {
     }
 
     /* mobile-small */
-    @media screen and (width <= 359px) {
+    @media screen and (width <= 360px) {
         min-width: 300px;
         max-width: none;
 
@@ -495,7 +495,7 @@ body {
     transform-origin: 50% calc(100% - 1.5px);
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         width: 3px;
         height: 18px;
     }
@@ -605,7 +605,7 @@ body {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         padding: 13px 4px;
 
         img {
@@ -620,7 +620,7 @@ body {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         padding: 13px 4px;
 
         img {
@@ -642,7 +642,7 @@ body {
 .btn-siderBar {
 
     /* breakpoint tablet */
-    @media screen and (width <= 780px) {
+    @media screen and (width <=780px) {
         display: block !important;
         position: relative;
     }
@@ -659,7 +659,7 @@ body {
     cursor: pointer;
     z-index: 5;
 
-    @media (width <= 640px) {
+    @media (width <=640px) {
         height: 18px;
         width: 24px;
     }
@@ -683,7 +683,7 @@ body {
     justify-content: space-between;
 
     /* breakpoint tablet-samll and mobile */
-    @media (width <= 640px) {
+    @media (width <=640px) {
         height: 18px;
         width: 24px;
     }
@@ -698,7 +698,7 @@ body {
         align-items: center;
 
         /* breakpoint tablet */
-        @media (width <= 1279px) {
+        @media (width <=1280px) {
             height: 3px;
 
             &::before {
@@ -743,7 +743,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line1 {
     border-radius: 10px;
 
     /* breakpoint tablet */
-    @media (width <= 1279px) {
+    @media (width <=1280px) {
         transform: rotate(41deg);
         border-radius: 10px;
     }
@@ -758,7 +758,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     border-radius: 10px;
 
     /* breakpoint tablet */
-    @media (width <= 1279px) {
+    @media (width <=1280px) {
         transform: rotate(-41deg);
         border-radius: 10px;
     }
@@ -777,12 +777,12 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     width: 100%;
 
     /* breakpoint tablet */
-    @media screen and (width <= 1279px) {
+    @media screen and (width <=1280px) {
         margin: 36px 0;
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         gap: 24px;
     }
 }
@@ -797,12 +797,12 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     gap: 20px;
 
     /* brakpoint tablet-samll and mobile */
-    @media screen and (width <= 640px) and (width > 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         margin: 0 42px;
     }
 
     /* brakpoint mobile-samll */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         margin: 0 20px;
         /* background-color: #000; */
     }
@@ -879,7 +879,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet */
-    @media screen and (width <=1279px) and (width > 640px) {
+    @media screen and (width <=1280px) and (width > 640px) {
         column-gap: 8px;
         padding-right: 8px;
 
@@ -903,7 +903,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) and (width > 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         max-height: none;
         min-width: 270px;
         max-width: none;
@@ -944,7 +944,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         max-height: none;
         min-width: 270px;
         max-width: none;
@@ -998,15 +998,17 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     background-color: var(--Secundary-Claro);
 
     /* breakpoint tablet */
-    @media screen and (width <=1279px) and (width > 640px) {
+    @media screen and (width <=1280px) and (width > 640px) {
         padding: 36px 12.5%;
     }
+
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) and (width > 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         padding: 36px 6.57%;
     }
+
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         padding: 36px 5.57%;
     }
 }
@@ -1022,7 +1024,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     min-width: 1030px;
 
     /* breakpoint tablet  */
-    @media screen and (width <= 1279px) and (width > 640px) {
+    @media screen and (width <=1280px) and (width > 640px) {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -1033,7 +1035,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile  */
-    @media screen and (width <= 640px) and (width > 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px 16px;
@@ -1041,7 +1043,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width < 360px) {
+    @media screen and (width <= 360px) {
         gap: 16px 12px;
         grid-template-columns: repeat(2, 1fr);
         min-width: 0;
@@ -1085,7 +1087,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet */
-    @media screen and (width <=1279px) and (width > 640px) {
+    @media screen and (width <=1280px) and (width > 640px) {
         padding: 24px 24px;
         gap: 10px;
         flex-shrink: 0;
@@ -1102,7 +1104,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) and (width > 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         gap: 6px;
         padding: 10px 8px;
         min-width: 145px;
@@ -1121,7 +1123,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         min-width: 0px;
         padding: 10px 8px;
         gap: 6px;
@@ -1138,7 +1140,6 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
 /* Box de pagos para Donaciones */
 .cbp {
-    margin-bottom: 12%;
     min-height: 600px;
     max-height: 800px;
     position: relative;
@@ -1150,8 +1151,10 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         "img text";
 
 
+    
     /* breakpoint tablet */
-    @media screen and (width <= 1279px) and (width > 640px) {
+    @media screen and (width <=1280px) and (width > 640px) {
+        margin-bottom: 4%;
         min-height: 0;
         max-height: none;
         padding: 0px 0%;
@@ -1161,7 +1164,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) and (width > 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         min-height: 0;
         max-height: none;
         padding: 36px 0;
@@ -1191,7 +1194,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet */
-    @media screen and (width <= 1279px) and (width > 640px) {
+    @media screen and (width <=1280px) and (width > 640px) {
         display: none;
 
         ~.tittle-donaciones__desktop {
@@ -1208,7 +1211,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) and (width > 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         display: block;
         margin-bottom: 11%;
         text-align: center;
@@ -1219,7 +1222,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         display: block;
         margin-bottom: 56px;
         text-align: center;
@@ -1254,7 +1257,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet */
-    @media screen and (width <= 1279px) {
+    @media screen and (width <=1280px) {
         width: 100%;
 
         &::after {
@@ -1304,7 +1307,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         display: none;
     }
 }
@@ -1316,15 +1319,15 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     grid-area: box;
 
     /* breakpoint tablet */
-    @media screen and (width <= 1279px) {
-        padding: 56px 110px 12% 110px;
+    @media screen and (width <=1280px) {
+        padding: 10% 110px 12% 110px;
         width: 100%;
         min-width: 515px;
         max-width: 1140px;
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         padding: 0 40px;
         display: flex;
         flex-flow: column nowrap;
@@ -1334,7 +1337,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         padding: 0 20px;
     }
 
@@ -1373,7 +1376,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         }
 
         /* breakpoint tablet-small and mobile */
-        @media screen and (width <= 640px) {
+        @media screen and (width <=640px) {
             padding: 6px 24px;
         }
     }
@@ -1394,7 +1397,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         text-align: center;
     }
 
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         font-size: 13px;
 
         & i {
@@ -1455,7 +1458,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
 
         &::before,
         &::after {
@@ -1524,7 +1527,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
 
     /* breakpoint  tablet */
-    @media screen and (width <=1279px) and (width > 640px) {
+    @media screen and (width <=1280px) and (width > 640px) {
         display: none !important;
 
         & .parrafo {
@@ -1540,7 +1543,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) and (width > 360px) {
+    @media screen and (width <=640px) and (width > 360px) {
         margin-top: 12px;
 
         & .parrafo {
@@ -1560,7 +1563,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         width: 100%;
         gap: 4px;
         margin-top: 8px;
@@ -1597,18 +1600,20 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         padding: 36px 20px;
     }
 }
 
 .container-info_small {
+
     /* breakpoint tablet */
-    @media screen and (width <=1279px) and (width >=640px) {
+    @media screen and (width <=1280px) and (width >=640px) {
         display: none;
     }
+
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         width: 100%;
         display: flex;
         flex-flow: row wrap;
@@ -1672,7 +1677,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         max-width: 319px;
         min-width: 290px;
         padding: 32px 0;
