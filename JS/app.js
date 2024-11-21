@@ -12,17 +12,26 @@ function scrollDown() {
 function activarInfo(obj) {
     let containersInfo = document.querySelectorAll("#container-info");
     let containerInfoActual = obj.nextElementSibling;
+    let boxContainer = obj.parentElement;
+    let boxContainerAuto = document.querySelectorAll(".height-auto");    
     
     // si uno de los container-info esta visible y el container-info que clikeo no lo esta... oculto el que esta visible
-    containersInfo.forEach((div) => {
-    if (div.classList.contains("info-vissibility") && !containerInfoActual.classList.contains("info-vissibility")) {
-        div.classList.toggle("info-vissibility");
+    containersInfo.forEach(div => {
+    if (div.classList.contains("info-visibility") && !containerInfoActual.classList.contains("info-visibility")) {
+        div.classList.toggle("info-visibility");
         div.previousElementSibling.classList.toggle("arrow-box__click");
-    }})
-    
+    }});
     // alterno class al container-info de informacion
-    containerInfoActual.classList.toggle("info-vissibility");
+    containerInfoActual.classList.toggle("info-visibility");
     // alterno class al arrow
     obj.classList.toggle("arrow-box__click");
     
+    // si uno de los boxs esta expandido y el que yo clikeo no... oculto el que esta expandido
+    boxContainerAuto.forEach( box =>{
+        if (box.classList.contains("height-auto") && !boxContainer.classList.contains("height-auto")) {
+            box.classList.toggle("height-auto")
+        }
+    });
+    // alterno la class para dar animacion al heigth
+    boxContainer.classList.toggle("height-auto");
 }

@@ -184,13 +184,13 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 
     /* breakpoint 1280px - 640px */
-    @media screen and (width <= 1280) and (width > 640px) {
+    @media screen and (width <=1280) and (width > 640px) {
         font-size: var(--sizeH3);
         font-weight: 600;
     }
 
     /* breakpoint  640px - 360px and 359px - 320px */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         font-size: 20px;
         font-weight: 700;
     }
@@ -433,7 +433,7 @@ body {
     }
 
     /* mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         min-width: 300px;
         max-width: none;
 
@@ -1043,7 +1043,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         gap: 16px 12px;
         grid-template-columns: repeat(2, 1fr);
         min-width: 0;
@@ -1151,7 +1151,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         "img text";
 
 
-    
+
     /* breakpoint tablet */
     @media screen and (width <=1280px) and (width > 640px) {
         margin-bottom: 4%;
@@ -1173,7 +1173,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         min-height: 0;
         max-height: none;
         padding: 36px 0;
@@ -1340,52 +1340,55 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     @media screen and (width <=360px) {
         padding: 0 20px;
     }
+}
 
-    .box {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        padding: 9px 35px;
-        user-select: none;
+.box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 9px 35px;
+    user-select: none;
+    height: min-content;
+    transition: height .5s;
+    interpolate-size: allow-keywords;
 
-        &.tranferencia {
-            border-top: #000 solid 1px;
-            border-left: #000 solid 1px;
-            border-right: #000 solid 1px;
-            border-radius: 4px 4px 0px 0px;
-        }
+    &.tranferencia {
+        border-top: #000 solid 1px;
+        border-left: #000 solid 1px;
+        border-right: #000 solid 1px;
+        border-radius: 4px 4px 0px 0px;
+    }
 
-        &.tarjeta {
-            border-top: #000 solid 1px;
-            border-left: #000 solid 1px;
-            border-right: #000 solid 1px;
-        }
+    &.tarjeta {
+        border-top: #000 solid 1px;
+        border-left: #000 solid 1px;
+        border-right: #000 solid 1px;
+    }
 
-        &.mp {
-            border-top: #000 solid 1px;
-            border-left: #000 solid 1px;
-            border-right: #000 solid 1px;
-        }
+    &.mp {
+        border-top: #000 solid 1px;
+        border-left: #000 solid 1px;
+        border-right: #000 solid 1px;
+    }
 
-        &.presencial {
-            border-top: #000 solid 1px;
-            border-left: #000 solid 1px;
-            border-right: #000 solid 1px;
-            border-bottom: #000 solid 1px;
-            border-radius: 0px 0px 4px 4px;
-        }
+    &.presencial {
+        border-top: #000 solid 1px;
+        border-left: #000 solid 1px;
+        border-right: #000 solid 1px;
+        border-bottom: #000 solid 1px;
+        border-radius: 0px 0px 4px 4px;
+    }
 
-        /* breakpoint tablet-small and mobile */
-        @media screen and (width <=640px) {
-            padding: 6px 24px;
-        }
+    /* breakpoint tablet-small and mobile */
+    @media screen and (width <=640px) {
+        padding: 6px 24px;
     }
 }
 
 .content-icons-text {
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
+    align-items: start;
     gap: 9px;
     font-size: clamp(16px, 1vw, 20px);
     font-family: var(--Lato);
@@ -1476,11 +1479,21 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 }
 
-.info-vissibility {
+.info-visibility {
+    height: auto !important;
+    opacity: 1 !important;
+}
+
+.height-auto {
+    height: 110px;
+}
+
+#container-info{
     width: 100%;
-    height: auto;
-    display: block !important;
+    height: 0px;
     text-align: center;
+    transition: height .4s, opacity .1s;
+    interpolate-size: allow-keywords;
 }
 
 .info-tarjeta {
@@ -1491,14 +1504,13 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     cursor: pointer;
     text-decoration: underline;
 }
-
 .info-tranferencia,
 .info-mp,
 .info-presencial {
+    text-align: center;
     padding: 8px 24px;
     font-family: var(--Lato);
     font-size: 12px;
-
 }
 
 .container-text__donaciones {
