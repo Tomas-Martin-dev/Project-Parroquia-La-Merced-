@@ -35,3 +35,18 @@ function activarInfo(obj) {
     // alterno la class para dar animacion al heigth
     boxContainer.classList.toggle("height-auto");
 }
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Activar la animación cuando el enlace sea visible
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.5 }); // 50% del elemento visible para activar
+
+  // Seleccionar el enlace
+  const link = document.querySelectorAll('.info-anim');
+  link.forEach( e =>{
+      observer.observe(e); // Iniciar la observación del enlace
+  })
