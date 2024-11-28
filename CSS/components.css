@@ -234,16 +234,16 @@ body {
     user-select: none;
 
     /* breakpoint tablet */
-    @media screen and (width <=1280px) {
-        padding: 4px 12px;
+    @media screen and (width <= 1280px) {
+        padding: 4px 4.46%;
     }
 
-    @media screen and (width <=780px) {
+    @media screen and (width <= 780px) {
         padding: 4px 8.6%;
     }
 
     /* breakpoint tablet-small */
-    @media screen and (width <=640px) {
+    @media screen and (width <= 640px) {
         padding: 4px 6.26%;
 
         .container-logo {
@@ -252,7 +252,7 @@ body {
     }
 
     /* breakpoint mobile */
-    @media screen and (width <=360px) {
+    @media screen and (width <= 360px) {
         padding: 4px 20px;
     }
 }
@@ -1607,10 +1607,11 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding: 36px 25px;
+    padding: 36px 0px;
 
     & .tittle-contacto {
         align-self: self-start;
+        padding: 0 25px;
     }
 
     /* breakpoint mobile-small */
@@ -1620,6 +1621,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 }
 
 .container-info_small {
+    display: none;
 
     /* breakpoint tablet */
     @media screen and (width <=1280px) and (width > 800px) {
@@ -1767,5 +1769,90 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 }
 
 .info-anim:hover {
-    color: #fdfdfd;
+    @media screen and (width < 800px) {
+        color: #fdfdfd;
+    }
+}
+
+/* Maps section contacto */
+.conteiner-info{
+    /* background-color: #2A5A4F; */
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 100%;
+    padding: 0 12.5%;
+    gap: 10%;
+}
+
+.conteiner-dates-map{
+    /* background-color: #942406; */
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 8px;
+    align-items: center;
+}
+
+.content-api-maps{
+    background: url("../MEDIA/PHOTOS/foto-sin-fondo.jpg");
+    height: 460px;
+    width: 460px;
+}
+
+.content-email-tel{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.info{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2px;
+    align-items: center;
+    & .info-text{
+        text-decoration: none;
+        color: var(--Tinta-Negro);
+        font-family: var(--Lato);
+        font-size: 16px;
+    }
+} 
+/* Formulario para section contacto */
+
+.content-form{
+    background-color: #F6572C;
+    & .title__form{
+        font-family: var(--Mont);
+        font-size: 22px;
+        font-weight: 600;
+        width: 100%;
+    }
+
+    & form{
+        display: flex;
+        flex-flow: column nowrap;
+        & .conteiner-email-tel__form{
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 12px;
+            & input[name="email"]{
+                width: 60%;
+            }
+            & input[name="tel"]{
+                width: 40%;
+            }
+        }
+        & .conteiner-nombre-asunto__form{
+            display: flex;
+            flex-flow: row nowrap; 
+            gap: 12px;
+            & input[name="nombre"]{
+                width: 40%;
+            }
+            & input[name="asunto"]{
+                width: 60%;
+            }   
+        }
+    }
 }
