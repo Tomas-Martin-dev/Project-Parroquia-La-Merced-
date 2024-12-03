@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Parroquia Nuestra Señora de la Merced</title>
     <meta name="description"
@@ -62,7 +64,7 @@
                     <a class="" href="#section-horarios">Horarios</a>
                     <a class="donar" href="#section-donaciones">Donar</a>
                     <a class="donar donar__small" href="#section-donaciones" style="display: none;">Donaciones</a>
-                    <a class="" href="">Contacto</a>
+                    <a class="" href="#section-contacto">Contacto</a>
                     <a class="calendario" href="">Calendario</a>
                     <a class="comunidad" href="">Comunidad</a>
                 </nav>
@@ -94,7 +96,7 @@
                         <h3>Novedad de la Merced</h3>
                         <p class="resumen">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro accusamus
                             natus iste ad quisquam, fugit corporis rem ex sint libero voluptatum? Consequuntur quis
-                            asperiores afgaggrbsdgsasdvsdgsd sdgsd sdgsd sdg wseg sdgaaaaaaaaaaaaaaaaaaaaaaaaa  </p>
+                            asperiores afgaggrbsdgsasdvsdgsd sdgsd sdgsd sdg wseg sdgaaaaaaaaaaaaaaaaaaaaaaaaa </p>
                         <a target="_blank" href="#" rel="noopener noreferrer" class="btn LeerMas">Leer Mas</a>
                     </div>
                 </article>
@@ -170,7 +172,7 @@
             </section>
             <div class="btn ToCalendario">Calendario de Actividades</div>
         </section>
-        <div id="section-donaciones" class="cbp">
+        <!-- <div id="section-donaciones" class="cbp">
             <h2 class=" tittle-donaciones tittle-sections">Colecta Virtual</h2>
             <h2 class=" tittle-donaciones__desktop tittle-sections" style="display: none;">Tu aporte nos sostiene</h2>
             <div class="container-img" ;">
@@ -234,41 +236,50 @@
                     individuales y abrirse generosamente hacia un bien más amplio”</p>
                 <p class="autor">Cita del Papa Francisco</p>
             </div>
-        </div>
+        </div> -->
         <div id="section-contacto" class="container-section__contacto">
             <h2 class="tittle-sections tittle-contacto">Contacto</h2>
             <div class="conteiner-info">
                 <div class="conteiner-dates-map">
-                    <div class="info"><i class="fa-solid fa-location-dot fa-lg"></i><a href="https://www.google.com/maps?q=-27.477859903863507, -58.95371411781046" target="_blank" class="info-text info-text__ubic ">Aristobulo del valle 3665</a></div>
+                    <div class="info"><i class="fa-solid fa-location-dot fa-lg"></i><a
+                            href="https://www.google.com/maps?q=-27.477859903863507, -58.95371411781046" target="_blank"
+                            class="info-text info-text__ubic ">Aristobulo del valle 3665</a></div>
                     <div class="content-api-maps"></div>
                     <div class="content-email-tel">
-                        <div class="info"><i class="fa-solid fa-envelope fa-lg"></i><a href="mailto:danteg2003@gmail.com" class="info-text info-text__email ">emial@noExiste.com</a></div>
-                        <div class="info"><i class="fa-solid fa-phone fa-lg"></i><a href="tel:3624813313" class="info-text info-text__tel " color>3624813313</a> </div>
+                        <div class="info"><i class="fa-solid fa-envelope fa-lg"></i><a
+                                href="mailto:danteg2003@gmail.com"
+                                class="info-text info-text__email ">emial@noExiste.com</a></div>
+                        <div class="info"><i class="fa-solid fa-phone fa-lg"></i><a href="tel:3624813313"
+                                class="info-text info-text__tel " color>3624813313</a> </div>
                     </div>
                 </div>
+                <div class="container-info_small">
+                    <div class="conteiner-info__h">
+                        <div class="info info__tel"><img src="./MEDIA/icons/phone-D.png" alt=""> <a href="tel:3624813313"
+                                class="info-text info-text__tel info-anim" color>3624813313</a> </div>
+                        <div class="info info__ubic"><img src="./MEDIA/icons/location-D.png" alt=""><a
+                                href="https://www.google.com/maps?q=-27.477859903863507, -58.95371411781046" target="_blank"
+                                class="info-text info-text__ubic info-anim">Aristobulo del valle 3665</a></div>
+                    </div>
+                    <div class="info info__email"><img src="./MEDIA/icons/email-D.png" alt=""><a
+                            href="mailto:danteg2003@gmail.com"
+                            class="info-text info-text__email info-anim">emial@noExiste.com</a></div>
+                </div>
                 <div class="content-form">
-                    <h4 class="title__form">¿Quieres Hacernos una Consulta?</h4>
+                    <h4 class="title__form">Envianos tu Consulta</h4>
                     <form action="">
                         <div class="conteiner-email-tel__form">
                             <input type="email" name="email" id="" placeholder="TUcorreo@personal.com">
-                            <input type="tel" name="tel" id="" placeholder="Telefono para contactarnos">
+                            <input type="tel" name="tel" id="" placeholder="Telefono personal">
                         </div>
                         <div class="conteiner-nombre-asunto__form">
                             <input type="text" name="nombre" id="" placeholder="Nombre">
                             <input type="text" name="asunto" id="" placeholder="Asunto">
                         </div>
-                        <input type="text" name="mensaje" id="" placeholder="Escribe tu mensaje...">
-                        
+                        <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje..."></textarea>
                         <input type="submit" value="ENVIAR">
                     </form>
                 </div>
-            </div>
-            <div class="container-info_small">
-                <div class="conteiner-info__h">
-                    <div class="info info__tel"><img src="./MEDIA/icons/phone-D.png" alt=""> <a href="tel:3624813313" class="info-text info-text__tel info-anim" color>3624813313</a> </div>
-                    <div class="info info__ubic"><img src="./MEDIA/icons/location-D.png" alt=""><a href="https://www.google.com/maps?q=-27.477859903863507, -58.95371411781046" target="_blank" class="info-text info-text__ubic info-anim">Aristobulo del valle 3665</a></div>
-                </div>
-                <div class="info info__email"><img src="./MEDIA/icons/email-D.png" alt=""><a href="mailto:danteg2003@gmail.com" class="info-text info-text__email info-anim">emial@noExiste.com</a></div>
             </div>
             <div class="container-form"></div>
         </div>

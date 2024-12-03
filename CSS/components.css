@@ -234,16 +234,16 @@ body {
     user-select: none;
 
     /* breakpoint tablet */
-    @media screen and (width <= 1280px) {
+    @media screen and (width <=1280px) {
         padding: 4px 4.46%;
     }
 
-    @media screen and (width <= 780px) {
+    @media screen and (width <=780px) {
         padding: 4px 8.6%;
     }
 
     /* breakpoint tablet-small */
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         padding: 4px 6.26%;
 
         .container-logo {
@@ -252,7 +252,7 @@ body {
     }
 
     /* breakpoint mobile */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         padding: 4px 20px;
     }
 }
@@ -263,6 +263,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1920px;
 
     .container-logo {
         display: flex;
@@ -992,7 +993,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 48px;
 
     width: 100%;
     padding: 40px 12.5%;
@@ -1611,15 +1612,23 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     & .tittle-contacto {
         align-self: self-start;
-        padding: 0 25px;
+        margin-left: -10%;
     }
 
     /* breakpoint mobile-small */
     @media screen and (width <=360px) {
         padding: 36px 20px;
     }
+
+    /* breakpoint tablet and desktop */
+    @media screen and (width > 800px) {
+        gap: 48px;
+        padding: 0 12.5%;
+    }
+
 }
 
+/*  info para versiones smalls  */
 .container-info_small {
     display: none;
 
@@ -1629,7 +1638,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 800px) {
+    @media screen and (width <=800px) {
         width: 100%;
         display: flex;
         flex-flow: row wrap;
@@ -1687,7 +1696,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         max-width: 319px;
         min-width: 290px;
         padding: 32px 0;
@@ -1774,85 +1783,154 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 }
 
-/* Maps section contacto */
-.conteiner-info{
-    /* background-color: #2A5A4F; */
+/* info version tablet and desktop */
+.conteiner-info {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 0 12.5%;
     gap: 10%;
+    max-width: 1440px;
+
+    @media screen and (width <= 1280px) and (width > 800px){
+        flex-flow: column nowrap;
+        padding: 0 40px;
+        gap: 56px;
+    }
+
+    @media screen and (width <= 800px) {
+        display: none;
+    }
 }
 
-.conteiner-dates-map{
-    /* background-color: #942406; */
+/* Maps  */
+.conteiner-dates-map {
+    width: 100%;
+    min-width: 460px;
     display: flex;
     flex-flow: column nowrap;
     row-gap: 8px;
     align-items: center;
 }
 
-.content-api-maps{
+.content-api-maps {
     background: url("../MEDIA/PHOTOS/foto-sin-fondo.jpg");
-    height: 460px;
-    width: 460px;
+    height: 350px;
+    width: 100%;
 }
 
-.content-email-tel{
+.content-email-tel {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
 }
 
-.info{
+.info {
     display: flex;
     flex-flow: row nowrap;
     gap: 2px;
     align-items: center;
-    & .info-text{
+
+    & .info-text {
         text-decoration: none;
         color: var(--Tinta-Negro);
         font-family: var(--Lato);
         font-size: 16px;
     }
-} 
-/* Formulario para section contacto */
+}
 
-.content-form{
-    background-color: #F6572C;
-    & .title__form{
+/* Formulario  */
+
+.content-form {
+    max-width: 679px;
+    min-width: 460px;
+    width: 100%;
+
+    & .title__form {
         font-family: var(--Mont);
         font-size: 22px;
         font-weight: 600;
         width: 100%;
     }
 
-    & form{
+    @media screen and (width <= 1280px) and (width > 800px){
+        max-width: none;
+        min-width: none;
+    }
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4px;
+    margin-top: 12px;
+
+    & .conteiner-email-tel__form {
         display: flex;
-        flex-flow: column nowrap;
-        & .conteiner-email-tel__form{
-            display: flex;
-            flex-flow: row nowrap;
-            gap: 12px;
-            & input[name="email"]{
-                width: 60%;
-            }
-            & input[name="tel"]{
-                width: 40%;
-            }
+        flex-flow: row nowrap;
+        gap: 12px;
+
+        & input[name="email"] {
+            width: 60%;
         }
-        & .conteiner-nombre-asunto__form{
-            display: flex;
-            flex-flow: row nowrap; 
-            gap: 12px;
-            & input[name="nombre"]{
-                width: 40%;
-            }
-            & input[name="asunto"]{
-                width: 60%;
-            }   
+
+        & input[name="tel"] {
+            width: 40%;
         }
+    }
+
+    & .conteiner-nombre-asunto__form {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 12px;
+
+        & input[name="nombre"] {
+            width: 40%;
+        }
+
+        & input[name="asunto"] {
+            width: 60%;
+        }
+    }
+
+    & textarea {
+        width: 100%;
+        min-height: 150px;
+        resize: none;
+        overflow-y: auto;
+
+        &:focus {
+            overflow-y: hidden;
+        }
+    }
+
+    & input[type="submit"] {
+        place-self: end;
+        max-width: 165px;
+        padding: 10px 30px !important;
+        border: none !important;
+        cursor: pointer;
+        background-color: var(--Secundary-Saturado);
+
+        &:hover {
+            background-color: var(--Secundary-Claro);
+        }
+    }
+}
+
+form input,
+textarea {
+    text-decoration: none;
+    background-color: transparent;
+    border: solid 1px black;
+    padding: 10px 10px;
+    border-radius: 2px;
+    font-family: var(--Lato);
+    font-size: 12px;
+
+    &:focus {
+        background-color: #0000000b;
     }
 }
