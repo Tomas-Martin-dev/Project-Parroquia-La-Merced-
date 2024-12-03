@@ -1608,11 +1608,20 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding: 36px 0px;
+    padding: 36px 12.5%;
 
     & .tittle-contacto {
         align-self: self-start;
         margin-left: -10%;
+    }
+
+    /* breakpoint mobile-small */
+    @media screen and (width <=640px) {
+        padding: 36px 6.57%;
+        & .tittle-contacto {
+            align-self: self-start;
+            margin-left: -5%;
+        }
     }
 
     /* breakpoint mobile-small */
@@ -1623,7 +1632,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     /* breakpoint tablet and desktop */
     @media screen and (width > 800px) {
         gap: 48px;
-        padding: 0 12.5%;
+        padding: 36px 12.5%;
     }
 
 }
@@ -1638,22 +1647,23 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <=800px) {
+    @media screen and (width <= 800px) {
         width: 100%;
         display: flex;
         flex-flow: row wrap;
         padding: 36px 0;
-        max-width: 398px;
+        max-width: 460px;
+        min-width: 320px;
         row-gap: 20px;
         column-gap: 20px;
         justify-content: center;
 
-        & .conteiner-info__h {
+        & .conteiner-info__top {
             column-gap: 20px;
             width: 100%;
             display: flex;
             flex-flow: row nowrap;
-            justify-content: center;
+            justify-content: space-between;
         }
 
         & .info {
@@ -1666,7 +1676,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
             flex-flow: column nowrap;
             align-items: center;
             gap: 8px;
-            max-width: 189px;
+            max-width: 200px;
             min-width: 0px;
         }
 
@@ -1696,7 +1706,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <=360px) {
+    @media screen and (width <= 360px) {
         max-width: 319px;
         min-width: 290px;
         padding: 32px 0;
@@ -1713,11 +1723,23 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
             gap: 8px;
         }
 
+        & .info__tel {
+            img {
+                max-width: 42px;
+            }
+        }
+
+        & .info__ubic {
+            img {
+                max-width: 32px;
+            }
+        }
+
         & .info__email {
             max-width: 318px;
 
             img {
-                max-width: 60px;
+                max-width: 56px;
             }
         }
     }
@@ -1793,15 +1815,12 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     gap: 10%;
     max-width: 1440px;
 
-    @media screen and (width <= 1280px) and (width > 800px){
+    @media screen and (width <= 1280px){
         flex-flow: column nowrap;
         padding: 0 40px;
         gap: 56px;
     }
 
-    @media screen and (width <= 800px) {
-        display: none;
-    }
 }
 
 /* Maps  */
@@ -1812,12 +1831,18 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     flex-flow: column nowrap;
     row-gap: 8px;
     align-items: center;
+    
+    @media screen and (width <= 800px) {
+        display: none;
+    }
 }
 
 .content-api-maps {
     background: url("../MEDIA/PHOTOS/foto-sin-fondo.jpg");
     height: 350px;
     width: 100%;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
 }
 
 .content-email-tel {
@@ -1838,6 +1863,9 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         color: var(--Tinta-Negro);
         font-family: var(--Lato);
         font-size: 16px;
+        @media screen and (width <= 360px) {
+            font-size: 14px;
+        }
     }
 }
 
@@ -1853,11 +1881,31 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         font-size: 22px;
         font-weight: 600;
         width: 100%;
+        text-shadow: 1px 1px 0.8px #00000034;
+
+        @media screen and (width <= 640px) {
+            font-size: 18px;
+        }
     }
 
-    @media screen and (width <= 1280px) and (width > 800px){
+    @media screen and (width <= 1280px) {
         max-width: none;
-        min-width: none;
+        min-width: 0;
+    }
+
+    @media screen and (width <= 800px) {
+        max-width: none;
+        min-width: 540px;
+    }
+
+    @media screen and (width <= 640px) {
+        max-width: none;
+        min-width: 320px;
+    }
+
+    @media screen and (width <= 360px){
+        min-width: 290px;
+        width: 100%;
     }
 }
 
@@ -1879,6 +1927,10 @@ form {
         & input[name="tel"] {
             width: 40%;
         }
+
+        @media screen and (width <= 640px) {
+            gap: 6px;
+        }
     }
 
     & .conteiner-nombre-asunto__form {
@@ -1893,6 +1945,10 @@ form {
         & input[name="asunto"] {
             width: 60%;
         }
+
+        @media screen and (width <= 640px) {
+            gap: 6px;
+        }
     }
 
     & textarea {
@@ -1904,6 +1960,10 @@ form {
         &:focus {
             overflow-y: hidden;
         }
+
+        @media screen and (width <= 640px) {
+            min-height: 100px;
+        }
     }
 
     & input[type="submit"] {
@@ -1913,6 +1973,11 @@ form {
         border: none !important;
         cursor: pointer;
         background-color: var(--Secundary-Saturado);
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.40);
+        
+        @media screen and (width <= 640px) {
+            padding: 8px 20px !important;
+        }
 
         &:hover {
             background-color: var(--Secundary-Claro);
@@ -1929,8 +1994,14 @@ textarea {
     border-radius: 2px;
     font-family: var(--Lato);
     font-size: 12px;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.35);
 
     &:focus {
         background-color: #0000000b;
+    }
+
+    @media screen and (width <= 640px) {
+        padding: 8px 8px;
+        font-size: 10px;
     }
 }
