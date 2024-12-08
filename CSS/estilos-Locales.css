@@ -78,26 +78,28 @@
 }
 
 .top--hero{
-    margin-top: 8px;
+    z-index: 1000;
+    padding: 8px 20px;
     
-    /* breakpoint tablet-small */
-    @media screen and (width > 360px){
-        margin-top: 12px;
+
+    /* breakpoint tablet */
+    @media screen and (width >= 360px){
+        padding: 8px 6.26%;
     }
-    
+
     /* breakpoint tablet */
     @media screen and (width > 640px){
-        margin-top: 16px;
+        padding: 10px 6.2%;
     }
 
     /* breakpoint desktop */
     @media screen and (width > 1280px){
-        margin-top: 12px;
+        padding: 12px 36px;
     }
 
     /* breakpoint tablets and mobile in landscape*/
     @media screen and (width < 1440px) and (orientation: landscape){
-        padding: 0 8.6%;
+        padding: 10px 6.2%;
     }
 
     /* breakpoint tablets and mobile in landscape*/
@@ -107,25 +109,26 @@
 }
 
 .conteiner-nav--hero{
-    margin-top: 25px;
+    margin-top: 20%;
     
     /* breakpoint tablet-small */
     @media screen and (width > 360px){
-        margin-top: 44px;
+        margin-top: clamp(75px,20%,115px);
     }
     
     /* breakpoint tablet */
     @media screen and (width > 640px){
-        margin-top: 80px;
+        margin-top: clamp(130px,20%,160px);
     }
 
     /* breakpoint desktop */
     @media screen and (width > 1280px){
-        margin-top: 4.20%;
+        margin-top: clamp(110px,25%,150px);
     }
+
     /* breakpoint tablets and mobile in landscape*/
-    @media screen and (width < 1440px) and (orientation: landscape){
-        margin-top: 4.50%
+    @media screen and (width < 1280px) and (orientation: landscape){
+        margin-top: clamp(110px,20%,140px)
         
     }
 }
@@ -150,7 +153,7 @@ h1{
     /* breakpoint tablet */
     @media screen and (width > 640px){
         margin-top: 52px;
-        padding: 0 16%;
+        padding: 0 14%;
         min-width: 458px;
         max-width: 1015px;
         font-size: 40px;
@@ -170,5 +173,8 @@ h1{
     margin: -20vh auto ;
 }
 
+.pointer{
+    cursor: pointer;
+}
 
 

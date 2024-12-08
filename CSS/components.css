@@ -219,6 +219,25 @@ body {
         height: 22.5px;
     }
 
+    @media screen and (width <=1280px) {
+        gap: 10px;
+
+        .i-youtube {
+            width: 20px;
+            height: 16px;
+        }
+
+        .i-facebook {
+            width: 20px;
+            height: 20px;
+        }
+
+        .i-instagram {
+            width: 18.5px;
+            height: 18.5px;
+        }
+    }
+
     @media screen and (width <=780px) {
         display: none;
     }
@@ -226,12 +245,13 @@ body {
 
 /* Top del Hero */
 .top--hero {
+    position: fixed;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    padding: 8px 36px;
     width: 100%;
     user-select: none;
+    transition: background 0.5s ease;
 
     /* breakpoint tablet */
     @media screen and (width <=1280px) {
@@ -308,21 +328,17 @@ body {
             }
 
             /* breakpoint tablet-small */
-            @media screen and (width <=640px) {
-                font-size: 13px;
-            }
-
-            /* breakpoint mobile */
-            @media screen and (width <=360px) {
+            @media screen and (width <= 640px) {
                 display: none;
             }
+
         }
     }
 
     /* breakpoint tablet */
     @media screen and (width <=1280px) {
         @media screen and (width <=780px) {
-            min-width: 620px;
+            min-width: 600px;
         }
     }
 
@@ -401,7 +417,7 @@ body {
 
     /* Breakponit tablet */
     @media screen and (width <=1280px) and (width > 640px) {
-        min-width: 620px;
+        min-width: 600px;
         max-width: 959px;
 
         a {
@@ -517,26 +533,16 @@ body {
 
     width: 100%;
     padding: 0px 36px;
-    /* position: absolute; */
+    position: fixed;
     user-select: none;
     background: rgba(255, 255, 255, 0.65);
     box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(3px);
+    margin: 0 !important;
 
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-
-    .nav--scroll__container {
-        width: 100%;
-        max-width: 1920px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 14px;
-        flex-grow: 1;
-    }
 }
 
 .nav-scroll {
@@ -547,8 +553,18 @@ body {
     align-self: stretch;
     justify-content: center;
     gap: 14px;
-    padding: 12px 0px;
+    padding: 0px 0px;
     flex-grow: 1;
+
+    /* breakpoint tablet and mobile landcapes */
+    @media screen and (width <=1280px) {
+        gap: 6px;
+    }
+
+    /* breakpoint tablet-small and mobiles */
+    @media screen and (width <=780px) {
+        display: none;
+    }
 
     a {
         padding: 8px 8px;
@@ -564,6 +580,11 @@ body {
         &:hover {
             color: var(--Primary-Oscuro, #942406);
         }
+
+        @media screen and (width <=1280px) {
+            padding: 2px 4px;
+            font-size: 18px;
+        }
     }
 
     .donar {
@@ -571,73 +592,39 @@ body {
     }
 }
 
-/* nav Scroll --- version tablet y mobile*/
-.nav-scroll--small {
-    width: 100%;
-    /* position: fixed; */
-    /* top: 0px; */
-    /* left: 0px; */
-
-    background: rgba(255, 255, 255, 0.65);
-    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(3px);
-
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.nav-scroll--small__container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 100%;
-    max-width: 1920px;
-    padding: 13px 16px;
-    user-select: none;
-
-    h2 {
+.text-scroll__mobile {
+    @media screen and (width <=780px) {
+        display: block !important;
+        opacity: 0;
         font-family: var(--Mont);
         font-size: var(--sizeH4);
         font-weight: 600;
         color: var(--Tinta-Gris);
+        text-transform: uppercase;;
+    }
+    @media screen and (width <= 640px){
+        font-size: clamp(14px,2.5vw,16px);
     }
 
-    /* breakpoint tablet-small and mobile */
-    @media screen and (width <=640px) {
-        padding: 13px 4px;
-
-        img {
-            width: 36px;
-            height: 36px;
+    @media screen and (width <= 500px){
+        display: none !important;
         }
+}
 
-        h2 {
-            font-size: 14px;
-            margin-left: -6px;
-        }
+.text-scroll__mobile-small {
+    @media screen and (width <= 500px){
+        display: block !important;
+        opacity: 0;
+        font-size: clamp(12px,3.5vw,15px);
+        font-family: var(--Mont);
+        font-weight: 600;
+        color: var(--Tinta-Gris);
+        text-transform: uppercase;;
     }
+}
 
-    /* breakpoint mobile-small */
-    @media screen and (width <=360px) {
-        padding: 13px 4px;
-
-        img {
-            width: 36px;
-            height: 36px;
-        }
-
-        h2 {
-            display: none;
-        }
-
-        .h2-mobile__small {
-            display: block !important;
-        }
-    }
+.visible {
+    opacity: 1;
 }
 
 /* hamburg menu  */
@@ -1618,6 +1605,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     /* breakpoint mobile-small */
     @media screen and (width <=640px) {
         padding: 36px 6.57%;
+
         & .tittle-contacto {
             align-self: self-start;
             margin-left: -5%;
@@ -1647,7 +1635,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <= 800px) {
+    @media screen and (width <=800px) {
         width: 100%;
         display: flex;
         flex-flow: row wrap;
@@ -1706,7 +1694,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <= 360px) {
+    @media screen and (width <=360px) {
         max-width: 319px;
         min-width: 290px;
         padding: 32px 0;
@@ -1815,7 +1803,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     gap: 10%;
     max-width: 1440px;
 
-    @media screen and (width <= 1280px){
+    @media screen and (width <=1280px) {
         flex-flow: column nowrap;
         padding: 0 40px;
         gap: 56px;
@@ -1831,8 +1819,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
     flex-flow: column nowrap;
     row-gap: 8px;
     align-items: center;
-    
-    @media screen and (width <= 800px) {
+
+    @media screen and (width <=800px) {
         display: none;
     }
 }
@@ -1863,7 +1851,8 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         color: var(--Tinta-Negro);
         font-family: var(--Lato);
         font-size: 16px;
-        @media screen and (width <= 360px) {
+
+        @media screen and (width <=360px) {
             font-size: 14px;
         }
     }
@@ -1883,27 +1872,27 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
         width: 100%;
         text-shadow: 1px 1px 0.8px #00000034;
 
-        @media screen and (width <= 640px) {
+        @media screen and (width <=640px) {
             font-size: 18px;
         }
     }
 
-    @media screen and (width <= 1280px) {
+    @media screen and (width <=1280px) {
         max-width: none;
         min-width: 0;
     }
 
-    @media screen and (width <= 800px) {
+    @media screen and (width <=800px) {
         max-width: none;
         min-width: 540px;
     }
 
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         max-width: none;
         min-width: 320px;
     }
 
-    @media screen and (width <= 360px){
+    @media screen and (width <=360px) {
         min-width: 290px;
         width: 100%;
     }
@@ -1928,7 +1917,7 @@ form {
             width: 40%;
         }
 
-        @media screen and (width <= 640px) {
+        @media screen and (width <=640px) {
             gap: 6px;
         }
     }
@@ -1946,7 +1935,7 @@ form {
             width: 60%;
         }
 
-        @media screen and (width <= 640px) {
+        @media screen and (width <=640px) {
             gap: 6px;
         }
     }
@@ -1957,11 +1946,7 @@ form {
         resize: none;
         overflow-y: auto;
 
-        &:focus {
-            overflow-y: hidden;
-        }
-
-        @media screen and (width <= 640px) {
+        @media screen and (width <=640px) {
             min-height: 100px;
         }
     }
@@ -1972,10 +1957,11 @@ form {
         padding: 10px 30px !important;
         border: none !important;
         cursor: pointer;
+        color: #000;
         background-color: var(--Secundary-Saturado);
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.40);
-        
-        @media screen and (width <= 640px) {
+
+        @media screen and (width <=640px) {
             padding: 8px 20px !important;
         }
 
@@ -2000,7 +1986,7 @@ textarea {
         background-color: #0000000b;
     }
 
-    @media screen and (width <= 640px) {
+    @media screen and (width <=640px) {
         padding: 8px 8px;
         font-size: 10px;
     }
