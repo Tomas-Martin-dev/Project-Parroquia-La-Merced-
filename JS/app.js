@@ -2,10 +2,12 @@ console.log("js conectado");
 
 // Funcion para scroll del button arrow-down del hero
 function scrollArrowDown() {
-    const sectionNovedades = document.querySelector(".container-section__novedades")
-    let disntacia = sectionNovedades.offsetTop;
+    const sectionNovedades = document.querySelector(".container-section__novedades");
+    let largoNav = document.querySelector(".top--hero").offsetHeight;
+    let disntacia = sectionNovedades.getBoundingClientRect().top - 36;
+    disntacia -= largoNav; 
     window.scrollBy({
-        top: disntacia - 10, // Desplazarse 100px hacia abajo
+        top: disntacia, // Desplazarse 100px hacia abajo
         behavior: 'smooth' // Hacer que el desplazamiento sea suave
     });
 }
