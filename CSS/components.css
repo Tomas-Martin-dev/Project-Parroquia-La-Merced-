@@ -328,7 +328,7 @@ body {
             }
 
             /* breakpoint tablet-small */
-            @media screen and (width <= 640px) {
+            @media screen and (width <=640px) {
                 display: none;
             }
 
@@ -600,26 +600,29 @@ body {
         font-size: var(--sizeH4);
         font-weight: 600;
         color: var(--Tinta-Gris);
-        text-transform: uppercase;;
-    }
-    @media screen and (width <= 640px){
-        font-size: clamp(14px,2.5vw,16px);
+        text-transform: uppercase;
+        ;
     }
 
-    @media screen and (width <= 500px){
+    @media screen and (width <=640px) {
+        font-size: clamp(14px, 2.5vw, 16px);
+    }
+
+    @media screen and (width <=500px) {
         display: none !important;
-        }
+    }
 }
 
 .text-scroll__mobile-small {
-    @media screen and (width <= 500px){
+    @media screen and (width <=500px) {
         display: block !important;
         opacity: 0;
-        font-size: clamp(12px,3.5vw,15px);
+        font-size: clamp(12px, 3.5vw, 15px);
         font-family: var(--Mont);
         font-weight: 600;
         color: var(--Tinta-Gris);
-        text-transform: uppercase;;
+        text-transform: uppercase;
+        ;
     }
 }
 
@@ -1990,4 +1993,59 @@ textarea {
         padding: 8px 8px;
         font-size: 10px;
     }
+}
+
+/*                                      FOOTER                          */
+.conteiner-footer {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0 2.6%;
+}
+
+.content-AR {
+    width: 20%;
+    padding: 0 0 0 18px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    row-gap: 12px;
+
+    & h5 {
+        width: 100%;
+    }
+
+    & ul {
+        width: 100%;
+    }
+}
+
+.content-P {
+    width: 60%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+}
+
+.content-C {
+    width: 20%;
+    padding: 0 18px 0 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    row-gap: 12px;
+
+    & h5 {
+        width: 100%;
+    }
+
+    & ul {
+        width: 100%;
+    }
+}
+
+.li {
+    list-style: none;
+    padding-bottom: 10px;
 }

@@ -105,7 +105,8 @@ function scrollSection(seccion, ajuste) {
         behavior: "smooth"
     })
 }
-// escucho los eventos click de los enlaces del nav para agregar funcion de scroll
+
+// escucho los eventos click de los enlaces del nav, nav-scroll y del footer para agregar funcion de scroll
 
 /*                          Nav-hero */
 document.getElementById("link-novedades").addEventListener("click", e => {
@@ -191,6 +192,43 @@ document.getElementById("link-donacionesTop__small").addEventListener("click", e
 
 });
 document.getElementById("link-contactoTop").addEventListener("click", e => {
+    e.preventDefault()
+    const alturaNav = document.querySelector(".top--hero").scrollHeight;
+    let section = document.getElementById("section-contacto")
+    let marginTop = parseInt(window.getComputedStyle(section).marginTop);
+    let ajuste = alturaNav + marginTop;
+    scrollSection(section, ajuste);
+
+});
+/*                         Footer */
+document.getElementById("link-novedadesFooter").addEventListener("click", e => {
+    e.preventDefault()
+    const alturaNav = document.querySelector(".top--hero").scrollHeight;
+    let section = document.getElementById("section-novedades")
+    let marginTop = parseInt(window.getComputedStyle(section).marginTop);
+    let ajuste = alturaNav + marginTop;
+    scrollSection(section, ajuste);
+
+});
+document.getElementById("link-horariosFooter").addEventListener("click", e => {
+    e.preventDefault()
+    const alturaNav = document.querySelector(".top--hero").scrollHeight;
+    let section = document.getElementById("section-horarios")
+    let marginTop = parseInt(window.getComputedStyle(section).marginTop);
+    let ajuste = alturaNav + marginTop;
+    scrollSection(section, ajuste);
+
+});
+document.getElementById("link-donacionesFooter").addEventListener("click", e => {
+    e.preventDefault()
+    const alturaNav = document.querySelector(".top--hero").scrollHeight;
+    let section = document.getElementById("section-donaciones")
+    let marginTop = parseInt(window.getComputedStyle(section).marginTop);
+    let ajuste = alturaNav + marginTop;
+    scrollSection(section, ajuste);
+
+});
+document.getElementById("link-contactoFooter").addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-contacto")
