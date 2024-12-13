@@ -177,4 +177,7 @@ h1{
     cursor: pointer;
 }
 
+.fa-piggy-bank::before{
+    font-size: 18px;
+}
 
