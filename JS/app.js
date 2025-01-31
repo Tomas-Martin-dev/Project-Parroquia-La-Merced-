@@ -22,31 +22,55 @@ function scrollTop() {
 
 // funcion/animacion para box de donaciones
 function activarInfo(obj) {
+    let conteinersBoxs = document.querySelectorAll(".box");
+    let conteinerInfo = obj.childNodes[3]; 
+    let info = conteinerInfo.childNodes[1];
+    let infos = document.querySelectorAll(".info-box");
+    let arrow = conteinerInfo.previousElementSibling.childNodes[3];
     let containersInfo = document.querySelectorAll("#container-info");
-    let containerInfoActual = obj.nextElementSibling;
-    let boxContainer = obj.parentElement;
-    let boxContainerAuto = document.querySelectorAll(".height-auto");
 
-    // si uno de los container-info esta visible y el container-info que clikeo no lo esta... oculto el que esta visible
+    // si uno de los container-info esta visible y el container-info que clikeo no lo esta... oculto el que esta visible y muestro el clikeado
     containersInfo.forEach(div => {
-        if (div.classList.contains("info-visibility") && !containerInfoActual.classList.contains("info-visibility")) {
-            div.classList.toggle("info-visibility");
-            div.previousElementSibling.classList.toggle("arrow-box__click");
+        if (div.classList.contains("info-visibility") && !conteinerInfo.classList.contains("info-visibility")) {
+            div.classList.remove("info-visibility");
+            div.previousElementSibling.childNodes[3].classList.toggle("arrow-box__click");
         }
     });
-    // alterno class al container-info de informacion
-    containerInfoActual.classList.toggle("info-visibility");
+
+    // si la info del box clikeado esta en none y otro esta en inline, al inline lo vuelvo none
+    infos.forEach(i => {
+        if (i.classList.contains("display-A") && !info.classList.contains("display-A")) {
+            i.classList.remove("display-A");
+        }
+    })
+    
+    // alterno class al container-info y el tipo de display a la info
+    conteinerInfo.classList.toggle("info-visibility");
+    info.classList.toggle("display-A");
+    
     // alterno class al arrow
-    obj.classList.toggle("arrow-box__click");
+    arrow.classList.toggle("arrow-box__click");
 
     // si uno de los boxs esta expandido y el que yo clikeo no... oculto el que esta expandido
-    boxContainerAuto.forEach(box => {
-        if (box.classList.contains("height-auto") && !boxContainer.classList.contains("height-auto")) {
-            box.classList.toggle("height-auto")
+    conteinersBoxs.forEach(box => {
+        if (box.classList.contains("height-auto") && !obj.classList.contains("height-auto")) {
+            box.classList.remove("height-auto")
         }
     });
+    
+    conteinersBoxs.forEach(box => {
+        if (box.classList.contains("height-auto_mp") && !obj.classList.contains("height-auto_mp")) {
+            console.log("llego aca");
+            box.classList.remove("height-auto_mp")
+        }
+    });
+
     // alterno la class para dar animacion al heigth
-    boxContainer.classList.toggle("height-auto");
+    if (obj.classList.contains("mp")) {
+        obj.classList.toggle("height-auto_mp")
+    }else {
+        obj.classList.toggle("height-auto");
+    }
 }
 
 // Funcion que agrega una class cuando el elemento es visible (cards de la section contacto)
