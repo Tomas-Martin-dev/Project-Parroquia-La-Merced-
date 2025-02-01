@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Parroquia Nuestra Señora de la Merced</title>
     <meta name="description"
         content="Sitio web oficial de la Parroquia Nuestra Señora de la Merced, la parroquia cuenta con x comunidades, todas ubicadas en la ciudad de Resistencia provincia del Chaco." />
@@ -295,19 +295,19 @@
                     <h4 class="title__form">Envianos tu Consulta</h4>
                     <form action="">
                         <div class="conteiner-email-tel__form">
-                            <input type="email" name="email" id="" placeholder="TUcorreo@personal.com">
-                            <input type="tel" name="tel" id="" placeholder="Telefono personal">
+                            <input type="email" name="email" id="" placeholder="TUcorreo@personal.com" required>
+                            <input type="tel" name="tel" pattern="[0-9]*" inputmode="numeric" placeholder="Telefono personal" required>
                         </div>
                         <div class="conteiner-nombre-asunto__form">
-                            <input type="text" name="nombre" id="" placeholder="Nombre">
-                            <input type="text" name="asunto" id="" placeholder="Asunto">
+                            <input type="text" name="nombre" id="" placeholder="Nombre" required>
+                            <input type="text" name="asunto" id="" placeholder="Asunto" required>
                         </div>
-                        <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje..."></textarea>
+                        <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
                         <input type="submit" value="ENVIAR">
                     </form>
+                    <span class="loader"></span>
                 </div>
             </div>
-            <div class="container-form"></div>
         </div>
     </main>
     <footer class="footer">
@@ -353,7 +353,8 @@
             </div>
         </div>
     </footer>
-    <script src="./JS/app.js"></script>
+    <script src="./JS/animaciones.js"></script>
+    <script src="./JS/funciones.js"></script>
 </body>
 
 </html>
