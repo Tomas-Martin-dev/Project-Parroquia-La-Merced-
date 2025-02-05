@@ -89,6 +89,14 @@ link.forEach(e => {
     observer.observe(e); // Iniciar la observación del enlace
 })
 
+function checkScreenSize(textoLogo) {
+    if (window.innerWidth < 1280) {
+        textoLogo.style.display = "none";
+    } else {
+        textoLogo.style.display = "block"; // O "flex" según tu diseño
+    }
+}
+
 // Animacion para nav-scroll top
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.top--hero');
@@ -101,7 +109,7 @@ window.addEventListener('scroll', () => {
         // agregar o eliminar propiedades al div conteiner del nav-scrol
         nav.classList.add('nav--scroll');
         // elimar el texto del logo
-        textoLogo.style.display = "none";
+        checkScreenSize(textoLogo);
         // elimar el texto del logo
         divScroll.removeAttribute("style");
         // agregar funcion Onclick a img
@@ -117,6 +125,16 @@ window.addEventListener('scroll', () => {
         img.classList.remove("pointer")
         textScrollMobile.classList.remove("visible");
         textScrollMobileSmall.classList.remove("visible");
+    }
+});
+
+window.addEventListener("resize", () => {
+    const nav = document.querySelector(".top--hero");
+    const textoLogo = nav.childNodes[1].childNodes[1].childNodes[3];
+
+    // Solo actualiza el display del logo si ya está en modo "scroll"
+    if (window.scrollY >= 300) {
+        checkScreenSize(textoLogo);
     }
 });
 
@@ -269,4 +287,21 @@ function obtenerDistanciaDesdeTop(elemento) {
         elemento = elemento.offsetParent; // Subir al contenedor padre
     }
     return distancia;
+}
+
+// Animacion para dar display al SiderBar, al tocar el btn del top
+const siderbar = document.querySelector(".siderBar");
+const BTNsiderbarOpen = document.querySelector(".arrow-left");
+const BTNsiderbarClose = document.querySelector(".btn-siderBar-Close");
+function displaySiderOpen() {
+    BTNsiderbarOpen.classList.add("opacity-0");
+    BTNsiderbarClose.classList.remove("opacity-0");
+    siderbar.classList.add("width");    
+}
+function displaySiderClose() {
+    BTNsiderbarClose.classList.add("opacity-0");
+    siderbar.classList.remove("width");    
+    setTimeout(() => {
+        BTNsiderbarOpen.classList.remove("opacity-0");
+    }, 400);
 }

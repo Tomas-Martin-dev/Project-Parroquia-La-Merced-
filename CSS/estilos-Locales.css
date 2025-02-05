@@ -99,7 +99,7 @@
 
     /* breakpoint tablets and mobile in landscape*/
     @media screen and (width < 1440px) and (orientation: landscape){
-        padding: 10px 6.2%;
+        /* padding: 10px 6.2%; */
     }
 
     /* breakpoint tablets and mobile in landscape*/

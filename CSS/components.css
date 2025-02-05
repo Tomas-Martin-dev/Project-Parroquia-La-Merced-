@@ -10,6 +10,7 @@
 html,
 body {
     /* Evita cualquier desplazamiento horizontal */
+    position: relative;
     margin: 0;
     padding: 0;
     overflow: auto;
@@ -203,7 +204,9 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: end;
     gap: 16px;
+    min-width: 250px;
 
     .i-youtube {
         width: 25px;
@@ -220,8 +223,9 @@ body {
         height: 22.5px;
     }
 
-    @media screen and (width <=1280px) {
+    @media screen and (width <= 1280px) {
         gap: 10px;
+        min-width: 0;
 
         .i-youtube {
             width: 20px;
@@ -630,132 +634,54 @@ body {
 .visible {
     opacity: 1;
 }
-
-/* hamburg menu  */
-.btn-siderBar {
-
-    /* breakpoint tablet */
-    @media screen and (width <=780px) {
-        display: block !important;
-        position: relative;
-    }
-}
-
-.checkbox {
-    position: absolute;
-    left: -8px;
-    top: -2px;
-    display: block;
-    height: 20px;
-    width: 38px;
-    opacity: 0;
+/* Button SiderBar */
+.arrow-left {
+    width: 31px;
+    height: 30px;
+    position: relative;
     cursor: pointer;
-    z-index: 5;
-
-    @media (width <=640px) {
-        height: 18px;
-        width: 24px;
-    }
-
-    /*mientras checkbox este con hover, el hijo line del hno div va a cambiar de color, lo mismo el before */
-    &:hover~div .line {
-        background-color: var(--Tinta-Gris);
-
-        &::before {
-            background-color: var(--Tinta-Gris);
-        }
+    @media screen and (width <= 780px){
+        display: inline-block !important;
     }
 }
+  
+.arrow-left::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+    border-radius: 3px;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
 
-.hamburger-lines {
-    height: 20px;
-    width: 28px;
-    /*estos valores se tienen que emparejar con el .checkbox*/
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.arrow-left:hover {
+    animation: bounce .7s infinite both; 
+}
 
-    /* breakpoint tablet-samll and mobile */
-    @media (width <=640px) {
-        height: 18px;
-        width: 24px;
+@keyframes bounce {
+    0%, 100% {
+      transform:  scale(1); 
     }
-
-    .line {
-        position: relative;
-        height: 4px;
-        width: 100%;
-        border-radius: 0 10px 10px 0;
-        background-color: var(--Tinta-Negro);
-        display: flex;
-        align-items: center;
-
-        /* breakpoint tablet */
-        @media (width <=1280px) {
-            height: 3px;
-
-            &::before {
-                left: -5px !important;
-                height: 3px !important;
-                width: 3px !important;
-            }
-        }
-    }
-
-    .line::before {
-        position: absolute;
-        left: -7px;
-        content: "";
-        height: 4px;
-        width: 4px;
-        border-radius: 50%;
-        background-color: var(--Tinta-Negro);
+    50% {
+      transform: scale(1.1); 
     }
 }
 
-.line1 {
-    transform-origin: 0% 0%;
-    transition: transform 0.4s ease-in-out;
+.opacity-0{
+    opacity: 0;
 }
 
-.line2 {
-    transition: transform 0.2s ease-in-out;
+/* .display-None{
+    display: none; 
 }
 
-.line3 {
-    transform-origin: 0% 100%;
-    transition: transform 0.4s ease-in-out;
-}
-
-input[type="checkbox"]:checked~div .line::before {
-    height: 0px !important;
-}
-
-input[type="checkbox"]:checked~.hamburger-lines .line1 {
-    transform: rotate(37deg);
-    border-radius: 10px;
-
-    /* breakpoint tablet */
-    @media (width <=1280px) {
-        transform: rotate(41deg);
-        border-radius: 10px;
-    }
-}
-
-input[type="checkbox"]:checked~div .line2 {
-    transform: scaleY(0);
-}
-
-input[type="checkbox"]:checked~.hamburger-lines .line3 {
-    transform: rotate(-37deg);
-    border-radius: 10px;
-
-    /* breakpoint tablet */
-    @media (width <=1280px) {
-        transform: rotate(-41deg);
-        border-radius: 10px;
-    }
-}
+.display-fixed{
+    display: fixed;
+} */
 
 /* articulos de nodevades */
 .container-section__novedades {
@@ -795,7 +721,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* brakpoint tablet-samll and mobile */
     @media screen and (width <=640px) and (width > 360px) {
-        margin: 0 42px;
+        margin: 0 6.57%;
     }
 
     /* brakpoint mobile-samll */
@@ -1006,7 +932,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* breakpoint mobile-small */
     @media screen and (width <=360px) {
-        padding: 36px 5.57%;
+        padding: 36px 20px;
     }
 }
 
@@ -1326,7 +1252,7 @@ input[type="checkbox"]:checked~.hamburger-lines .line3 {
 
     /* breakpoint tablet-small and mobile */
     @media screen and (width <=640px) {
-        padding: 0 40px;
+        padding: 0 6.57%;
         display: flex;
         flex-flow: column nowrap;
         width: 100%;
@@ -2348,4 +2274,25 @@ h5 {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(0, 0, 0, 0.6);
     /* Más visible al interactuar */
+}
+
+/*                                  SIDER-BAR                                                                   */
+.siderBar{
+    background-color: #71e76dad;
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 0%;
+    min-height: 100vh;
+    z-index: 1100;
+    padding-top: 22px;
+    transition: width .4s ease-in-out;
+}
+
+.width{
+    width: 40%;
+}
+
+.btn-siderBar-Close{
+    cursor: pointer;
 }

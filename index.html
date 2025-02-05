@@ -28,7 +28,11 @@
 </head>
 
 <body>
-
+    <div class="siderBar display-None">
+        <div class="btn-siderBar-Close" onclick="displaySiderClose()">
+            <i class="fa-solid fa-angle-right fa-2xl" style="color: #000000;"></i>                  
+        </div>
+    </div>
     <div class="hero">
         <div class="container--hero">
             <header class="top--hero">
@@ -63,13 +67,7 @@
                                 onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"
                                 onmouseover="this.src=`./MEDIA/icons/instagram-H.png`"> </a>
                     </div>
-                    <div class="btn-siderBar" style="display: none;">
-                        <input class="checkbox" type="checkbox" name="" id="" />
-                        <div class="hamburger-lines">
-                            <span class="line line1"></span>
-                            <span class="line line2"></span>
-                            <span class="line line3"></span>
-                        </div>
+                    <div class="arrow-left" style="display: none;" onclick="displaySiderOpen()">
                     </div>
                 </div>
             </header>
