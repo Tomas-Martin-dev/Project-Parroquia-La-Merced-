@@ -292,16 +292,18 @@ function obtenerDistanciaDesdeTop(elemento) {
 // Animacion para dar display al SiderBar, al tocar el btn del top
 const siderbar = document.querySelector(".siderBar");
 const BTNsiderbarOpen = document.querySelector(".arrow-left");
-const BTNsiderbarClose = document.querySelector(".btn-siderBar-Close");
+const BTNsiderbarClose = document.querySelector(".arrow-siderBar-Close");
+
 function displaySiderOpen() {
     BTNsiderbarOpen.classList.add("opacity-0");
     BTNsiderbarClose.classList.remove("opacity-0");
     siderbar.classList.add("width");    
 }
+
 function displaySiderClose() {
     BTNsiderbarClose.classList.add("opacity-0");
     siderbar.classList.remove("width");    
     setTimeout(() => {
         BTNsiderbarOpen.classList.remove("opacity-0");
-    }, 400);
+    }, 200);
 }

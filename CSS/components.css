@@ -302,18 +302,13 @@ body {
             height: auto;
 
             /* breakpoint tablet */
-            @media screen and (width <=1280px) {
+            @media screen and (width <= 1280px) {
                 width: 42px;
             }
 
             /* breakpoint tablet-small and mobile */
-            @media screen and (width <=640px) {
-                width: 36px;
-            }
-
-            /* breakpoint tablet-small and mobile */
             @media screen and (width <=360px) {
-                width: 32px;
+                width: 38px;
             }
         }
 
@@ -634,9 +629,11 @@ body {
 .visible {
     opacity: 1;
 }
-/* Button SiderBar */
+
+/* Button SiderBar OPEN */
 .arrow-left {
     width: 31px;
+    min-width: 31px;
     height: 30px;
     position: relative;
     cursor: pointer;
@@ -671,17 +668,62 @@ body {
     }
 }
 
+/* Button SiderBar CLOSE */
+.arrow-siderBar-Close {
+    width: 31px;
+    height: 30px;
+    position: absolute;
+    top: 16px;
+    cursor: pointer;
+    align-items: center;
+    @media screen and (width <= 780px){
+        display: flex !important;
+    }
+    @media screen and (width <= 600px){
+        top: 14px;
+    }
+}
+
+.arrow-siderBar-Close::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+    transform: rotate(-135deg);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.arrow-siderBar-Close::after {
+    content: "";
+    position: absolute;
+    border-radius: 3px;
+    width: 20px;
+    height: 5px;
+    background-color: black;
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.arrow-siderBar-Close:hover::before {
+    transform: rotate(45deg);
+    border: none;
+    width: 20px;
+    height: 5px;
+    background-color: black;
+}
+
+.arrow-siderBar-Close:hover::after {
+    opacity: 1;
+    transform: rotate(-45deg);
+}
+
 .opacity-0{
     opacity: 0;
 }
-
-/* .display-None{
-    display: none; 
-}
-
-.display-fixed{
-    display: fixed;
-} */
 
 /* articulos de nodevades */
 .container-section__novedades {
@@ -1428,9 +1470,9 @@ body {
 }
 
 .height-auto {
-    height: 100px;
+    height: 120px;
     @media screen and (width <= 640px) {
-        height: 120px;
+        height: 130px;
     }
 }
 
@@ -1732,7 +1774,7 @@ body {
     100% {
       opacity: 1;
     }
-  }
+}
 
 /* Estilos del enlace */
 .info-anim {
@@ -2278,21 +2320,65 @@ h5 {
 
 /*                                  SIDER-BAR                                                                   */
 .siderBar{
-    background-color: #71e76dad;
+    background-color: #0000007d;
     position: fixed;
     top: 0;
     right: 0; 
-    width: 0%;
+    width: 0;
     min-height: 100vh;
     z-index: 1100;
-    padding-top: 22px;
-    transition: width .4s ease-in-out;
+    display: grid;
+    grid-template-columns:  minmax(200px, 800px) minmax(200px, 300px);
+    transition: width .1s ease-in-out;
+}
+
+.conteiner-arrow{
+    background-color: #e0d148c4;
+    padding: 100px 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    & .conteiner-siderbar{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 30px;
+    }
+    & .social{
+        display: flex !important;
+        justify-content: center;
+        gap: 20px;
+        & a img{
+            width: 22px;
+            height: auto;
+        }
+    }
+    & .ubic-siderbar{
+        text-decoration: none;
+        color: var(--Tinta-Negro);
+        font-family: var(--Lato);
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+}
+
+.enlace-siderbar{
+    color: #000;
+    text-decoration: none;
+    font-family: var(--Mont);
+    font-size: 14px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    background-color: #ebf52aeb;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.40);
+    &:hover{
+        background-color: #dfea1f;
+    }
 }
 
 .width{
-    width: 40%;
+    width: 100%;
 }
 
-.btn-siderBar-Close{
-    cursor: pointer;
-}

@@ -29,8 +29,32 @@
 
 <body>
     <div class="siderBar display-None">
-        <div class="btn-siderBar-Close" onclick="displaySiderClose()">
-            <i class="fa-solid fa-angle-right fa-2xl" style="color: #000000;"></i>                  
+        <div class="color-fondo"></div>
+        <div class="conteiner-arrow">
+            <div class="arrow-siderBar-Close" style="display: none;" onclick="displaySiderClose()"></div>
+            <div class="conteiner-siderbar">
+                <a href="" class="enlace-siderbar">Donar</a>
+                <a href="" class="enlace-siderbar">Calendario</a>
+                <a href="" class="enlace-siderbar">Novedades</a>
+                <a href="" class="enlace-siderbar">Comunidades</a>
+            </div>
+            <div class="social">
+                <a href="https://www.youtube.com/@parroquialamercedresistenc3327/featured" target="_blank"> <img
+                        class="i-youtube" src="./MEDIA/icons/youtube-D.png" alt="youtube"
+                        onmouseout="this.src=`./MEDIA/icons/youtube-D.png`"
+                        onmouseover="this.src=`./MEDIA/icons/Vector.png`"> </a>
+                <a href="https://www.facebook.com/pquialamercedrcia" target="_blank"> <img class="i-facebook"
+                        src="./MEDIA/icons/face-D.png" alt="face" onmouseout="this.src=`./MEDIA/icons/face-D.png`"
+                        onmouseover="this.src=`./MEDIA/icons/face-H.png`"> </a>
+                <a href="https://www.instagram.com/pquia.lamerced_resistencia/" target="_blank"> <img
+                        class="i-instagram" src="./MEDIA/icons/instagram-D.png" alt="instagram"
+                        onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"
+                        onmouseover="this.src=`./MEDIA/icons/instagram-H.png`"> </a>
+            </div>
+            <a href="https://www.google.com/maps?q=-27.47795518819804, -58.95372686408571" target="_blank" class="ubic-siderbar">
+                <i class="fa-solid fa-location-dot fa-lg" style="color: #000000;"></i>
+                Aristobulo del valle 3665
+            </a>
         </div>
     </div>
     <div class="hero">
@@ -202,76 +226,77 @@
                 <div class="box tranferencia" onclick="activarInfo(this)">
                     <div class="conteiner-rowTop">
                         <div class="content-icons-text"><i class="fa-solid fa-landmark"></i>
-                        <p>Transferencia Bancaria</p>
+                            <p>Transferencia Bancaria</p>
                         </div>
                         <div class="arrow-box""></div>
                     </div>
-                    <div id="container-info" class="">
-                        <p class="info-box info-presencial" href="" target="_blank">Lorem, ipsum dolor sit amet consectetur
-                            adipisicing
-                            elit. Iste labore incidunt laudantium fugiat eaque dolor in et est, repudiandae quam
-                            corporis libero
-                            impedit illum tenetur, atque inventore.
-                        </p>
-                    </div>
-                </div>
-                <div class="box tarjeta" onclick="activarInfo(this)">
-                    <div class="conteiner-rowTop">
-                        <div class="content-icons-text"><i class="fa-solid fa-credit-card"></i>
-                            <p>Pago con Tarjeta</p>
+                    <div id=" container-info" class="">
+                            <p class="info-box info-presencial" href="" target="_blank">Lorem, ipsum dolor sit amet
+                                consectetur
+                                adipisicing
+                                elit. Iste labore incidunt laudantium fugiat eaque dolor in et est, repudiandae quam
+                                corporis libero
+                                impedit illum tenetur, atque inventore.
+                            </p>
                         </div>
-                        <div class="arrow-box"></div>
                     </div>
-                    <div id="container-info" class="" >
-                        <a class="info-box info-tarjeta" href="https://www.mercadopago.com.ar/" target="_blank">Link para pagos
-                            con tarjetas
-                        </a>
-                    </div>
-                </div>
-                <div class="box mp" onclick="activarInfo(this)">
-                    <div class="conteiner-rowTop">
-                        <div class="content-icons-text"><i class="fa-solid fa-qrcode qr"></i>
-                            <p>QR-Mercado pago</p>
+                    <div class="box tarjeta" onclick="activarInfo(this)">
+                        <div class="conteiner-rowTop">
+                            <div class="content-icons-text"><i class="fa-solid fa-credit-card"></i>
+                                <p>Pago con Tarjeta</p>
+                            </div>
+                            <div class="arrow-box"></div>
                         </div>
-                        <div class="arrow-box"></div>
-                    </div>
-                    <div id="container-info" class="container-mp">
-                        <img class="info-box info-mp" src="./MEDIA/PHOTOS/QR.png"></img>
-                    </div>
-                </div>
-                <div class="box presencial" onclick="activarInfo(this)">
-                    <div class="conteiner-rowTop">
-                        <div class="content-icons-text"><i class="fa-solid fa-church" style="color: #000000;"></i>
-                            <p>Donaciones Presenciales</p>
+                        <div id="container-info" class="">
+                            <a class="info-box info-tarjeta" href="https://www.mercadopago.com.ar/" target="_blank">Link
+                                para pagos
+                                con tarjetas
+                            </a>
                         </div>
-                        <div class="arrow-box"></div>
                     </div>
-                    <div id="container-info" class="">
-                        <p class="info-box info-presencial" href="" target="_blank">Lorem, ipsum dolor sit amet consectetur
-                        adipisicing
-                        elit. Iste labore incidunt laudantium fugiat eaque dolor in et est, repudiandae quam
-                        corporis libero
-                        impedit illum tenetur, atque inventore.
-                        </p>
+                    <div class="box mp" onclick="activarInfo(this)">
+                        <div class="conteiner-rowTop">
+                            <div class="content-icons-text"><i class="fa-solid fa-qrcode qr"></i>
+                                <p>QR-Mercado pago</p>
+                            </div>
+                            <div class="arrow-box"></div>
+                        </div>
+                        <div id="container-info" class="container-mp">
+                            <img class="info-box info-mp" src="./MEDIA/PHOTOS/QR.png"></img>
+                        </div>
+                    </div>
+                    <div class="box presencial" onclick="activarInfo(this)">
+                        <div class="conteiner-rowTop">
+                            <div class="content-icons-text"><i class="fa-solid fa-church" style="color: #000000;"></i>
+                                <p>Donaciones Presenciales</p>
+                            </div>
+                            <div class="arrow-box"></div>
+                        </div>
+                        <div id="container-info" class="">
+                            <p class="info-box info-presencial" href="" target="_blank">Lorem, ipsum dolor sit amet
+                                consectetur
+                                adipisicing
+                                elit. Iste labore incidunt laudantium fugiat eaque dolor in et est, repudiandae quam
+                                corporis libero
+                                impedit illum tenetur, atque inventore.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-text__donaciones">
-                <p class="parrafo">"Donar significa mirar e ir más allá de uno mismo, más allá de las necesidades
-                    individuales y abrirse generosamente hacia un bien más amplio”</p>
-                <p class="autor">Cita del Papa Francisco</p>
-            </div>
+                <div class="container-text__donaciones">
+                    <p class="parrafo">"Donar significa mirar e ir más allá de uno mismo, más allá de las necesidades
+                        individuales y abrirse generosamente hacia un bien más amplio”</p>
+                    <p class="autor">Cita del Papa Francisco</p>
+                </div>
         </div>
         <div id="section-contacto" class="container-section__contacto">
             <h2 class="tittle-sections tittle-contacto">Contacto</h2>
             <div class="conteiner-info">
                 <div class="conteiner-dates-map">
                     <div class="content-api-maps">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1488.266950254524!2d-58.95383009859263!3d-27.478121656659237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450d3267798149%3A0x267294e209e34410!2sParroquia%20La%20Merced!5e0!3m2!1ses-419!2sar!4v1738611946005!5m2!1ses-419!2sar" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1488.266950254524!2d-58.95383009859263!3d-27.478121656659237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450d3267798149%3A0x267294e209e34410!2sParroquia%20La%20Merced!5e0!3m2!1ses-419!2sar!4v1738611946005!5m2!1ses-419!2sar"
+                            style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
@@ -285,30 +310,39 @@
                 </div>
                 <div class="container-info_small">
                     <div class="conteiner-info__top">
-                        <div class="info info__tel"><img src="./MEDIA/icons/phone-D.png" alt=""> <a
-                                href="tel:3624813313" class="info-text info-text__tel info-anim" color>3624813313</a>
+                        <div class="info info__tel">
+                            <img src="./MEDIA/icons/phone-D.png" alt="">
+                            <a href="tel:3624813313" class="info-text info-text__tel info-anim" color>3624813313
+                            </a>
                         </div>
-                        <div class="info info__ubic"><img src="./MEDIA/icons/location-D.png" alt=""><a
-                                href="https://www.google.com/maps?q=-27.47795518819804, -58.95372686408571"
+                        <div class="info info__ubic">
+                            <img src="./MEDIA/icons/location-D.png" alt="icono-ubicacion">
+                            <a href="https://www.google.com/maps?q=-27.47795518819804, -58.95372686408571"
                                 target="_blank" class="info-text info-text__ubic info-anim">Aristobulo del valle
-                                3665</a></div>
+                                3665
+                            </a>
+                        </div>
                     </div>
-                    <div class="info info__email"><img src="./MEDIA/icons/email-D.png" alt=""><a
-                            href="mailto:danteg2003@gmail.com"
-                            class="info-text info-text__email info-anim">emial@noExiste.com</a></div>
+                    <div class="info info__email"><img src="./MEDIA/icons/email-D.png" alt="">
+                        <a href="mailto:danteg2003@gmail.com"
+                            class="info-text info-text__email info-anim">emial@noExiste.com
+                        </a>
+                    </div>
                 </div>
                 <div class="content-form">
                     <h4 class="title__form">Envianos tu Consulta</h4>
                     <form action="">
                         <div class="conteiner-email-tel__form">
                             <input type="email" name="email" id="" placeholder="TuCorreo@personal.com" required>
-                            <input type="tel" name="tel" pattern="[0-9]*" inputmode="numeric" placeholder="Telefono personal: 3624000000" title="Solo se acepta numeros" required>
+                            <input type="tel" name="tel" pattern="[0-9]*" inputmode="numeric"
+                                placeholder="Telefono personal: 3624000000" title="Solo se acepta numeros" required>
                         </div>
                         <div class="conteiner-nombre-asunto__form">
                             <input type="text" name="nombre" id="" placeholder="Nombre" required>
                             <input type="text" name="asunto" id="" placeholder="Asunto: Fiesta Patronal" required>
                         </div>
-                        <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+                        <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje..."
+                            required></textarea>
                         <input type="submit" value="ENVIAR">
                     </form>
                     <span class="loader"></span>
@@ -319,7 +353,7 @@
     <footer class="footer">
         <div class="conteiner-footer">
             <div class="content-AR foot-pd-t">
-                <h5 class="tittle-footer" >ACCESO RAPIDO</h5>
+                <h5 class="tittle-footer">ACCESO RAPIDO</h5>
                 <ul class="listado-AR">
                     <li class=" li li-AR"><i class="fa-solid fa-lg fa-newspaper"></i><a class="pointer"
                             id="link-novedadesFooter">Novedades</a></li>
@@ -336,21 +370,26 @@
                     <img src="./MEDIA/icons/LOGO(110px).png" alt="">
                     <div class="text">
                         <p>¡Gracias por visitar nuestra web!</p>
-                        <p style="color: var(--Tinta-Gris); margin-top: 6px;">En nuestra comunidad siempre seran bienvenidos los bienaventurados</p>
+                        <p style="color: var(--Tinta-Gris); margin-top: 6px;">En nuestra comunidad siempre seran
+                            bienvenidos los bienaventurados</p>
                     </div>
-                </div>           
+                </div>
             </div>
             <div class="content-C foot-pd-t">
                 <h5 class="tittle-footer" style="text-align: end;">COMUNIDADES</h5>
                 <ul class="listado-C">
-                    <li class=" li li-C"><a href="http://">Misericordioso<img class="i-instagram" src="./MEDIA/icons/instagram-D.png" alt="instagram"
-                        onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"></a></li>
-                    <li class=" li li-C"><a href="http://">Caritas<img class="i-instagram" src="./MEDIA/icons/instagram-D.png" alt="instagram"
-                            onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"></a></li>
-                    <li class=" li li-C"><a href="http://">Santa Catalina<img class="i-instagram" src="./MEDIA/icons/instagram-D.png" alt="instagram"
-                            onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"></a></li>
-                    <li class=" li li-C"><a href="http://">Buen Pastor<img class="i-instagram" src="./MEDIA/icons/instagram-D.png" alt="instagram"
-                        onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"></a></li>
+                    <li class=" li li-C"><a href="http://">Misericordioso<img class="i-instagram"
+                                src="./MEDIA/icons/instagram-D.png" alt="instagram"
+                                onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"></a></li>
+                    <li class=" li li-C"><a href="http://">Caritas<img class="i-instagram"
+                                src="./MEDIA/icons/instagram-D.png" alt="instagram"
+                                onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"></a></li>
+                    <li class=" li li-C"><a href="http://">Santa Catalina<img class="i-instagram"
+                                src="./MEDIA/icons/instagram-D.png" alt="instagram"
+                                onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"></a></li>
+                    <li class=" li li-C"><a href="http://">Buen Pastor<img class="i-instagram"
+                                src="./MEDIA/icons/instagram-D.png" alt="instagram"
+                                onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"></a></li>
                 </ul>
             </div>
             <div class="content-copy">
