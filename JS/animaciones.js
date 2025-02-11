@@ -136,6 +136,7 @@ window.addEventListener("resize", () => {
     if (window.scrollY >= 300) {
         checkScreenSize(textoLogo);
     }
+    quitarWidth();
 });
 
 // funcion para scroll en los enlaces de secciones del nav
@@ -185,7 +186,6 @@ document.getElementById("link-donaciones").addEventListener("click", e => {
     let marginTop = parseInt(window.getComputedStyle(section).marginTop);
     let ajuste = alturaNav + marginTop;
     scrollSection(section, ajuste);
-
 });
 document.getElementById("link-contacto").addEventListener("click", e => {
     e.preventDefault()
@@ -307,3 +307,27 @@ function displaySiderClose() {
         BTNsiderbarOpen.classList.remove("opacity-0");
     }, 200);
 }
+
+function quitarWidth() {
+    const siderbar = document.querySelector(".siderBar");
+    const arrow = document.querySelector(".arrow-left");
+    if (window.innerWidth >= 780) {
+        siderbar.classList.remove("width"); 
+        arrow.classList.remove("opacity-0"); 
+    };
+}
+
+siderbar.addEventListener("click", (e=>{
+    if(e.target.classList.contains("color-fondo")){
+        displaySiderClose();
+    };
+}))
+
+document.querySelector(".enlace-donar").addEventListener("click", e => {
+    e.preventDefault()
+    const alturaNav = document.querySelector(".top--hero").scrollHeight;
+    let section = document.getElementById("section-donaciones")
+    let marginTop = parseInt(window.getComputedStyle(section).marginTop);
+    let ajuste = alturaNav + marginTop;
+    scrollSection(section, ajuste);
+});

@@ -1544,7 +1544,7 @@ body {
     text-align: center;
     text-wrap: stable;
     margin-top: 12px;
-    padding: 0 4px 0 4px;
+    padding: 0 4px;
 
     & .parrafo {
         font-size: 14px;
@@ -1581,7 +1581,7 @@ body {
     /* breakpoint tablet-small and mobile */
     @media screen and (width <=640px) and (width > 360px) {
         margin-top: 12px;
-
+        padding: 0 8px;
         & .parrafo {
             font-family: var(--Mont);
             font-size: clamp(12px, 3vw, 14px);
@@ -1599,11 +1599,11 @@ body {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <=360px) {
+    @media screen and (width <= 360px) {
         width: 100%;
         gap: 4px;
         margin-top: 8px;
-        padding: 0 4px;
+        padding: 0 6px;
 
         & .parrafo {
             font-family: var(--Mont);
@@ -1664,7 +1664,7 @@ body {
     }
 
     /* breakpoint tablet-small and mobile */
-    @media screen and (width <=640px) and (width > 360px) {
+    @media screen and (width <= 640px) {
         width: 100%;
         display: flex;
         flex-flow: row wrap;
@@ -1723,7 +1723,7 @@ body {
     }
 
     /* breakpoint mobile-small */
-    @media screen and (width <=360px) {
+    @media screen and (width <= 360px) {
         max-width: 319px;
         min-width: 290px;
         padding: 32px 0;
@@ -2102,7 +2102,11 @@ textarea {
             text-align: center;
             font-size: 22px;
             font-family: var(--Lato);
-
+            :last-child{
+                color: var(--Tinta-Gris); 
+                margin-top: 6px;
+                padding: 0 6px;
+            }
         }
     }
 
@@ -2280,12 +2284,21 @@ h5 {
     text-align: center;
     background-color: #b2acacda;
     padding: 8px 0;
-    font-size: 14px;
-    font-family: var(--Mont);
-    color: var(--Complementos-Blanco);
+    a{
+        text-decoration: none;
+        p{
+            font-size: 14px;
+            font-family: var(--Mont);
+            color: var(--Complementos-Blanco);
+        }
+    }
 
-    @media screen and (width <=1280px) {
-        font-size: clamp(10px, 1.5vw, 12px);
+    @media screen and (width <= 1280px) {
+        a{
+            p{
+                font-size: clamp(10px, 1.5vw, 12px);
+            }
+        }
     }
 
 }
@@ -2328,28 +2341,31 @@ h5 {
     min-height: 100vh;
     z-index: 1100;
     display: grid;
-    grid-template-columns:  minmax(200px, 800px) minmax(200px, 300px);
+    grid-template-columns:  minmax(120px, 800px) minmax(200px, 300px);
     transition: width .1s ease-in-out;
 }
 
-.conteiner-arrow{
+.conteiner-siderBar{
     background-color: #e0d148c4;
     padding: 100px 10px;
     display: flex;
     flex-flow: column nowrap;
     gap: 20px;
-    & .conteiner-siderbar{
+    & .conteiner-buttom{
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
         gap: 30px;
+        @media screen and (width <= 520px){
+            gap: 24px;
+        }
     }
     & .social{
         display: flex !important;
         justify-content: center;
         gap: 20px;
         & a img{
-            width: 22px;
+            width: 18px;
             height: auto;
         }
     }
@@ -2360,6 +2376,9 @@ h5 {
         font-size: 16px;
         font-weight: bold;
         text-align: center;
+        @media screen and (width <= 520px){
+            font-size: 12px;
+        }
     }
     
 }
@@ -2376,9 +2395,16 @@ h5 {
     &:hover{
         background-color: #dfea1f;
     }
+    @media screen and (width <= 520px){
+        font-size: 12px;
+        padding: 8px 32px;
+    }
 }
 
 .width{
     width: 100%;
+    @media screen and (width >= 780px){
+        width: 0%;
+    }
 }
 

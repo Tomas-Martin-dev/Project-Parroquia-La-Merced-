@@ -30,12 +30,12 @@
 <body>
     <div class="siderBar display-None">
         <div class="color-fondo"></div>
-        <div class="conteiner-arrow">
+        <div class="conteiner-siderBar">
             <div class="arrow-siderBar-Close" style="display: none;" onclick="displaySiderClose()"></div>
-            <div class="conteiner-siderbar">
-                <a href="" class="enlace-siderbar">Donar</a>
+            <div class="conteiner-buttom">
+                <a class="enlace-siderbar enlace-donar" onclick="displaySiderClose()">Donar</a>
                 <a href="" class="enlace-siderbar">Calendario</a>
-                <a href="" class="enlace-siderbar">Novedades</a>
+                <a href="" class="enlace-siderbar MW170">Novedades</a>
                 <a href="" class="enlace-siderbar">Comunidades</a>
             </div>
             <div class="social">
@@ -51,7 +51,8 @@
                         onmouseout="this.src=`./MEDIA/icons/instagram-D.png`"
                         onmouseover="this.src=`./MEDIA/icons/instagram-H.png`"> </a>
             </div>
-            <a href="https://www.google.com/maps?q=-27.47795518819804, -58.95372686408571" target="_blank" class="ubic-siderbar">
+            <a href="https://www.google.com/maps?q=-27.47795518819804, -58.95372686408571" target="_blank"
+                class="ubic-siderbar">
                 <i class="fa-solid fa-location-dot fa-lg" style="color: #000000;"></i>
                 Aristobulo del valle 3665
             </a>
@@ -288,67 +289,67 @@
                         individuales y abrirse generosamente hacia un bien más amplio”</p>
                     <p class="autor">Cita del Papa Francisco</p>
                 </div>
-        </div>
-        <div id="section-contacto" class="container-section__contacto">
-            <h2 class="tittle-sections tittle-contacto">Contacto</h2>
-            <div class="conteiner-info">
-                <div class="conteiner-dates-map">
-                    <div class="content-api-maps">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1488.266950254524!2d-58.95383009859263!3d-27.478121656659237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450d3267798149%3A0x267294e209e34410!2sParroquia%20La%20Merced!5e0!3m2!1ses-419!2sar!4v1738611946005!5m2!1ses-419!2sar"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+            </div>
+            <div id="section-contacto" class="container-section__contacto">
+                <h2 class="tittle-sections tittle-contacto">Contacto</h2>
+                <div class="conteiner-info">
+                    <div class="conteiner-dates-map">
+                        <div class="content-api-maps">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1488.266950254524!2d-58.95383009859263!3d-27.478121656659237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450d3267798149%3A0x267294e209e34410!2sParroquia%20La%20Merced!5e0!3m2!1ses-419!2sar!4v1738611946005!5m2!1ses-419!2sar"
+                                style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="content-email-tel">
+                            <div class="info"><i class="fa-solid fa-envelope fa-lg"></i><a
+                                    href="mailto:elcorreoquequieres@correo.com?Subject=Aquí%20el%20asunto%20del%20mail"
+                                    class="info-text info-text__email ">emial@noExiste.com</a></div>
+                            <div class="info"><i class="fa-solid fa-phone fa-lg"></i><a href="tel:3624813313"
+                                    class="info-text info-text__tel " color>3624813313</a> </div>
+                        </div>
                     </div>
-                    <div class="content-email-tel">
-                        <div class="info"><i class="fa-solid fa-envelope fa-lg"></i><a
-                                href="mailto:elcorreoquequieres@correo.com?Subject=Aquí%20el%20asunto%20del%20mail"
-                                class="info-text info-text__email ">emial@noExiste.com</a></div>
-                        <div class="info"><i class="fa-solid fa-phone fa-lg"></i><a href="tel:3624813313"
-                                class="info-text info-text__tel " color>3624813313</a> </div>
-                    </div>
-                </div>
-                <div class="container-info_small">
-                    <div class="conteiner-info__top">
-                        <div class="info info__tel">
-                            <img src="./MEDIA/icons/phone-D.png" alt="">
-                            <a href="tel:3624813313" class="info-text info-text__tel info-anim" color>3624813313
+                    <div class="container-info_small">
+                        <div class="conteiner-info__top">
+                            <div class="info info__tel">
+                                <img src="./MEDIA/icons/phone-D.png" alt="">
+                                <a href="tel:3624813313" class="info-text info-text__tel info-anim" color>3624813313
+                                </a>
+                            </div>
+                            <div class="info info__ubic">
+                                <img src="./MEDIA/icons/location-D.png" alt="icono-ubicacion">
+                                <a href="https://www.google.com/maps?q=-27.47795518819804, -58.95372686408571"
+                                    target="_blank" class="info-text info-text__ubic info-anim">Aristobulo del valle
+                                    3665
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info info__email"><img src="./MEDIA/icons/email-D.png" alt="">
+                            <a href="mailto:danteg2003@gmail.com"
+                                class="info-text info-text__email info-anim">emial@noExiste.com
                             </a>
                         </div>
-                        <div class="info info__ubic">
-                            <img src="./MEDIA/icons/location-D.png" alt="icono-ubicacion">
-                            <a href="https://www.google.com/maps?q=-27.47795518819804, -58.95372686408571"
-                                target="_blank" class="info-text info-text__ubic info-anim">Aristobulo del valle
-                                3665
-                            </a>
-                        </div>
                     </div>
-                    <div class="info info__email"><img src="./MEDIA/icons/email-D.png" alt="">
-                        <a href="mailto:danteg2003@gmail.com"
-                            class="info-text info-text__email info-anim">emial@noExiste.com
-                        </a>
+                    <div class="content-form">
+                        <h4 class="title__form">Envianos tu Consulta</h4>
+                        <form action="">
+                            <div class="conteiner-email-tel__form">
+                                <input type="email" name="email" id="" placeholder="TuCorreo@personal.com" required>
+                                <input type="tel" name="tel" pattern="[0-9]*" inputmode="numeric"
+                                    placeholder="Telefono personal: 3624000000" title="Solo se acepta numeros" required>
+                            </div>
+                            <div class="conteiner-nombre-asunto__form">
+                                <input type="text" name="nombre" id="" placeholder="Nombre" required>
+                                <input type="text" name="asunto" id="" placeholder="Asunto: Fiesta Patronal" required>
+                            </div>
+                            <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje..."
+                                required></textarea>
+                            <input type="submit" value="ENVIAR">
+                        </form>
+                        <span class="loader"></span>
                     </div>
-                </div>
-                <div class="content-form">
-                    <h4 class="title__form">Envianos tu Consulta</h4>
-                    <form action="">
-                        <div class="conteiner-email-tel__form">
-                            <input type="email" name="email" id="" placeholder="TuCorreo@personal.com" required>
-                            <input type="tel" name="tel" pattern="[0-9]*" inputmode="numeric"
-                                placeholder="Telefono personal: 3624000000" title="Solo se acepta numeros" required>
-                        </div>
-                        <div class="conteiner-nombre-asunto__form">
-                            <input type="text" name="nombre" id="" placeholder="Nombre" required>
-                            <input type="text" name="asunto" id="" placeholder="Asunto: Fiesta Patronal" required>
-                        </div>
-                        <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje..."
-                            required></textarea>
-                        <input type="submit" value="ENVIAR">
-                    </form>
-                    <span class="loader"></span>
                 </div>
             </div>
-        </div>
     </main>
     <footer class="footer">
         <div class="conteiner-footer">
@@ -370,7 +371,7 @@
                     <img src="./MEDIA/icons/LOGO(110px).png" alt="">
                     <div class="text">
                         <p>¡Gracias por visitar nuestra web!</p>
-                        <p style="color: var(--Tinta-Gris); margin-top: 6px;">En nuestra comunidad siempre seran
+                        <p>En nuestra comunidad siempre seran
                             bienvenidos los bienaventurados</p>
                     </div>
                 </div>
@@ -393,8 +394,10 @@
                 </ul>
             </div>
             <div class="content-copy">
-                <p>Copyright 2024 RIghtly</p>
-                <p>By Tomas Martin dev</p>
+                <a href="https://github.com/Tomas-Martin-dev" target="_blank">
+                    <p>Copyright 2024 RIghtly</p>
+                    <p>By Tomas Martin dev</p>
+                </a>
             </div>
         </div>
     </footer>

@@ -180,3 +180,11 @@ h1{
 .fa-piggy-bank::before{
     font-size: 18px;
 }
+
+.MW170{
+    min-width: 170px;
+    text-align: center;
+    @media screen and (width <= 520px){
+        min-width: 140px;
+    }
+}
