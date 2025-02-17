@@ -1,6 +1,6 @@
 import { form, inputTel, inputSubject, inputTextArea } from "./selectores.js";
 
-import { validarForm, validarTel, validarAsunto, validarMensaje, llamadoCMS } from "./funciones.js";
+import { validarForm, validarTel, validarAsunto, validarMensaje, llamadoNewCMS, llamadoHourCMS } from "./funciones.js";
 
 
 // eventos
@@ -20,4 +20,8 @@ inputTextArea.addEventListener("input", ()=>{
     validarMensaje()
 })
 
-llamadoCMS()
+try {
+    await Promise.all([llamadoNewCMS(),llamadoHourCMS()]);
+} catch (error) {
+    console.log(error);
+}

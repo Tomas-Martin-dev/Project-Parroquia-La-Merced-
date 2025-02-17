@@ -1148,7 +1148,6 @@ body {
     }
   }
 }
-
 /* Box de pagos para Donaciones */
 .cbp {
   min-height: 600px;
@@ -1596,7 +1595,7 @@ body {
   text-align: center;
   text-wrap: stable;
   margin-top: 12px;
-  padding: 0 4px;
+  padding: 0 48px;
 
   & .parrafo {
     font-size: 14px;
@@ -1632,7 +1631,7 @@ body {
   /* breakpoint tablet-small and mobile */
   @media screen and (width <=640px) and (width > 360px) {
     margin-top: 12px;
-    padding: 0 8px;
+    padding: 0 18px;
 
     & .parrafo {
       font-family: var(--Mont);
@@ -2379,30 +2378,27 @@ h5 {
 
 /* Personalizar el ancho y altura de la barra */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
   /* Ancho de la barra de scroll vertical */
-  height: 6px;
+  height: 10px;
   /* Altura de la barra de scroll horizontal */
 }
 
-/* Fondo de la barra (asegurando que sea transparente) */
+/* Fondo de la barra */
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0);
+  background: rgb(0, 0, 0);
   /* Fondo completamente transparente */
 }
 
 /* Mueca visible para scrollear */
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.4);
-  /* Mueca oscura con transparencia */
-  border-radius: 10px;
-  /* Bordes redondeados */
+  background: var(--Primary-Claro);
+  border-radius: 6px;
 }
 
 /* Mueca al pasar el cursor por encima */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.6);
-  /* Más visible al interactuar */
+  background: var(--Primary-Saturado);
 }
 
 /*                                  SIDER-BAR                                                                   */

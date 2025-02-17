@@ -81,7 +81,7 @@ export async function validarForm(e) {
     }
 }
 
-export async function llamadoCMS() {
+export async function llamadoNewCMS() {
     const url = "http://localhost:1337/api/news?populate=imagen";
     try {
         const res = await fetch(url);
@@ -92,16 +92,26 @@ export async function llamadoCMS() {
     }
 }
 
-export function crearNew(array) {
+export async function llamadoHourCMS() {
+    const url = "http://localhost:1337/api/hours?populate=imagen";
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        crearCardHour(data.data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function crearNew(array) {
     const contenedprNew = document.querySelector(".content-art__novedades");
-    console.log(array);
-    
+
     array.forEach(e => {
-        const { fecha, id, imagen:{formats, url, name}, informacion, titulo } = e;
+        const { fecha, id, imagen: { formats, url, name }, informacion, titulo } = e;
         // creo la new
         let article = document.createElement("article");
         article.classList.add("art-novedades");
-        
+
         let img = document.createElement("img");
         img.src = `${url}`;
         img.alt = `${name}`;
@@ -119,7 +129,7 @@ export function crearNew(array) {
 
         let contenedorTop = document.createElement("div");
         contenedorTop.classList.add("contenedorTop")
-        
+
         let pResumen = document.createElement("p");
         pResumen.classList.add("resumen");
         pResumen.textContent = `${informacion}`;
@@ -127,7 +137,7 @@ export function crearNew(array) {
         let enlace = document.createElement("a");
         enlace.href = "noticias.html";
         enlace.rel = "noopener noreferrer";
-        enlace.classList.add("btn","LeerMas");
+        enlace.classList.add("btn", "LeerMas");
         enlace.textContent = "Leer Mas";
 
 
@@ -139,8 +149,39 @@ export function crearNew(array) {
         article.appendChild(img);
         article.appendChild(div);
         contenedprNew.appendChild(article);
-        console.log(article);
-        
+
     });
-    
+
+}
+
+function crearCardHour(array) {
+    const contenedorCards = document.querySelector(".content-art__horarios");
+    // console.log(contenedorCards);
+    array.forEach(e => {
+        const { imagen: { name, url }, id, info, tittle } = e;
+
+        // Crear el elemento article principal
+        const article = document.createElement('article');
+        article.className = 'art-card';
+
+        // Crear la imagen
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = name;
+
+        // Crear el título
+        const h3 = document.createElement('h3');
+        h3.textContent = tittle;
+
+        // Crear el párrafo
+        const p = document.createElement('p');
+        p.textContent = info;
+
+        // Añadir todos los elementos al article
+        article.appendChild(img);
+        article.appendChild(h3);
+        article.appendChild(p);
+        contenedorCards.appendChild(article);
+    });
+
 }
