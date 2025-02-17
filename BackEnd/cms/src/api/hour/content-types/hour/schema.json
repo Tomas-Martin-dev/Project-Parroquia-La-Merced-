@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hours",
+  "info": {
+    "singularName": "hour",
+    "pluralName": "hours",
+    "displayName": "hour"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "imagen": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "tittle": {
+      "type": "string",
+      "required": true
+    },
+    "info": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

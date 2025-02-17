@@ -117,6 +117,9 @@ export function crearNew(array) {
         let h3 = document.createElement("h3");
         h3.textContent = `${titulo}`
 
+        let contenedorTop = document.createElement("div");
+        contenedorTop.classList.add("contenedorTop")
+        
         let pResumen = document.createElement("p");
         pResumen.classList.add("resumen");
         pResumen.textContent = `${informacion}`;
@@ -127,8 +130,10 @@ export function crearNew(array) {
         enlace.classList.add("btn","LeerMas");
         enlace.textContent = "Leer Mas";
 
-        div.appendChild(pFecha);
-        div.appendChild(h3);
+
+        contenedorTop.appendChild(pFecha);
+        contenedorTop.appendChild(h3);
+        div.appendChild(contenedorTop);
         div.appendChild(pResumen);
         div.appendChild(enlace);
         article.appendChild(img);

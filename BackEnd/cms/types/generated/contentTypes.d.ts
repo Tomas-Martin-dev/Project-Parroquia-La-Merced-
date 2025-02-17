@@ -369,6 +369,34 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHourHour extends Struct.CollectionTypeSchema {
+  collectionName: 'hours';
+  info: {
+    displayName: 'hour';
+    pluralName: 'hours';
+    singularName: 'hour';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imagen: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    info: Schema.Attribute.Text & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::hour.hour'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tittle: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNewNew extends Struct.CollectionTypeSchema {
   collectionName: 'news';
   info: {
@@ -390,7 +418,7 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
     informacion: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        minLength: 90;
+        minLength: 160;
       }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::new.new'> &
@@ -912,6 +940,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::hour.hour': ApiHourHour;
       'api::new.new': ApiNewNew;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

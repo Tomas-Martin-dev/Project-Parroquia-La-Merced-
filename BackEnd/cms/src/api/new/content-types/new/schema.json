@@ -33,7 +33,7 @@
     "informacion": {
       "type": "text",
       "required": true,
-      "minLength": 90
+      "minLength": 160
     }
   }
 }
