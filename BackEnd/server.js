@@ -50,6 +50,6 @@ cron.schedule('*/14 * * * *', async () => {
     } catch (error) {
       console.error('Error al pingear el servidor:', error);
     }
-  });
+});
 
 app.listen(3000, () => console.log("Servidor corriendo en puerto 3000"));

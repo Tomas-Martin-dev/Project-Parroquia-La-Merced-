@@ -81,3 +81,61 @@ export async function validarForm(e) {
     }
 }
 
+export async function llamadoCMS() {
+    const url = "http://localhost:1337/api/news?populate=imagen";
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        crearNew(data.data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export function crearNew(array) {
+    const contenedprNew = document.querySelector(".content-art__novedades");
+    console.log(array);
+    
+    array.forEach(e => {
+        const { fecha, id, imagen:{formats, url, name}, informacion, titulo } = e;
+        // creo la new
+        let article = document.createElement("article");
+        article.classList.add("art-novedades");
+        
+        let img = document.createElement("img");
+        img.src = `${url}`;
+        img.alt = `${name}`;
+        img.loading = "eager"
+
+        let div = document.createElement("div");
+        div.classList.add("container-text");
+
+        let pFecha = document.createElement("p");
+        pFecha.classList.add("fecha");
+        pFecha.textContent = `${fecha}`;
+
+        let h3 = document.createElement("h3");
+        h3.textContent = `${titulo}`
+
+        let pResumen = document.createElement("p");
+        pResumen.classList.add("resumen");
+        pResumen.textContent = `${informacion}`;
+
+        let enlace = document.createElement("a");
+        enlace.href = "noticias.html";
+        enlace.rel = "noopener noreferrer";
+        enlace.classList.add("btn","LeerMas");
+        enlace.textContent = "Leer Mas";
+
+        div.appendChild(pFecha);
+        div.appendChild(h3);
+        div.appendChild(pResumen);
+        div.appendChild(enlace);
+        article.appendChild(img);
+        article.appendChild(div);
+        contenedprNew.appendChild(article);
+        console.log(article);
+        
+    });
+    
+}

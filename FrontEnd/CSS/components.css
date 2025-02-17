@@ -114,15 +114,16 @@ body {
   }
 }
 
-.toIndex{
+.toIndex {
   background-color: var(--Primary-Claro);
   color: black;
   box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.205);
   text-transform: uppercase;
-  
+
   padding: 10px 26px;
   border-radius: 6px;
-  &:hover{
+
+  &:hover {
     background-color: #ff6969;
   }
 }
@@ -790,6 +791,7 @@ body {
   flex: 1 0 0;
   column-gap: 12px;
 
+  overflow: hidden;
   padding-right: 12px;
   min-width: 550px;
   max-width: 825px;
@@ -800,9 +802,12 @@ body {
   /* medidas la imagen y el contenedor de texto */
   & img {
     width: 45%;
+    height: auto;
     max-height: 244px;
     align-self: stretch;
     z-index: -1;
+    object-fit: cover;
+    aspect-ratio: 1.1;
   }
 
   .container-text {
@@ -813,6 +818,7 @@ body {
     align-self: stretch;
     gap: 8px;
     flex: 1 0 0;
+    width: 55%;
 
     padding: 12px 0px;
 
@@ -848,6 +854,13 @@ body {
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;       
+      -webkit-line-clamp: 3;  
+      -webkit-box-orient: vertical;
+      max-width: 100%;
     }
   }
 
@@ -1287,6 +1300,7 @@ body {
   margin: 0 0px;
   width: 100%;
   grid-area: box;
+  content-visibility: auto;
 
   /* breakpoint tablet */
   @media screen and (width <=1280px) {
@@ -1640,12 +1654,16 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 36px 12.5%;
+  padding: 36px 6%;
   gap: 48px;
-
+  
   & .tittle-contacto {
     align-self: self-start;
-    margin-left: -10%;
+  }
+  
+  /* breakpoint tablet */
+  @media screen and (width <=1280px) and (width > 640px) {
+    padding: 36px 12.5%;
   }
 
   /* breakpoint mobile-small */
@@ -1735,7 +1753,7 @@ body {
   /* breakpoint mobile-small */
   @media screen and (width <=360px) {
     max-width: 319px;
-    min-width: 290px;
+    min-width: 240px;
     padding: 32px 0;
     row-gap: 12px;
     column-gap: 12px;
@@ -1745,7 +1763,7 @@ body {
     }
 
     & .info {
-      min-width: 138px;
+      min-width: 100px;
       max-width: 153px;
       gap: 8px;
     }
@@ -1820,6 +1838,7 @@ body {
   width: 100%;
   gap: 10%;
   max-width: 1440px;
+  content-visibility: auto;
 
   @media screen and (width <=1280px) {
     align-items: center;
@@ -1831,7 +1850,7 @@ body {
 /* Maps  */
 .conteiner-dates-map {
   width: 100%;
-  min-width: 540px;
+  min-width: 470px;
   display: flex;
   flex-flow: column nowrap;
   row-gap: 8px;
@@ -1884,7 +1903,7 @@ body {
 
 .content-form {
   max-width: 679px;
-  min-width: 460px;
+  min-width: 400px;
   width: 100%;
 
   & .title__form {
@@ -1907,16 +1926,16 @@ body {
 
   @media screen and (width <=800px) {
     max-width: none;
-    min-width: 540px;
+    min-width: 480px;
   }
 
   @media screen and (width <=640px) {
     max-width: none;
-    min-width: 320px;
+    min-width: 300px;
   }
 
   @media screen and (width <=360px) {
-    min-width: 290px;
+    min-width: 20px;
     width: 100%;
   }
 }
@@ -2498,7 +2517,7 @@ h5 {
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.103);
-  
+
   @media screen and (width <=600px) {
     width: 80%;
   }

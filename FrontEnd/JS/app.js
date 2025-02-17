@@ -1,5 +1,6 @@
 import { form, inputTel, inputSubject, inputTextArea } from "./selectores.js";
-import { validarForm, validarTel, validarAsunto, validarMensaje } from "./funciones.js";
+
+import { validarForm, validarTel, validarAsunto, validarMensaje, llamadoCMS } from "./funciones.js";
 
 
 // eventos
@@ -18,3 +19,5 @@ inputSubject.addEventListener("input", ()=>{
 inputTextArea.addEventListener("input", ()=>{ 
     validarMensaje()
 })
+
+llamadoCMS()

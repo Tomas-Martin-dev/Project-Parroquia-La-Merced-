@@ -26,5 +26,6 @@
             "ext": ".conf.php",
             "level": 1
         }
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
