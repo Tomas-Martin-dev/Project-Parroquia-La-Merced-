@@ -100,31 +100,51 @@ function checkScreenSize(textoLogo) {
 // Animacion para nav-scroll top
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.top--hero');
+    const navNovedades = document.querySelector('.top-novedades');
     const textoLogo = nav.childNodes[1].childNodes[1].childNodes[3];
     const divScroll = nav.childNodes[1].childNodes[3];
     const img = nav.childNodes[1].childNodes[1].childNodes[1];
     const textScrollMobile = document.querySelector(".text-scroll__mobile");
     const textScrollMobileSmall = document.querySelector(".text-scroll__mobile-small");
+    
     if (window.scrollY >= 300) {
         // agregar o eliminar propiedades al div conteiner del nav-scrol
-        nav.classList.add('nav--scroll');
+        if (!nav.classList.contains("top-novedades")) {
+            nav.classList.add('nav--scroll'); 
+            console.log("activo original");
+             
+        }
+        
         // elimar el texto del logo
-        checkScreenSize(textoLogo);
+        if (!textoLogo.classList.contains("text-logo-novedades")) {
+            checkScreenSize(textoLogo);
+        }
+        
         // elimar el texto del logo
         divScroll.removeAttribute("style");
+        
         // agregar funcion Onclick a img
         img.addEventListener("click", scrollTop);
         img.classList.add("pointer")
+        
         // oculto o muestro el text del nav
-        textScrollMobile.classList.add("visible");
-        textScrollMobileSmall.classList.add("visible");
+        textScrollMobile?.classList.add("visible");
+        textScrollMobileSmall?.classList.add("visible");
+    } 
+    else if (window.scrollY > 80) {
+        if (navNovedades) {
+            navNovedades.classList.add('nav--scroll');
+            console.log("activo else if");
+        }
     } else {
         nav.classList.remove('nav--scroll');
         textoLogo.removeAttribute("style");
-        divScroll.style.display = "none";
+        if (!divScroll.classList.contains("info--novedades")) {
+            divScroll.style.display = "none";
+        }
         img.classList.remove("pointer")
-        textScrollMobile.classList.remove("visible");
-        textScrollMobileSmall.classList.remove("visible");
+        textScrollMobile?.classList.remove("visible");
+        textScrollMobileSmall?.classList.remove("visible");
     }
 });
 
@@ -134,7 +154,9 @@ window.addEventListener("resize", () => {
 
     // Solo actualiza el display del logo si ya está en modo "scroll"
     if (window.scrollY >= 300) {
-        checkScreenSize(textoLogo);
+        if (!textoLogo.classList.contains("text-logo-novedades")) {
+            checkScreenSize(textoLogo);
+        }       
     }
     quitarWidth();
 });
@@ -152,7 +174,7 @@ function scrollSection(seccion, ajuste) {
 // escucho los eventos click de los enlaces del nav, nav-scroll y del footer para agregar funcion de scroll
 
 /*                          Nav-hero */
-document.getElementById("link-novedades").addEventListener("click", e => {
+document.getElementById("link-novedades")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-novedades")
@@ -161,7 +183,7 @@ document.getElementById("link-novedades").addEventListener("click", e => {
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-horarios").addEventListener("click", e => {
+document.getElementById("link-horarios")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-horarios")
@@ -170,7 +192,7 @@ document.getElementById("link-horarios").addEventListener("click", e => {
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-donaciones__small").addEventListener("click", e => {
+document.getElementById("link-donaciones__small")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-donaciones")
@@ -179,7 +201,7 @@ document.getElementById("link-donaciones__small").addEventListener("click", e =>
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-donaciones").addEventListener("click", e => {
+document.getElementById("link-donaciones")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-donaciones")
@@ -187,7 +209,7 @@ document.getElementById("link-donaciones").addEventListener("click", e => {
     let ajuste = alturaNav + marginTop;
     scrollSection(section, ajuste);
 });
-document.getElementById("link-contacto").addEventListener("click", e => {
+document.getElementById("link-contacto")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-contacto")
@@ -197,7 +219,7 @@ document.getElementById("link-contacto").addEventListener("click", e => {
 
 });
 /*                         Nav-scroll */
-document.getElementById("link-novedadesTop").addEventListener("click", e => {
+document.getElementById("link-novedadesTop")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-novedades")
@@ -206,7 +228,7 @@ document.getElementById("link-novedadesTop").addEventListener("click", e => {
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-horariosTop").addEventListener("click", e => {
+document.getElementById("link-horariosTop")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-horarios")
@@ -215,7 +237,7 @@ document.getElementById("link-horariosTop").addEventListener("click", e => {
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-donacionesTop").addEventListener("click", e => {
+document.getElementById("link-donacionesTop")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-donaciones")
@@ -224,7 +246,7 @@ document.getElementById("link-donacionesTop").addEventListener("click", e => {
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-donacionesTop__small").addEventListener("click", e => {
+document.getElementById("link-donacionesTop__small")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-donaciones")
@@ -233,7 +255,7 @@ document.getElementById("link-donacionesTop__small").addEventListener("click", e
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-contactoTop").addEventListener("click", e => {
+document.getElementById("link-contactoTop")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-contacto")
@@ -243,7 +265,7 @@ document.getElementById("link-contactoTop").addEventListener("click", e => {
 
 });
 /*                         Footer */
-document.getElementById("link-novedadesFooter").addEventListener("click", e => {
+document.getElementById("link-novedadesFooter")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-novedades")
@@ -252,7 +274,7 @@ document.getElementById("link-novedadesFooter").addEventListener("click", e => {
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-horariosFooter").addEventListener("click", e => {
+document.getElementById("link-horariosFooter")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-horarios")
@@ -261,7 +283,7 @@ document.getElementById("link-horariosFooter").addEventListener("click", e => {
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-donacionesFooter").addEventListener("click", e => {
+document.getElementById("link-donacionesFooter")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-donaciones")
@@ -270,7 +292,7 @@ document.getElementById("link-donacionesFooter").addEventListener("click", e => 
     scrollSection(section, ajuste);
 
 });
-document.getElementById("link-contactoFooter").addEventListener("click", e => {
+document.getElementById("link-contactoFooter")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-contacto")
@@ -312,18 +334,18 @@ function quitarWidth() {
     const siderbar = document.querySelector(".siderBar");
     const arrow = document.querySelector(".arrow-left");
     if (window.innerWidth >= 780) {
-        siderbar.classList.remove("width"); 
-        arrow.classList.remove("opacity-0"); 
+        siderbar?.classList.remove("width"); 
+        arrow?.classList.remove("opacity-0"); 
     };
 }
 
-siderbar.addEventListener("click", (e=>{
+siderbar?.addEventListener("click", (e=>{
     if(e.target.classList.contains("color-fondo")){
         displaySiderClose();
     };
 }))
 
-document.querySelector(".enlace-donar").addEventListener("click", e => {
+document.querySelector(".enlace-donar")?.addEventListener("click", e => {
     e.preventDefault()
     const alturaNav = document.querySelector(".top--hero").scrollHeight;
     let section = document.getElementById("section-donaciones")

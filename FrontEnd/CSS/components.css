@@ -88,6 +88,13 @@ body {
   }
 }
 
+.btn-principal{
+  @media screen and (width <=640px) {
+    padding: 8px 26px;
+    font-size: 16px;
+  }
+}
+
 .ToCalendario {
   padding: 9px 25px;
   border-radius: 6px;
@@ -331,14 +338,20 @@ body {
       text-align: left;
 
       /* breakpoint tablet */
-      @media screen and (width <=1280px) {
+      @media screen and (width <= 1280px) {
         font-size: 16px;
         font-weight: 500;
       }
 
       /* breakpoint tablet-small */
-      @media screen and (width <=640px) {
+      @media screen and (width <= 640px) {
         display: none;
+      }
+
+      @media screen and (width < 450px) {
+        display: block;
+        font-size: 14px;
+        padding-right: 18px;
       }
     }
   }
@@ -2178,7 +2191,7 @@ textarea {
   @media screen and (width <=1280px) {
     & .content-logo-info {
       & img {
-        width: 68px;
+        width: 88px;
         height: auto;
       }
 
@@ -2191,7 +2204,7 @@ textarea {
   @media screen and (width <=640px) {
     & .content-logo-info {
       & img {
-        width: 58px;
+        width: 68px;
         height: auto;
       }
 
@@ -2595,5 +2608,28 @@ h5 {
 #lottie-container {
   position: relative;
   width: 100%;
+  height: auto;
+}
+
+.contenedor-titulos{
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  align-items: center;
+    & h4{
+      font-size: clamp(20px, 1.69vw, 22px);
+      font-family: var(--Lato);
+      font-weight: 500;
+      text-align: center;
+      @media screen and (width <= 640px){
+        font-size: 18px;
+        padding: 0 6.57%;
+      }
+    }
+}
+
+.img--novedades{
+  width: 120px; 
   height: auto;
 }

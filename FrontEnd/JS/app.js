@@ -4,19 +4,19 @@ import { validarForm, validarTel, validarAsunto, validarMensaje, llamadoNewCMS, 
 
 
 // eventos
-form.addEventListener("submit", (e)=>{
+form?.addEventListener("submit", (e)=>{
     validarForm(e)
 });
 
-inputTel.addEventListener("input", () => {
+inputTel?.addEventListener("input", () => {
     validarTel(); 
 });
 
-inputSubject.addEventListener("input", ()=>{ 
+inputSubject?.addEventListener("input", ()=>{ 
     validarAsunto()
 })
 
-inputTextArea.addEventListener("input", ()=>{ 
+inputTextArea?.addEventListener("input", ()=>{ 
     validarMensaje()
 })
 

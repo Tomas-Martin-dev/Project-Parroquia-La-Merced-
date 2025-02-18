@@ -86,7 +86,13 @@ export async function llamadoNewCMS() {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        crearNew(data.data)
+        // verifico que este en la page index
+        const index = document.querySelector(".container-box");
+        if (!index) {
+            crearNew(data.data)
+        }else{
+            crearNew(data.data.slice(-4))
+        }
     } catch (error) {
         console.log(error);
     }
@@ -156,7 +162,6 @@ function crearNew(array) {
 
 function crearCardHour(array) {
     const contenedorCards = document.querySelector(".content-art__horarios");
-    // console.log(contenedorCards);
     array.forEach(e => {
         const { imagen: { name, url }, id, info, tittle } = e;
 
@@ -181,7 +186,7 @@ function crearCardHour(array) {
         article.appendChild(img);
         article.appendChild(h3);
         article.appendChild(p);
-        contenedorCards.appendChild(article);
+        contenedorCards?.appendChild(article);
     });
 
 }

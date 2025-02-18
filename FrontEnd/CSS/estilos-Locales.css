@@ -188,3 +188,33 @@ h1{
         min-width: 140px;
     }
 }
+
+.margin-novedades{
+    margin: 120px 0 !important;
+}
+
+.social-novedades{
+    min-width: 250px !important;
+    display: flex !important;
+    @media screen and (width <= 900px){
+        min-width: 80px !important;
+    }
+}
+
+.text-logo-novedades{
+    @media screen and (width <= 900px){
+        display: none;
+    }
+}
+
+.conteiner-p-nov{
+    @media screen and (width <= 900px){
+        min-width: 80px !important;
+    }
+}
+
+.info--novedades{
+    @media screen and (width <= 450px){
+        display: none;
+    }
+}
