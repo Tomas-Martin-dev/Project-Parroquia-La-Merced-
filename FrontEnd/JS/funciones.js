@@ -81,7 +81,7 @@ export async function validarForm(e) {
     }
 }
 
-export async function llamadoNewCMS() {
+export async function llamadoNewsCMS() {
     const url = "http://localhost:1337/api/news?populate=imagen";
     try {
         const res = await fetch(url);
@@ -89,9 +89,9 @@ export async function llamadoNewCMS() {
         // verifico que este en la page index
         const index = document.querySelector(".container-box");
         if (!index) {
-            crearNew(data.data)
-        }else{
-            crearNew(data.data.slice(-4))
+            crearNews(data.data)
+        } else {
+            crearNews(data.data.slice(-4))
         }
     } catch (error) {
         console.log(error);
@@ -109,11 +109,28 @@ export async function llamadoHourCMS() {
     }
 }
 
-function crearNew(array) {
+export async function llamadoNew() {
+    const params = new URLSearchParams(window.location.search);
+    const Id = params.get("id");
+
+    if (!Id) {
+        return null
+    }
+
+    try {
+        const response = await fetch(`http://localhost:1337/api/news/${Id}?populate=imagen`);
+        const data = await response.json();
+        crearNew(data.data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function crearNews(array) {
     const contenedprNew = document.querySelector(".content-art__novedades");
 
     array.forEach(e => {
-        const { fecha, id, imagen: { formats, url, name }, informacion, titulo } = e;
+        const { fecha, documentId, imagen: { formats, url, name }, informacion, titulo } = e;
         // creo la new
         let article = document.createElement("article");
         article.classList.add("art-novedades");
@@ -141,8 +158,9 @@ function crearNew(array) {
         pResumen.textContent = `${informacion}`;
 
         let enlace = document.createElement("a");
-        enlace.href = "noticias.html";
+        enlace.href = `new.html?id=${documentId}`;
         enlace.rel = "noopener noreferrer";
+        enlace.target = "_blank"
         enlace.classList.add("btn", "LeerMas");
         enlace.textContent = "Leer Mas";
 
@@ -154,7 +172,7 @@ function crearNew(array) {
         div.appendChild(enlace);
         article.appendChild(img);
         article.appendChild(div);
-        contenedprNew.appendChild(article);
+        contenedprNew?.appendChild(article);
 
     });
 
@@ -189,4 +207,42 @@ function crearCardHour(array) {
         contenedorCards?.appendChild(article);
     });
 
+}
+
+function crearNew(data) {
+    const contenedor = document.querySelector(".section-new");
+    const btn = document.querySelector(".btn");
+
+    const { imagen: { name, url, }, informacion, fecha, titulo } = data;
+    
+    const containerImgTop = document.createElement('div');
+    containerImgTop.className = 'conteiner-imgTop';
+
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = name;
+
+    const fechaNew = document.createElement('p');
+    fechaNew.className = 'fecha-new';
+    fechaNew.textContent = fecha;
+
+    const tituloNew = document.createElement('h1');
+    tituloNew.className = 'titulo-new';
+    tituloNew.textContent = titulo;
+
+    const containerInformacion = document.createElement('div');
+    containerInformacion.className = 'conteiner-informacion';
+
+    const informacionNew = document.createElement('p');
+    informacionNew.className = 'informacion-new';
+    informacionNew.textContent = informacion;
+
+    containerImgTop.appendChild(img);
+    containerImgTop.appendChild(fechaNew);
+
+    containerInformacion.appendChild(informacionNew);
+
+    contenedor.insertBefore(containerImgTop, btn);
+    contenedor.insertBefore(tituloNew, btn);
+    contenedor.insertBefore(containerInformacion, btn);
 }

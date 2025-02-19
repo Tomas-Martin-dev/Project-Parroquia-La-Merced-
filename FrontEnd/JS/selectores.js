@@ -16,6 +16,8 @@ const botonSubmit = form?.lastElementChild;
 
 const loader = document.querySelector(".loader");
 
+const pageNew = document.querySelector(".pageNew");
+
 export {
     form,
     inputEmail,
@@ -24,5 +26,6 @@ export {
     inputSubject,
     inputTextArea,
     loader, 
-    botonSubmit
+    botonSubmit,
+    pageNew
 }

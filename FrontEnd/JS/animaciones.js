@@ -111,8 +111,6 @@ window.addEventListener('scroll', () => {
         // agregar o eliminar propiedades al div conteiner del nav-scrol
         if (!nav.classList.contains("top-novedades")) {
             nav.classList.add('nav--scroll'); 
-            console.log("activo original");
-             
         }
         
         // elimar el texto del logo
@@ -131,10 +129,9 @@ window.addEventListener('scroll', () => {
         textScrollMobile?.classList.add("visible");
         textScrollMobileSmall?.classList.add("visible");
     } 
-    else if (window.scrollY > 80) {
+    else if (window.scrollY > 1) {
         if (navNovedades) {
             navNovedades.classList.add('nav--scroll');
-            console.log("activo else if");
         }
     } else {
         nav.classList.remove('nav--scroll');

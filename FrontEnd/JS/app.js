@@ -1,6 +1,6 @@
-import { form, inputTel, inputSubject, inputTextArea } from "./selectores.js";
+import { form, inputTel, inputSubject, inputTextArea, pageNew } from "./selectores.js";
 
-import { validarForm, validarTel, validarAsunto, validarMensaje, llamadoNewCMS, llamadoHourCMS } from "./funciones.js";
+import { validarForm, validarTel, validarAsunto, validarMensaje, llamadoNewsCMS, llamadoHourCMS, llamadoNew } from "./funciones.js";
 
 
 // eventos
@@ -21,7 +21,11 @@ inputTextArea?.addEventListener("input", ()=>{
 })
 
 try {
-    await Promise.all([llamadoNewCMS(),llamadoHourCMS()]);
+    if(pageNew){
+        llamadoNew();
+    }else{
+        await Promise.all([llamadoNewsCMS(),llamadoHourCMS()]);
+    }
 } catch (error) {
     console.log(error);
 }
