@@ -22,7 +22,7 @@ inputTextArea?.addEventListener("input", ()=>{
 
 try {
     if(pageNew){
-        llamadoNew();
+        await llamadoNew();
     }else{
         await Promise.all([llamadoNewsCMS(),llamadoHourCMS()]);
     }

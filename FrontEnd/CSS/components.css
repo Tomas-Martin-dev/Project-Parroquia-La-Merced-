@@ -2640,9 +2640,10 @@ h5 {
 
 /*                              PAGINA NEW                         */
 
-.section-new{
+.section-new {
   text-align: center;
   margin-bottom: 36px;
+  min-height: 90vh;
 }
 
 .conteiner-imgTop {
@@ -2678,13 +2679,14 @@ h5 {
 
   }
 
-  @media screen and (width <= 1280px){
+  @media screen and (width <=1280px) {
     margin-top: 62px;
 
     & img {
       width: 80%;
       min-width: 720px;
     }
+
     & .fecha-new {
       width: 80%;
       min-width: 720px;
@@ -2692,11 +2694,12 @@ h5 {
     }
   }
 
-  @media screen and (width <= 800px){
+  @media screen and (width <=800px) {
     & img {
       width: 100%;
       min-width: 0px;
     }
+
     & .fecha-new {
       width: 100%;
       min-width: 0px;
@@ -2704,11 +2707,11 @@ h5 {
     }
   }
 
-  @media screen and (width <= 640px){
+  @media screen and (width <=640px) {
     margin-top: 58px;
   }
-  
-  @media screen and (width <= 360px){
+
+  @media screen and (width <=360px) {
     margin-top: 54px;
   }
 }
@@ -2722,12 +2725,12 @@ h5 {
   color: var(--Tinta-Gris);
   font-size: clamp(30px, 2.1vw, 36px);
   text-shadow: 1px 1px 0px #00000053;
-  
-  @media screen and (width <= 1280px){
+
+  @media screen and (width <=1280px) {
     font-size: clamp(28px, 2.6vw, 30px);
   }
 
-  @media screen and (width <= 800px){
+  @media screen and (width <=800px) {
     font-size: clamp(24px, 3.8vw, 28px);
   }
 }
@@ -2746,20 +2749,88 @@ h5 {
     font-size: clamp(22px, 1.5vw, 24px);
     white-space: normal;
     overflow-wrap: break-word;
-    line-height: 1.3; 
+    line-height: 1.2;
+    white-space: pre-wrap;
   }
 
-  @media screen and (width <=1280px){
+  @media screen and (width <=1280px) {
     & .informacion-new {
       font-size: clamp(18px, 1.9vw, 22px);
     }
   }
 
-  @media screen and (width <= 800px){
+  @media screen and (width <=800px) {
     padding: 0 20px;
+
     & .informacion-new {
       font-size: clamp(16px, 2.4vw, 18px);
     }
   }
 }
 
+.errorNew {
+  min-height: 70vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  & .cont-msj-error {
+    background-color: #00000034;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 28px;
+
+    padding: 20px 40px;
+    background-color: rgba(173, 155, 155, 0.144);
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.103);
+    
+    & h3 {
+      font-size: 2.5vw;
+      text-align: center;
+      font-family: var(--Mont);
+      color: var(--Primary-Claro);
+      margin-bottom: 2vh;
+  
+      @media screen and (width <=1080px) {
+        font-size: 3.5vw;
+      }
+  
+      @media screen and (width <=840px) {
+        font-size: 4.5vw;
+      }
+  
+      @media screen and (width <=600px) {
+        font-size: 5.5vw;
+      }
+  
+      @media screen and (width <=380px) {
+        font-size: 6.5vw;
+      }
+    }
+    
+    & p {
+      font-size: 1.2vw;
+      text-align: center;
+      font-family: var(--Lato);
+  
+      @media screen and (width <=1080px) {
+        font-size: 1.7vw;
+      }
+  
+      @media screen and (width <=840px) {
+        font-size: 2.5vw;
+      }
+  
+      @media screen and (width <=600px) {
+        font-size: 3.1vw;
+      }
+  
+      @media screen and (width <=380px) {
+        font-size: 3.4vw;
+      }
+    }
+  }
+}

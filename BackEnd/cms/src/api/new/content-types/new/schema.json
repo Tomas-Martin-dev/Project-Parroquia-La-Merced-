@@ -31,9 +31,8 @@
       "required": true
     },
     "informacion": {
-      "type": "text",
-      "required": true,
-      "minLength": 160
+      "type": "richtext",
+      "required": true
     }
   }
 }

@@ -415,11 +415,7 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
     fecha: Schema.Attribute.String & Schema.Attribute.Required;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
-    informacion: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 160;
-      }>;
+    informacion: Schema.Attribute.RichText & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::new.new'> &
       Schema.Attribute.Private;

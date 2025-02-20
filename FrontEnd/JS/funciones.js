@@ -25,7 +25,7 @@ export function validarAsunto() {
 }
 
 export function validarMensaje() {
-    if (inputTextArea.value.length < 5) {
+    if (inputTextArea.value.length < 10) {
         inputTextArea.setCustomValidity("Caracteres mínimos: 10");
         inputTextArea.reportValidity();
         return false;
@@ -155,7 +155,7 @@ function crearNews(array) {
 
         let pResumen = document.createElement("p");
         pResumen.classList.add("resumen");
-        pResumen.textContent = `${informacion}`;
+        pResumen.innerHTML = marked.parse(informacion);
 
         let enlace = document.createElement("a");
         enlace.href = `new.html?id=${documentId}`;
@@ -210,10 +210,15 @@ function crearCardHour(array) {
 }
 
 function crearNew(data) {
+    if (!data) {
+        ErroNew();  
+        return
+    }
+
     const contenedor = document.querySelector(".section-new");
-    const btn = document.querySelector(".btn");
 
     const { imagen: { name, url, }, informacion, fecha, titulo } = data;
+    console.log(informacion);
     
     const containerImgTop = document.createElement('div');
     containerImgTop.className = 'conteiner-imgTop';
@@ -235,14 +240,49 @@ function crearNew(data) {
 
     const informacionNew = document.createElement('p');
     informacionNew.className = 'informacion-new';
-    informacionNew.textContent = informacion;
+    informacionNew.innerHTML = marked.parse(informacion);
+
+    const button = document.createElement("a");
+    button.classList.add("btn","VerMasN","btn-principal");
+    button.href = "./noticias.html";
+    button.textContent = "Ver mas Noticias";
 
     containerImgTop.appendChild(img);
     containerImgTop.appendChild(fechaNew);
 
     containerInformacion.appendChild(informacionNew);
 
-    contenedor.insertBefore(containerImgTop, btn);
-    contenedor.insertBefore(tituloNew, btn);
-    contenedor.insertBefore(containerInformacion, btn);
+    contenedor.appendChild(containerImgTop);
+    contenedor.appendChild(tituloNew);
+    contenedor.appendChild(containerInformacion);
+    contenedor.appendChild(button);
+    
+}
+
+function ErroNew() {
+    const contenedor = document.querySelector(".section-new");
+
+    const cont = document.createElement("div");
+    cont.classList = "cont-msj-error"
+
+    const titulo = document.createElement("h3");
+    titulo.className = "titulo-construccion";
+    titulo.textContent = "Noticia no encontrada en el servidor";
+
+    const parrafo = document.createElement("p");
+    parrafo.className = "texto-construccion";
+    parrafo.textContent = "Disculpanos el inconveniente, vuelva a intentarlo mas tarde";
+
+    const button = document.createElement("a");
+    button.classList.add("btn","VerMasN","btn-principal");
+    button.href = "./noticias.html";
+    button.textContent = "Ver mas Noticias";
+
+    cont.appendChild(titulo);
+    cont.appendChild(parrafo);
+    cont.appendChild(button)
+
+    contenedor.classList.add("errorNew");
+    contenedor.appendChild(cont);
+
 }
