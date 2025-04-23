@@ -1,5 +1,6 @@
 # WebSite Parroquia Nuestra Señora de la Merced -Resistencia,Chaco-
 Proyecto dedicado y donado para la parroquia la Merced.
+
  -Esta web esta creada con la finalidad de compartir horarios y noticias de la parroquia a sus visitantes y fieles.
  ## Skills
  - Esta Web esta hecha pura y exclusivamente de las bases de la web HTML - CSS - JS.
